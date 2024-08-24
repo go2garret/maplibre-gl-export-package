@@ -306,6 +306,7 @@ export default class MaplibreExportControl implements IControl {
 			} else {
 				this.crosshair = new CrosshairManager(this.map);
 				this.crosshair.create();
+				console.log("Show crosshair", this.map, this.crosshair);
 			}
 		}
 	}
