@@ -302,6 +302,7 @@ export default class MaplibreExportControl implements IControl {
 				if (this.crosshair !== undefined) {
 					this.crosshair.destroy();
 					this.crosshair = undefined;
+					console.log("Hide crosshair");
 				}
 			} else {
 				this.crosshair = new CrosshairManager(this.map);
