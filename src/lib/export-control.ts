@@ -300,7 +300,7 @@ export default class MaplibreExportControl implements IControl {
 
 	public toggleCrosshair(state: boolean) {
 		if (this.options.Crosshair === true) {
-			console.log('toggleCrosshair', state, JSON.stringify(this.crosshair));
+			console.log('toggleCrosshair', state, this.crosshair);
 			if (state === false) {
 				if (this.crosshair !== undefined) {
 					console.log("Hide crosshair");
@@ -319,7 +319,7 @@ export default class MaplibreExportControl implements IControl {
 
 	public togglePrintableArea(state: boolean) {
 		if (this.options.PrintableArea === true) {
-			console.log('togglePrintableArea', state, JSON.stringify(this.printableArea));
+			console.log('togglePrintableArea', state, this.printableArea);
 			if (state === false) {
 				if (this.printableArea !== undefined) {
 					this.printableArea.destroy();
