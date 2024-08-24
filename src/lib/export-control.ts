@@ -335,6 +335,7 @@ export default class MaplibreExportControl implements IControl {
 	}
 
 	public showPrintableArea() {
+		console.log("testShowPrintableArea")
 		this.printableArea = new PrintableAreaManager(this.map);
 		this.updatePrintableArea();
 	}
@@ -347,6 +348,7 @@ export default class MaplibreExportControl implements IControl {
 	}
 
 	public showCrosshair() {
+		console.log("testShowCrosshair")
 		this.crosshair = new CrosshairManager(this.map);
 		this.crosshair.create();
 	}
