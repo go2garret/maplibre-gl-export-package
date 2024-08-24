@@ -1,17 +1,17 @@
 import { type Map as MaplibreMap } from 'maplibre-gl';
 import { type Map as MapboxMap } from 'mapbox-gl';
 export default class PrintableAreaManager {
-    private map;
-    private width;
-    private height;
-    private unit;
-    private svgCanvas;
-    private svgPath;
+    protected map: MaplibreMap | MapboxMap | undefined;
+    protected width: number;
+    protected height: number;
+    protected unit: string;
+    protected svgCanvas: SVGElement | undefined;
+    protected svgPath: SVGElement | undefined;
     constructor(map: MaplibreMap | MapboxMap | undefined);
     private mapResize;
     updateArea(width: number, height: number): void;
-    private generateCutOut;
+    protected generateCutOut(): void;
     destroy(): void;
-    private toPixels;
+    protected toPixels(length: number, conversionFactor?: number): number;
 }
 //# sourceMappingURL=printable-area-manager.d.ts.map

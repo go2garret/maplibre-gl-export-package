@@ -3,17 +3,17 @@ import { type Map as MapboxMap } from 'mapbox-gl';
 import { Unit } from './interfaces';
 
 export default class PrintableAreaManager {
-	private map: MaplibreMap | MapboxMap | undefined;
+	protected map: MaplibreMap | MapboxMap | undefined;
 
-	private width: number;
+	protected width: number;
 
-	private height: number;
+	protected height: number;
 
-	private unit: string;
+	protected unit: string;
 
-	private svgCanvas: SVGElement | undefined;
+	protected svgCanvas: SVGElement | undefined;
 
-	private svgPath: SVGElement | undefined;
+	protected svgPath: SVGElement | undefined;
 
 	constructor(map: MaplibreMap | MapboxMap | undefined) {
 		this.map = map;
@@ -50,7 +50,7 @@ export default class PrintableAreaManager {
 		this.generateCutOut();
 	}
 
-	private generateCutOut() {
+	protected generateCutOut() {
 		if (this.map === undefined || this.svgCanvas === undefined || this.svgPath === undefined) {
 			return;
 		}
@@ -87,7 +87,7 @@ export default class PrintableAreaManager {
 	 * @param length mm/inch length
 	 * @param conversionFactor DPI value. default is 96.
 	 */
-	private toPixels(length: number, conversionFactor = 96) {
+	protected toPixels(length: number, conversionFactor = 96) {
 		if (this.unit === Unit.mm) {
 			conversionFactor /= 25.4;
 		}
