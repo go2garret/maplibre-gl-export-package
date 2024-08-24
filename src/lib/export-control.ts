@@ -299,13 +299,9 @@ export default class MaplibreExportControl implements IControl {
 	private toggleCrosshair(state: boolean) {
 		if (this.options.Crosshair === true) {
 			if (state === false) {
-				if (this.crosshair !== undefined) {
-					this.crosshair.destroy();
-					this.crosshair = undefined;
-				}
+				this.hideCrosshair();
 			} else {
-				this.crosshair = new CrosshairManager(this.map);
-				this.crosshair.create();
+				this.showCrosshair();
 			}
 		}
 	}
@@ -313,13 +309,9 @@ export default class MaplibreExportControl implements IControl {
 	private togglePrintableArea(state: boolean) {
 		if (this.options.PrintableArea === true) {
 			if (state === false) {
-				if (this.printableArea !== undefined) {
-					this.printableArea.destroy();
-					this.printableArea = undefined;
-				}
+				this.hidePrintableArea();
 			} else {
-				this.printableArea = new PrintableAreaManager(this.map);
-				this.updatePrintableArea();
+				this.showPrintableArea();
 			}
 		}
 	}
@@ -340,5 +332,29 @@ export default class MaplibreExportControl implements IControl {
 			pageSizeValue = pageSizeValue.reverse();
 		}
 		this.printableArea.updateArea(pageSizeValue[0], pageSizeValue[1]);
+	}
+
+	public showPrintableArea() {
+		this.printableArea = new PrintableAreaManager(this.map);
+		this.updatePrintableArea();
+	}
+
+	public hidePrintableArea() {
+		if (this.printableArea !== undefined) {
+			this.printableArea.destroy();
+			this.printableArea = undefined;
+		}
+	}
+
+	public showCrosshair() {
+		this.crosshair = new CrosshairManager(this.map);
+		this.crosshair.create();
+	}
+
+	public hideCrosshair() {
+		if (this.crosshair !== undefined) {
+			this.crosshair.destroy();
+			this.crosshair = undefined;
+		}		
 	}
 }
