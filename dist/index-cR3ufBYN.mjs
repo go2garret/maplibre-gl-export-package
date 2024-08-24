@@ -7600,7 +7600,7 @@ function(i) {
  */
 function(i) {
   function e() {
-    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-5xBIuAF7.mjs")).catch(function(n) {
+    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-D_2gSwg-.mjs")).catch(function(n) {
       return Promise.reject(new Error("Could not load canvg: " + n));
     }).then(function(n) {
       return n.default ? n.default : n;
@@ -8962,10 +8962,10 @@ class Qh {
     this.controlContainer && !this.controlContainer.contains(e.target) && this.exportContainer && this.exportButton && (this.exportContainer.style.display = "none", this.exportButton.style.display = "block", this.toggleCrosshair(!1), this.togglePrintableArea(!1));
   }
   toggleCrosshair(e) {
-    this.options.Crosshair === !0 && (e === !1 ? this.crosshair !== void 0 && (this.crosshair.destroy(), this.crosshair = void 0) : (this.crosshair = new Ml(this.map), this.crosshair.create()));
+    this.options.Crosshair === !0 && (e === !1 ? this.hideCrosshair() : this.showCrosshair());
   }
   togglePrintableArea(e) {
-    this.options.PrintableArea === !0 && (e === !1 ? this.printableArea !== void 0 && (this.printableArea.destroy(), this.printableArea = void 0) : (this.printableArea = new Dl(this.map), this.updatePrintableArea()));
+    this.options.PrintableArea === !0 && (e === !1 ? this.hidePrintableArea() : this.showPrintableArea());
   }
   updatePrintableArea() {
     if (this.printableArea === void 0)
@@ -8973,6 +8973,18 @@ class Qh {
     const e = document.getElementById("mapbox-gl-export-page-size"), r = document.getElementById("mapbox-gl-export-page-orientation").value;
     let s = JSON.parse(e.value);
     r === to.Portrait && (s = s.reverse()), this.printableArea.updateArea(s[0], s[1]);
+  }
+  showPrintableArea() {
+    this.printableArea = new Dl(this.map), this.updatePrintableArea();
+  }
+  hidePrintableArea() {
+    this.printableArea !== void 0 && (this.printableArea.destroy(), this.printableArea = void 0);
+  }
+  showCrosshair() {
+    this.crosshair = new Ml(this.map), this.crosshair.create();
+  }
+  hideCrosshair() {
+    this.crosshair !== void 0 && (this.crosshair.destroy(), this.crosshair = void 0);
   }
 }
 export {
@@ -8993,4 +9005,4 @@ export {
   Jh as e,
   Kl as g
 };
-//# sourceMappingURL=index-CFeB4viV.mjs.map
+//# sourceMappingURL=index-cR3ufBYN.mjs.map
