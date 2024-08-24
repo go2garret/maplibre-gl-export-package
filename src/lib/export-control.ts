@@ -290,7 +290,6 @@ export default class MaplibreExportControl implements IControl {
 			this.exportContainer &&
 			this.exportButton
 		) {
-			console.log("handle onDocumentClick", this.options.autoClose);
 			this.exportContainer.style.display = 'none';
 			this.exportButton.style.display = 'block';
 			this.toggleCrosshair(false);
@@ -300,16 +299,13 @@ export default class MaplibreExportControl implements IControl {
 
 	public toggleCrosshair(state: boolean) {
 		if (this.options.Crosshair === true) {
-			console.log('toggleCrosshair', state, this.crosshair);
 			if (state === false) {
 				if (this.crosshair !== undefined) {
-					console.log("Hide crosshair");
 					this.crosshair.destroy();
 					this.crosshair = undefined;
 				}
 			} else {
 				if (this.crosshair === undefined) {
-					console.log("Show crosshair");
 					this.crosshair = new CrosshairManager(this.map);
 					this.crosshair.create();
 				}
@@ -319,7 +315,6 @@ export default class MaplibreExportControl implements IControl {
 
 	public togglePrintableArea(state: boolean) {
 		if (this.options.PrintableArea === true) {
-			console.log('togglePrintableArea', state, this.printableArea);
 			if (state === false) {
 				if (this.printableArea !== undefined) {
 					this.printableArea.destroy();
