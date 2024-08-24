@@ -23,5 +23,9 @@ export default class MaplibreExportControl implements IControl {
     private toggleCrosshair;
     private togglePrintableArea;
     private updatePrintableArea;
+    showPrintableArea(): void;
+    hidePrintableArea(): void;
+    showCrosshair(): void;
+    hideCrosshair(): void;
 }
 //# sourceMappingURL=export-control.d.ts.map
