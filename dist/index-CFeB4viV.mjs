@@ -57,7 +57,7 @@ const uc = {
   200: 200,
   300: 300,
   400: 400
-}, Ir = {
+}, Cr = {
   JPEG: "jpg",
   PNG: "png",
   PDF: "pdf",
@@ -510,8 +510,8 @@ var Ql = /* @__PURE__ */ Kn(jr, 9, 0), th = /* @__PURE__ */ Kn(jr, 9, 1), eh = /
           var gt = ss(tt), pt = (1 << gt) - 1;
           if (!o && f + lt * (gt + 7) > O)
             break;
-          for (var I = Kn(tt, gt, 1), R = 0; R < lt; ) {
-            var k = I[Mn(i, f, pt)];
+          for (var C = Kn(tt, gt, 1), R = 0; R < lt; ) {
+            var k = C[Mn(i, f, pt)];
             f += k & 15;
             var B = k >>> 4;
             if (B < 16)
@@ -667,7 +667,7 @@ var Ql = /* @__PURE__ */ Kn(jr, 9, 0), th = /* @__PURE__ */ Kn(jr, 9, 1), eh = /
     tt[E[R] & 31]++;
   for (var R = 0; R < lt.length; ++R)
     tt[lt[R] & 31]++;
-  for (var gt = ls(tt, 7), pt = gt[0], I = gt[1], k = 19; k > 4 && !pt[ms[k - 1]]; --k)
+  for (var gt = ls(tt, 7), pt = gt[0], C = gt[1], k = 19; k > 4 && !pt[ms[k - 1]]; --k)
     ;
   var z = g + 5 << 3, q = la(s, jr) + la(o, fa) + l, ot = la(s, S) + la(o, P) + l + 14 + 3 * k + la(tt, pt) + (2 * tt[16] + 3 * tt[17] + 7 * tt[18]);
   if (z <= q && z <= ot)
@@ -675,7 +675,7 @@ var Ql = /* @__PURE__ */ Kn(jr, 9, 0), th = /* @__PURE__ */ Kn(jr, 9, 1), eh = /
   var nt, ht, Z, ft;
   if (ur(e, m, 1 + (ot < q)), m += 2, ot < q) {
     nt = Kn(S, d, 0), ht = S, Z = Kn(P, B, 0), ft = P;
-    var ut = Kn(pt, I, 0);
+    var ut = Kn(pt, C, 0);
     ur(e, m, Y - 257), ur(e, m + 5, yt - 1), ur(e, m + 10, k - 4), m += 14;
     for (var R = 0; R < k; ++R)
       ur(e, m + 3 * R, pt[ms[R]]);
@@ -706,9 +706,9 @@ var Ql = /* @__PURE__ */ Kn(jr, 9, 0), th = /* @__PURE__ */ Kn(jr, 9, 1), eh = /
   else {
     for (var S = ih[e - 1], d = S >>> 13, O = S & 8191, P = (1 << n) - 1, B = new tn(32768), _ = new tn(P + 1), E = Math.ceil(n / 3), Y = 2 * E, at = function(zt) {
       return (i[zt] ^ i[zt + 1] << E ^ i[zt + 2] << Y) & P;
-    }, lt = new ua(25e3), yt = new tn(288), tt = new tn(32), R = 0, gt = 0, m = 0, pt = 0, I = 0, k = 0; m < l; ++m) {
+    }, lt = new ua(25e3), yt = new tn(288), tt = new tn(32), R = 0, gt = 0, m = 0, pt = 0, C = 0, k = 0; m < l; ++m) {
       var z = at(m), q = m & 32767, ot = _[z];
-      if (B[q] = ot, _[z] = q, I <= m) {
+      if (B[q] = ot, _[z] = q, C <= m) {
         var nt = l - m;
         if ((R > 7e3 || pt > 24576) && nt > 423) {
           g = dc(i, f, 0, lt, yt, tt, gt, pt, k, m - k, g), pt = R = gt = 0, k = m;
@@ -737,7 +737,7 @@ var Ql = /* @__PURE__ */ Kn(jr, 9, 0), th = /* @__PURE__ */ Kn(jr, 9, 1), eh = /
         if (ft) {
           lt[pt++] = 268435456 | vs[Z] << 18 | fc[ft];
           var Lt = vs[Z] & 31, Ft = fc[ft] & 31;
-          gt += po[Lt] + go[Ft], ++yt[257 + Lt], ++tt[Ft], I = m + Z, ++R;
+          gt += po[Lt] + go[Ft], ++yt[257 + Lt], ++tt[Ft], C = m + Z, ++R;
         } else
           lt[pt++] = i[m], ++yt[i[m]];
       }
@@ -1115,7 +1115,7 @@ function Ut(i) {
   s = s || "a4";
   var E = { COMPAT: "compat", ADVANCED: "advanced" }, Y = E.COMPAT;
   function at() {
-    this.saveGraphicsState(), D(new Tt(It, 0, 0, -It, 0, gr() * It).toString() + " cm"), this.setFontSize(this.getFontSize() / It), g = "n", Y = E.ADVANCED;
+    this.saveGraphicsState(), D(new Tt(Ct, 0, 0, -Ct, 0, gr() * Ct).toString() + " cm"), this.setFontSize(this.getFontSize() / Ct), g = "n", Y = E.ADVANCED;
   }
   function lt() {
     this.restoreGraphicsState(), g = "S", Y = E.COMPAT;
@@ -1153,12 +1153,12 @@ function Ut(i) {
   var pt = d.f2 = d.__private__.f2 = function(c) {
     if (isNaN(c)) throw new Error("Invalid argument passed to jsPDF.f2");
     return gt(c, 2);
-  }, I = d.__private__.f3 = function(c) {
+  }, C = d.__private__.f3 = function(c) {
     if (isNaN(c)) throw new Error("Invalid argument passed to jsPDF.f3");
     return gt(c, 3);
   }, k = d.scale = d.__private__.scale = function(c) {
     if (isNaN(c)) throw new Error("Invalid argument passed to jsPDF.scale");
-    return Y === E.COMPAT ? c * It : Y === E.ADVANCED ? c : void 0;
+    return Y === E.COMPAT ? c * Ct : Y === E.ADVANCED ? c : void 0;
   }, z = function(c) {
     return Y === E.COMPAT ? gr() - c : Y === E.ADVANCED ? c : void 0;
   }, q = function(c) {
@@ -1231,10 +1231,10 @@ function Ut(i) {
   };
   var Nt = i.fontSize || 16;
   d.__private__.setFontSize = d.setFontSize = function(c) {
-    return Nt = Y === E.ADVANCED ? c / It : c, this;
+    return Nt = Y === E.ADVANCED ? c / Ct : c, this;
   };
-  var Ct, Pt = d.__private__.getFontSize = d.getFontSize = function() {
-    return Y === E.COMPAT ? Nt : Nt * It;
+  var It, Pt = d.__private__.getFontSize = d.getFontSize = function() {
+    return Y === E.COMPAT ? Nt : Nt * Ct;
   }, Dt = i.R2L || !1;
   d.__private__.setR2L = d.setR2L = function(c) {
     return Dt = c, this;
@@ -1243,14 +1243,14 @@ function Ut(i) {
   };
   var Vt, Zt = d.__private__.setZoomMode = function(c) {
     var b = [void 0, null, "fullwidth", "fullheight", "fullpage", "original"];
-    if (/^(?:\d+\.\d*|\d*\.\d+|\d+)%$/.test(c)) Ct = c;
+    if (/^(?:\d+\.\d*|\d*\.\d+|\d+)%$/.test(c)) It = c;
     else if (isNaN(c)) {
       if (b.indexOf(c) === -1) throw new Error('zoom must be Integer (e.g. 2), a percentage Value (e.g. 300%) or fullwidth, fullheight, fullpage, original. "' + c + '" is not recognized.');
-      Ct = c;
-    } else Ct = parseInt(c, 10);
+      It = c;
+    } else It = parseInt(c, 10);
   };
   d.__private__.getZoomMode = function() {
-    return Ct;
+    return It;
   };
   var te, ae = d.__private__.setPageMode = function(c) {
     if ([void 0, null, "UseNone", "UseOutlines", "UseThumbs", "FullScreen"].indexOf(c) == -1) throw new Error('Page mode must be one of UseNone, UseOutlines, UseThumbs, or FullScreen. "' + c + '" is not recognized.');
@@ -1281,7 +1281,7 @@ function Ut(i) {
     if (Object.keys(Wt).indexOf(c) === -1) throw new Error("Invalid arguments passed to jsPDF.setDocumentProperty");
     return Wt[c] = b;
   };
-  var ee, It, Ve, se, xn, me = {}, Le = {}, Tn = [], le = {}, Er = {}, Ne = {}, Ln = {}, Qn = null, Se = 0, Yt = [], he = new bc(d), Br = i.hotfixes || [], We = {}, zn = {}, Un = [], Tt = function c(b, F, T, X, st, wt) {
+  var ee, Ct, Ve, se, xn, me = {}, Le = {}, Tn = [], le = {}, Er = {}, Ne = {}, Ln = {}, Qn = null, Se = 0, Yt = [], he = new bc(d), Br = i.hotfixes || [], We = {}, zn = {}, Un = [], Tt = function c(b, F, T, X, st, wt) {
     if (!(this instanceof c)) return new c(b, F, T, X, st, wt);
     isNaN(b) && (b = 1), isNaN(F) && (F = 0), isNaN(T) && (T = 0), isNaN(X) && (X = 1), isNaN(st) && (st = 0), isNaN(wt) && (wt = 0), this._matrix = [b, F, T, X, st, wt];
   };
@@ -1426,7 +1426,7 @@ function Ut(i) {
         break;
       case 3:
       default:
-        b = I(F / 255) + " " + wt[0];
+        b = C(F / 255) + " " + wt[0];
     }
     else if (st === void 0 || pe(st) === "object") {
       if (st && !isNaN(st.a) && st.a === 0) return b = ["1.", "1.", "1.", wt[1]].join(" ");
@@ -1437,7 +1437,7 @@ function Ut(i) {
           break;
         default:
         case 3:
-          b = [I(F / 255), I(T / 255), I(X / 255), wt[1]].join(" ");
+          b = [C(F / 255), C(T / 255), C(X / 255), wt[1]].join(" ");
       }
     } else if (typeof F == "string") b = [F, T, X, st, wt[2]].join(" ");
     else switch (c.precision) {
@@ -1446,7 +1446,7 @@ function Ut(i) {
         break;
       case 3:
       default:
-        b = [I(F), I(T), I(X), I(st), wt[2]].join(" ");
+        b = [C(F), C(T), C(X), C(st), wt[2]].join(" ");
     }
     return b;
   }, Wn = d.__private__.getFilters = function() {
@@ -1566,11 +1566,11 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
       for (c in D("/ExtGState <<"), Ne) Ne.hasOwnProperty(c) && Ne[c].objectNumber >= 0 && D("/" + c + " " + Ne[c].objectNumber + " 0 R");
       he.publish("putGStateDict"), D(">>");
     }
-  }, Ce = function(c) {
+  }, Ie = function(c) {
     hn(c.resourcesOid, !0), D("<<"), D("/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]"), ga(), xo(), ti(c.objectOid), Lo(), Oi(), D(">>"), D("endobj");
   }, ma = function() {
     var c = [];
-    $r(), yo(), Zr(), Qr(c), he.publish("putResources"), c.forEach(Ce), Ce({ resourcesOid: Nn, objectOid: Number.MAX_SAFE_INTEGER }), he.publish("postPutResources");
+    $r(), yo(), Zr(), Qr(c), he.publish("putResources"), c.forEach(Ie), Ie({ resourcesOid: Nn, objectOid: Number.MAX_SAFE_INTEGER }), he.publish("postPutResources");
   }, va = function() {
     he.publish("putAdditionalObjects");
     for (var c = 0; c < At.length; c++) {
@@ -1623,7 +1623,7 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
     Lt[++Se] = [], Yt[Se] = { objId: 0, contentsObjId: 0, userUnit: Number(h), artBox: null, bleedBox: null, cropBox: null, trimBox: null, mediaBox: { bottomLeftX: 0, bottomLeftY: 0, topRightX: Number(c[0]), topRightY: Number(c[1]) } }, wa(Se), ct(Lt[j]);
   }, ya = function(c, b) {
     var F, T, X;
-    switch (n = b || n, typeof c == "string" && (F = _(c.toLowerCase()), Array.isArray(F) && (T = F[0], X = F[1])), Array.isArray(c) && (T = c[0] * It, X = c[1] * It), isNaN(T) && (T = s[0], X = s[1]), (T > 14400 || X > 14400) && (be.warn("A page in a PDF can not be wider or taller than 14400 userUnit. jsPDF limits the width/height to 14400"), T = Math.min(14400, T), X = Math.min(14400, X)), s = [T, X], n.substr(0, 1)) {
+    switch (n = b || n, typeof c == "string" && (F = _(c.toLowerCase()), Array.isArray(F) && (T = F[0], X = F[1])), Array.isArray(c) && (T = c[0] * Ct, X = c[1] * Ct), isNaN(T) && (T = s[0], X = s[1]), (T > 14400 || X > 14400) && (be.warn("A page in a PDF can not be wider or taller than 14400 userUnit. jsPDF limits the width/height to 14400"), T = Math.min(14400, T), X = Math.min(14400, X)), s = [T, X], n.substr(0, 1)) {
       case "l":
         X > T && (s = [X, T]);
         break;
@@ -1648,7 +1648,7 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
     D("/CreationDate (" + nn(b(ot)) + ")"), D(">>"), D("endobj");
   }, Mi = d.__private__.putCatalog = function(c) {
     var b = (c = c || {}).rootDictionaryObjId || tr;
-    switch (qe(), D("<<"), D("/Type /Catalog"), D("/Pages " + b + " 0 R"), Ct || (Ct = "fullwidth"), Ct) {
+    switch (qe(), D("<<"), D("/Type /Catalog"), D("/Pages " + b + " 0 R"), It || (It = "fullwidth"), It) {
       case "fullwidth":
         D("/OpenAction [3 0 R /FitH null]");
         break;
@@ -1662,8 +1662,8 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
         D("/OpenAction [3 0 R /XYZ null null 1]");
         break;
       default:
-        var F = "" + Ct;
-        F.substr(F.length - 1) === "%" && (Ct = parseInt(Ct) / 100), typeof Ct == "number" && D("/OpenAction [3 0 R /XYZ null null " + pt(Ct) + "]");
+        var F = "" + It;
+        F.substr(F.length - 1) === "%" && (It = parseInt(It) / 100), typeof It == "number" && D("/OpenAction [3 0 R /XYZ null null " + pt(It) + "]");
     }
     switch (te || (te = "continuous"), te) {
       case "continuous":
@@ -1684,7 +1684,7 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
     D("trailer"), D("<<"), D("/Size " + (J + 1)), D("/Root " + J + " 0 R"), D("/Info " + (J - 1) + " 0 R"), m !== null && D("/Encrypt " + Ye.oid + " 0 R"), D("/ID [ <" + nt + "> <" + nt + "> ]"), D(">>");
   }, ko = d.__private__.putHeader = function() {
     D("%PDF-" + O), D("%ºß¬à");
-  }, Co = d.__private__.putXRef = function() {
+  }, Io = d.__private__.putXRef = function() {
     var c = "0000000000";
     D("xref"), D("0 " + (J + 1)), D("0000000000 65535 f ");
     for (var b = 1; b <= J; b++)
@@ -1692,7 +1692,7 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
   }, er = d.__private__.buildDocument = function() {
     zt(), ct(et), he.publish("buildDocument"), ko(), Mr(), va(), ma(), m !== null && wo(), _o(), Mi();
     var c = rt;
-    return Co(), Po(), D("startxref"), D("" + c), D("%%EOF"), ct(Lt[j]), et.join(`
+    return Io(), Po(), D("startxref"), D("" + c), D("%%EOF"), ct(Lt[j]), et.join(`
 `);
   }, ni = d.__private__.getBlob = function(c) {
     return new Blob([Mt(c)], { type: "application/pdf" });
@@ -1758,34 +1758,34 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
   };
   switch (r) {
     case "pt":
-      It = 1;
+      Ct = 1;
       break;
     case "mm":
-      It = 72 / 25.4;
+      Ct = 72 / 25.4;
       break;
     case "cm":
-      It = 72 / 2.54;
+      Ct = 72 / 2.54;
       break;
     case "in":
-      It = 72;
+      Ct = 72;
       break;
     case "px":
-      It = La("px_scaling") == 1 ? 0.75 : 96 / 72;
+      Ct = La("px_scaling") == 1 ? 0.75 : 96 / 72;
       break;
     case "pc":
     case "em":
-      It = 12;
+      Ct = 12;
       break;
     case "ex":
-      It = 6;
+      Ct = 6;
       break;
     default:
       if (typeof r != "number") throw new Error("Invalid unit: " + r);
-      It = r;
+      Ct = r;
   }
   var Ye = null;
   kt(), Z();
-  var Io = function(c) {
+  var Co = function(c) {
     return m !== null ? Ye.encryptor(c, 0) : function(b) {
       return b;
     };
@@ -1827,22 +1827,22 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
     }
     if (arguments[3] instanceof Tt ? (R("The transform parameter of text() with a Matrix value"), _e = X) : (jt = arguments[4], qt = arguments[5], pe(re = arguments[3]) === "object" && re !== null || (typeof jt == "string" && (qt = jt, jt = null), typeof re == "string" && (qt = re, re = null), typeof re == "number" && (jt = re, re = null), T = { flags: re, angle: jt, align: qt })), isNaN(b) || isNaN(F) || c == null) throw new Error("Invalid arguments passed to jsPDF.text");
     if (c.length === 0) return Be;
-    var Te = "", Cn = !1, un = typeof T.lineHeightFactor == "number" ? T.lineHeightFactor : qr, rr = Be.internal.scaleFactor;
+    var Te = "", In = !1, un = typeof T.lineHeightFactor == "number" ? T.lineHeightFactor : qr, rr = Be.internal.scaleFactor;
     function ja(ye) {
       return ye = ye.split("	").join(Array(T.TabLen || 9).join(" ")), nn(ye, re);
     }
     function Yi(ye) {
-      for (var we, Ie = ye.concat(), Re = [], sr = Ie.length; sr--; ) typeof (we = Ie.shift()) == "string" ? Re.push(we) : Array.isArray(ye) && (we.length === 1 || we[1] === void 0 && we[2] === void 0) ? Re.push(we[0]) : Re.push([we[0], we[1], we[2]]);
+      for (var we, Ce = ye.concat(), Re = [], sr = Ce.length; sr--; ) typeof (we = Ce.shift()) == "string" ? Re.push(we) : Array.isArray(ye) && (we.length === 1 || we[1] === void 0 && we[2] === void 0) ? Re.push(we[0]) : Re.push([we[0], we[1], we[2]]);
       return Re;
     }
     function Ji(ye, we) {
-      var Ie;
-      if (typeof ye == "string") Ie = we(ye)[0];
+      var Ce;
+      if (typeof ye == "string") Ce = we(ye)[0];
       else if (Array.isArray(ye)) {
         for (var Re, sr, wr = ye.concat(), vi = [], Ea = wr.length; Ea--; ) typeof (Re = wr.shift()) == "string" ? vi.push(we(Re)[0]) : Array.isArray(Re) && typeof Re[0] == "string" && (sr = we(Re[0], Re[1], Re[2]), vi.push([sr[0], sr[1], sr[2]]));
-        Ie = vi;
+        Ce = vi;
       }
-      return Ie;
+      return Ce;
     }
     var li = !1, Xi = !0;
     if (typeof c == "string") li = !0;
@@ -1918,50 +1918,50 @@ Q`), hn(X, !0), gn({ data: st, filters: Wn(), objectId: X }), D("endobj"), T;
     an !== -1 ? Te += an + ` Tr
 ` : Oa !== -1 && (Te += `0 Tr
 `), an !== -1 && (Zi.usedRenderingMode = an), qt = T.align || "left";
-    var In, Qi = Nt * un, Uo = Be.internal.pageSize.getWidth(), Ho = me[ee];
+    var Cn, Qi = Nt * un, Uo = Be.internal.pageSize.getWidth(), Ho = me[ee];
     $t = T.charSpace || oi, Qt = T.maxWidth || 0, re = Object.assign({ autoencode: !0, noBOM: !0 }, T.flags);
     var mr = [];
     if (Object.prototype.toString.call(c) === "[object Array]") {
       var mn;
-      wt = Yi(c), qt !== "left" && (In = wt.map(function(ye) {
+      wt = Yi(c), qt !== "left" && (Cn = wt.map(function(ye) {
         return Be.getStringUnitWidth(ye, { font: Ho, charSpace: $t, fontSize: Nt, doKerning: !1 }) * Nt / rr;
       }));
       var Fn, vr = 0;
       if (qt === "right") {
-        b -= In[0], c = [], rn = wt.length;
-        for (var Yn = 0; Yn < rn; Yn++) Yn === 0 ? (Fn = nr(b), mn = pr(F)) : (Fn = k(vr - In[Yn]), mn = -Qi), c.push([wt[Yn], Fn, mn]), vr = In[Yn];
+        b -= Cn[0], c = [], rn = wt.length;
+        for (var Yn = 0; Yn < rn; Yn++) Yn === 0 ? (Fn = nr(b), mn = pr(F)) : (Fn = k(vr - Cn[Yn]), mn = -Qi), c.push([wt[Yn], Fn, mn]), vr = Cn[Yn];
       } else if (qt === "center") {
-        b -= In[0] / 2, c = [], rn = wt.length;
-        for (var ir = 0; ir < rn; ir++) ir === 0 ? (Fn = nr(b), mn = pr(F)) : (Fn = k((vr - In[ir]) / 2), mn = -Qi), c.push([wt[ir], Fn, mn]), vr = In[ir];
+        b -= Cn[0] / 2, c = [], rn = wt.length;
+        for (var ir = 0; ir < rn; ir++) ir === 0 ? (Fn = nr(b), mn = pr(F)) : (Fn = k((vr - Cn[ir]) / 2), mn = -Qi), c.push([wt[ir], Fn, mn]), vr = Cn[ir];
       } else if (qt === "left") {
         c = [], rn = wt.length;
         for (var di = 0; di < rn; di++) c.push(wt[di]);
       } else {
         if (qt !== "justify") throw new Error('Unrecognized alignment option, use "left", "center", "right" or "justify".');
         c = [], rn = wt.length, Qt = Qt !== 0 ? Qt : Uo;
-        for (var jn = 0; jn < rn; jn++) mn = jn === 0 ? pr(F) : -Qi, Fn = jn === 0 ? nr(b) : 0, jn < rn - 1 ? mr.push(tt(k((Qt - In[jn]) / (wt[jn].split(" ").length - 1)))) : mr.push(0), c.push([wt[jn], Fn, mn]);
+        for (var jn = 0; jn < rn; jn++) mn = jn === 0 ? pr(F) : -Qi, Fn = jn === 0 ? nr(b) : 0, jn < rn - 1 ? mr.push(tt(k((Qt - Cn[jn]) / (wt[jn].split(" ").length - 1)))) : mr.push(0), c.push([wt[jn], Fn, mn]);
       }
     }
     var gi = typeof T.R2L == "boolean" ? T.R2L : Dt;
-    gi === !0 && (c = Ji(c, function(ye, we, Ie) {
-      return [ye.split("").reverse().join(""), we, Ie];
-    })), st = { text: c, x: b, y: F, options: T, mutex: { pdfEscape: nn, activeFontKey: ee, fonts: me, activeFontSize: Nt } }, he.publish("postProcessText", st), c = st.text, Cn = st.mutex.isHex || !1;
+    gi === !0 && (c = Ji(c, function(ye, we, Ce) {
+      return [ye.split("").reverse().join(""), we, Ce];
+    })), st = { text: c, x: b, y: F, options: T, mutex: { pdfEscape: nn, activeFontKey: ee, fonts: me, activeFontSize: Nt } }, he.publish("postProcessText", st), c = st.text, In = st.mutex.isHex || !1;
     var ta = me[ee].encoding;
-    ta !== "WinAnsiEncoding" && ta !== "StandardEncoding" || (c = Ji(c, function(ye, we, Ie) {
-      return [ja(ye), we, Ie];
+    ta !== "WinAnsiEncoding" && ta !== "StandardEncoding" || (c = Ji(c, function(ye, we, Ce) {
+      return [ja(ye), we, Ce];
     })), wt = Yi(c), c = [];
-    for (var br, On, ar, zr = 0, mi = 1, Ur = Array.isArray(wt[0]) ? mi : zr, yr = "", ea = function(ye, we, Ie) {
+    for (var br, On, ar, zr = 0, mi = 1, Ur = Array.isArray(wt[0]) ? mi : zr, yr = "", ea = function(ye, we, Ce) {
       var Re = "";
-      return Ie instanceof Tt ? (Ie = typeof T.angle == "number" ? An(Ie, new Tt(1, 0, 0, 1, ye, we)) : An(new Tt(1, 0, 0, 1, ye, we), Ie), Y === E.ADVANCED && (Ie = An(new Tt(1, 0, 0, -1, 0, 0), Ie)), Re = Ie.join(" ") + ` Tm
+      return Ce instanceof Tt ? (Ce = typeof T.angle == "number" ? An(Ce, new Tt(1, 0, 0, 1, ye, we)) : An(new Tt(1, 0, 0, 1, ye, we), Ce), Y === E.ADVANCED && (Ce = An(new Tt(1, 0, 0, -1, 0, 0), Ce)), Re = Ce.join(" ") + ` Tm
 `) : Re = tt(ye) + " " + tt(we) + ` Td
 `, Re;
     }, vn = 0; vn < wt.length; vn++) {
       switch (yr = "", Ur) {
         case mi:
-          ar = (Cn ? "<" : "(") + wt[vn][0] + (Cn ? ">" : ")"), br = parseFloat(wt[vn][1]), On = parseFloat(wt[vn][2]);
+          ar = (In ? "<" : "(") + wt[vn][0] + (In ? ">" : ")"), br = parseFloat(wt[vn][1]), On = parseFloat(wt[vn][2]);
           break;
         case zr:
-          ar = (Cn ? "<" : "(") + wt[vn] + (Cn ? ">" : ")"), br = nr(b), On = pr(F);
+          ar = (In ? "<" : "(") + wt[vn] + (In ? ">" : ")"), br = nr(b), On = pr(F);
       }
       mr !== void 0 && mr[vn] !== void 0 && (yr = mr[vn] + ` Tw
 `), vn === 0 ? c.push(yr + ea(br, On, _e) + ar) : Ur === zr ? c.push(yr + ar) : Ur === mi && c.push(yr + ea(br, On, _e) + ar);
@@ -2072,8 +2072,8 @@ T* `) : c.join(` Tj
     if (isNaN(c) || isNaN(b) || isNaN(F) || isNaN(T) || !Vn(X)) throw new Error("Invalid arguments passed to jsPDF.line");
     return Y === E.COMPAT ? this.lines([[F - c, T - b]], c, b, [1, 1], X || "S") : this.lines([[F - c, T - b]], c, b, [1, 1]).stroke();
   }, d.__private__.lines = d.lines = function(c, b, F, T, X, st) {
-    var wt, jt, qt, $t, Qt, re, Ae, _e, Be, Je, Te, Cn;
-    if (typeof c == "number" && (Cn = F, F = b, b = c, c = Cn), T = T || [1, 1], st = st || !1, isNaN(b) || isNaN(F) || !Array.isArray(c) || !Array.isArray(T) || !Vn(X) || typeof st != "boolean") throw new Error("Invalid arguments passed to jsPDF.lines");
+    var wt, jt, qt, $t, Qt, re, Ae, _e, Be, Je, Te, In;
+    if (typeof c == "number" && (In = F, F = b, b = c, c = In), T = T || [1, 1], st = st || !1, isNaN(b) || isNaN(F) || !Array.isArray(c) || !Array.isArray(T) || !Vn(X) || typeof st != "boolean") throw new Error("Invalid arguments passed to jsPDF.lines");
     for (qi(b, F), wt = T[0], jt = T[1], $t = c.length, Je = b, Te = F, qt = 0; qt < $t; qt++) (Qt = c[qt]).length === 2 ? (Je = Qt[0] * wt + Je, Te = Qt[1] * jt + Te, Dr(Je, Te)) : (re = Qt[0] * wt + Je, Ae = Qt[1] * jt + Te, _e = Qt[2] * wt + Je, Be = Qt[3] * jt + Te, Je = Qt[4] * wt + Je, Te = Qt[5] * jt + Te, fr(re, Ae, _e, Be, Je, Te));
     return st && Sa(), Di(X), this;
   }, d.path = function(c) {
@@ -2144,7 +2144,7 @@ T* `) : c.join(` Tj
   };
   var ka = d.__private__.setLineHeightFactor = d.setLineHeightFactor = function(c) {
     return typeof (c = c || 1.15) == "number" && (qr = c), this;
-  }, Ca = d.__private__.getLineHeightFactor = d.getLineHeightFactor = function() {
+  }, Ia = d.__private__.getLineHeightFactor = d.getLineHeightFactor = function() {
     return qr;
   };
   ka(i.lineHeight);
@@ -2196,9 +2196,9 @@ T* `) : c.join(` Tj
     if (c = c || 0, isNaN(c)) throw new Error("Invalid argument passed to jsPDF.setLineMiterLimit");
     return D(tt(k(c)) + " M"), this;
   }, d.GState = lo, d.setGState = function(c) {
-    (c = typeof c == "string" ? Ne[Ln[c]] : Ia(null, c)).equals(Qn) || (D("/" + c.id + " gs"), Qn = c);
+    (c = typeof c == "string" ? Ne[Ln[c]] : Ca(null, c)).equals(Qn) || (D("/" + c.id + " gs"), Qn = c);
   };
-  var Ia = function(c, b) {
+  var Ca = function(c, b) {
     if (!c || !Ln[c]) {
       var F = !1;
       for (var T in Ne) if (Ne.hasOwnProperty(T) && Ne[T].equals(b)) {
@@ -2214,7 +2214,7 @@ T* `) : c.join(` Tj
     }
   };
   d.addGState = function(c, b) {
-    return Ia(c, b), this;
+    return Ca(c, b), this;
   }, d.saveGraphicsState = function() {
     return D("q"), Tn.push({ key: ee, size: Nt, color: Rr }), this;
   }, d.restoreGraphicsState = function() {
@@ -2298,15 +2298,15 @@ T* `) : c.join(` Tj
     for (X = b.length - 1; X !== -1; X--) F = b[X][0], T = b[X][1], c.subscribe.apply(c, [F].concat(typeof T == "function" ? [T] : T));
   }(he, Ut.API.events) : d[ci] = Ut.API[ci]);
   var Tr = d.getPageWidth = function(c) {
-    return (Yt[c = c || j].mediaBox.topRightX - Yt[c].mediaBox.bottomLeftX) / It;
+    return (Yt[c = c || j].mediaBox.topRightX - Yt[c].mediaBox.bottomLeftX) / Ct;
   }, Gi = d.setPageWidth = function(c, b) {
-    Yt[c].mediaBox.topRightX = b * It + Yt[c].mediaBox.bottomLeftX;
+    Yt[c].mediaBox.topRightX = b * Ct + Yt[c].mediaBox.bottomLeftX;
   }, gr = d.getPageHeight = function(c) {
-    return (Yt[c = c || j].mediaBox.topRightY - Yt[c].mediaBox.bottomLeftY) / It;
+    return (Yt[c = c || j].mediaBox.topRightY - Yt[c].mediaBox.bottomLeftY) / Ct;
   }, Vi = d.setPageHeight = function(c, b) {
-    Yt[c].mediaBox.topRightY = b * It + Yt[c].mediaBox.bottomLeftY;
+    Yt[c].mediaBox.topRightY = b * Ct + Yt[c].mediaBox.bottomLeftY;
   };
-  return d.internal = { pdfEscape: nn, getStyle: Na, getFont: Mo, getFontSize: Pt, getCharSpace: Ro, getTextColor: qo, getLineHeight: Pa, getLineHeightFactor: Ca, getLineWidth: ai, write: Xt, getHorizontalCoordinate: nr, getVerticalCoordinate: pr, getCoordinateString: Do, getVerticalCoordinateString: dr, collections: {}, newObject: qe, newAdditionalObject: Jr, newObjectDeferred: Ee, newObjectDeferredBegin: hn, getFilters: Wn, putStream: gn, events: he, scaleFactor: It, pageSize: { getWidth: function() {
+  return d.internal = { pdfEscape: nn, getStyle: Na, getFont: Mo, getFontSize: Pt, getCharSpace: Ro, getTextColor: qo, getLineHeight: Pa, getLineHeightFactor: Ia, getLineWidth: ai, write: Xt, getHorizontalCoordinate: nr, getVerticalCoordinate: pr, getCoordinateString: Do, getVerticalCoordinateString: dr, collections: {}, newObject: qe, newAdditionalObject: Jr, newObjectDeferred: Ee, newObjectDeferredBegin: hn, getFilters: Wn, putStream: gn, events: he, scaleFactor: Ct, pageSize: { getWidth: function() {
     return Tr(j);
   }, setWidth: function(c) {
     Gi(j, c);
@@ -2314,7 +2314,7 @@ T* `) : c.join(` Tj
     return gr(j);
   }, setHeight: function(c) {
     Vi(j, c);
-  } }, encryptionOptions: m, encryption: Ye, getEncryptor: Io, output: ri, getNumberOfPages: So, pages: Lt, out: D, f2: pt, f3: I, getPageInfo: Aa, getPageInfoByObjId: Gt, getCurrentPageInfo: Fo, getPDFVersion: P, Point: si, Rectangle: Hi, Matrix: Tt, hasHotfix: La }, Object.defineProperty(d.internal.pageSize, "width", { get: function() {
+  } }, encryptionOptions: m, encryption: Ye, getEncryptor: Co, output: ri, getNumberOfPages: So, pages: Lt, out: D, f2: pt, f3: C, getPageInfo: Aa, getPageInfoByObjId: Gt, getCurrentPageInfo: Fo, getPDFVersion: P, Point: si, Rectangle: Hi, Matrix: Tt, hasHotfix: La }, Object.defineProperty(d.internal.pageSize, "width", { get: function() {
     return Tr(j);
   }, set: function(c) {
     Gi(j, c);
@@ -2351,20 +2351,20 @@ Ni.prototype.lsbFirstWord = function(i) {
   for (e in i) i.hasOwnProperty(e) && n.indexOf(e) < 0 && r--;
   return r === 0;
 }, Ut.API = { events: [] }, Ut.version = "2.5.1";
-var ke = Ut.API, Cs = 1, Yr = function(i) {
+var ke = Ut.API, Is = 1, Yr = function(i) {
   return i.replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
 }, Li = function(i) {
   return i.replace(/\\\\/g, "\\").replace(/\\\(/g, "(").replace(/\\\)/g, ")");
 }, Jt = function(i) {
   return i.toFixed(2);
-}, Cr = function(i) {
+}, Ir = function(i) {
   return i.toFixed(5);
 };
 ke.__acroform__ = {};
 var ln = function(i, e) {
   i.prototype = Object.create(e.prototype), i.prototype.constructor = i;
 }, yc = function(i) {
-  return i * Cs;
+  return i * Is;
 }, Xn = function(i) {
   var e = new Uc(), n = Bt.internal.getHeight(i) || 0, r = Bt.internal.getWidth(i) || 0;
   return e.BBox = [0, 0, Number(Jt(r)), Number(Jt(n))], e;
@@ -2400,19 +2400,19 @@ var ln = function(i, e) {
   }
 }, Ss = function(i, e) {
   var n = i.fontSize === 0 ? i.maxFontSize : i.fontSize, r = { text: "", fontSize: "" }, s = (e = (e = e.substr(0, 1) == "(" ? e.substr(1) : e).substr(e.length - 1) == ")" ? e.substr(0, e.length - 1) : e).split(" ");
-  s = i.multiline ? s.map(function(I) {
-    return I.split(`
+  s = i.multiline ? s.map(function(C) {
+    return C.split(`
 `);
-  }) : s.map(function(I) {
-    return [I];
+  }) : s.map(function(C) {
+    return [C];
   });
   var o = n, l = Bt.internal.getHeight(i) || 0;
   l = l < 0 ? -l : l;
   var h = Bt.internal.getWidth(i) || 0;
   h = h < 0 ? -h : h;
-  var f = function(I, k, z) {
-    if (I + 1 < s.length) {
-      var q = k + " " + s[I + 1][0];
+  var f = function(C, k, z) {
+    if (C + 1 < s.length) {
+      var q = k + " " + s[C + 1][0];
       return no(q, i, z).width <= h - 4;
     }
     return !1;
@@ -2496,7 +2496,7 @@ var ln = function(i, e) {
 }, Nh = function(i, e) {
   if (e.scope = i, i.internal !== void 0 && (i.internal.acroformPlugin === void 0 || i.internal.acroformPlugin.isInitialized === !1)) {
     if (qn.FieldNum = 0, i.internal.acroformPlugin = JSON.parse(JSON.stringify(xh)), i.internal.acroformPlugin.acroFormDictionaryRoot) throw new Error("Exception while creating AcroformDictionary");
-    Cs = i.internal.scaleFactor, i.internal.acroformPlugin.acroFormDictionaryRoot = new Hc(), i.internal.acroformPlugin.acroFormDictionaryRoot.scope = i, i.internal.acroformPlugin.acroFormDictionaryRoot._eventID = i.internal.events.subscribe("postPutResources", function() {
+    Is = i.internal.scaleFactor, i.internal.acroformPlugin.acroFormDictionaryRoot = new Hc(), i.internal.acroformPlugin.acroFormDictionaryRoot.scope = i, i.internal.acroformPlugin.acroFormDictionaryRoot._eventID = i.internal.events.subscribe("postPutResources", function() {
       (function(n) {
         n.internal.events.unsubscribe(n.internal.acroformPlugin.acroFormDictionaryRoot._eventID), delete n.internal.acroformPlugin.acroFormDictionaryRoot._eventID, n.internal.acroformPlugin.printedOut = !0;
       })(i);
@@ -2719,7 +2719,7 @@ var qn = function i() {
   } });
   var g = void 0;
   Object.defineProperty(this, "maxFontSize", { enumerable: !0, configurable: !0, get: function() {
-    return g === void 0 ? 50 / Cs : g;
+    return g === void 0 ? 50 / Is : g;
   }, set: function(_) {
     g = _;
   } });
@@ -2882,18 +2882,18 @@ var ki = function() {
   } }), this.hasAppearanceStream = !1;
 };
 ln(ki, qn);
-var Ci = function() {
+var Ii = function() {
   ki.call(this), this.fontName = "helvetica", this.combo = !1;
 };
-ln(Ci, ki);
-var Ii = function() {
-  Ci.call(this), this.combo = !0;
+ln(Ii, ki);
+var Ci = function() {
+  Ii.call(this), this.combo = !0;
 };
-ln(Ii, Ci);
+ln(Ci, Ii);
 var ao = function() {
-  Ii.call(this), this.edit = !0;
+  Ci.call(this), this.edit = !0;
 };
-ln(ao, Ii);
+ln(ao, Ci);
 var He = function() {
   qn.call(this), this.FT = "/Btn", Object.defineProperty(this, "noToggleToOff", { enumerable: !0, configurable: !0, get: function() {
     return !!Fe(this.Ff, 15);
@@ -3084,7 +3084,7 @@ var Bt = { CheckBox: { createAppearanceStream: function() {
   var n = [], r = Bt.internal.getWidth(i) <= Bt.internal.getHeight(i) ? Bt.internal.getWidth(i) / 4 : Bt.internal.getHeight(i) / 4;
   r = Number((0.9 * r).toFixed(5));
   var s = Bt.internal.Bezier_C, o = Number((r * s).toFixed(5));
-  return n.push("q"), n.push("1 0 0 1 " + Cr(Bt.internal.getWidth(i) / 2) + " " + Cr(Bt.internal.getHeight(i) / 2) + " cm"), n.push(r + " 0 m"), n.push(r + " " + o + " " + o + " " + r + " 0 " + r + " c"), n.push("-" + o + " " + r + " -" + r + " " + o + " -" + r + " 0 c"), n.push("-" + r + " -" + o + " -" + o + " -" + r + " 0 -" + r + " c"), n.push(o + " -" + r + " " + r + " -" + o + " " + r + " 0 c"), n.push("f"), n.push("Q"), e.stream = n.join(`
+  return n.push("q"), n.push("1 0 0 1 " + Ir(Bt.internal.getWidth(i) / 2) + " " + Ir(Bt.internal.getHeight(i) / 2) + " cm"), n.push(r + " 0 m"), n.push(r + " " + o + " " + o + " " + r + " 0 " + r + " c"), n.push("-" + o + " " + r + " -" + r + " " + o + " -" + r + " 0 c"), n.push("-" + r + " -" + o + " -" + o + " -" + r + " 0 -" + r + " c"), n.push(o + " -" + r + " " + r + " -" + o + " " + r + " 0 c"), n.push("f"), n.push("Q"), e.stream = n.join(`
 `), e;
 }, YesPushDown: function(i) {
   var e = Xn(i);
@@ -3092,7 +3092,7 @@ var Bt = { CheckBox: { createAppearanceStream: function() {
   var n = [], r = Bt.internal.getWidth(i) <= Bt.internal.getHeight(i) ? Bt.internal.getWidth(i) / 4 : Bt.internal.getHeight(i) / 4;
   r = Number((0.9 * r).toFixed(5));
   var s = Number((2 * r).toFixed(5)), o = Number((s * Bt.internal.Bezier_C).toFixed(5)), l = Number((r * Bt.internal.Bezier_C).toFixed(5));
-  return n.push("0.749023 g"), n.push("q"), n.push("1 0 0 1 " + Cr(Bt.internal.getWidth(i) / 2) + " " + Cr(Bt.internal.getHeight(i) / 2) + " cm"), n.push(s + " 0 m"), n.push(s + " " + o + " " + o + " " + s + " 0 " + s + " c"), n.push("-" + o + " " + s + " -" + s + " " + o + " -" + s + " 0 c"), n.push("-" + s + " -" + o + " -" + o + " -" + s + " 0 -" + s + " c"), n.push(o + " -" + s + " " + s + " -" + o + " " + s + " 0 c"), n.push("f"), n.push("Q"), n.push("0 g"), n.push("q"), n.push("1 0 0 1 " + Cr(Bt.internal.getWidth(i) / 2) + " " + Cr(Bt.internal.getHeight(i) / 2) + " cm"), n.push(r + " 0 m"), n.push(r + " " + l + " " + l + " " + r + " 0 " + r + " c"), n.push("-" + l + " " + r + " -" + r + " " + l + " -" + r + " 0 c"), n.push("-" + r + " -" + l + " -" + l + " -" + r + " 0 -" + r + " c"), n.push(l + " -" + r + " " + r + " -" + l + " " + r + " 0 c"), n.push("f"), n.push("Q"), e.stream = n.join(`
+  return n.push("0.749023 g"), n.push("q"), n.push("1 0 0 1 " + Ir(Bt.internal.getWidth(i) / 2) + " " + Ir(Bt.internal.getHeight(i) / 2) + " cm"), n.push(s + " 0 m"), n.push(s + " " + o + " " + o + " " + s + " 0 " + s + " c"), n.push("-" + o + " " + s + " -" + s + " " + o + " -" + s + " 0 c"), n.push("-" + s + " -" + o + " -" + o + " -" + s + " 0 -" + s + " c"), n.push(o + " -" + s + " " + s + " -" + o + " " + s + " 0 c"), n.push("f"), n.push("Q"), n.push("0 g"), n.push("q"), n.push("1 0 0 1 " + Ir(Bt.internal.getWidth(i) / 2) + " " + Ir(Bt.internal.getHeight(i) / 2) + " cm"), n.push(r + " 0 m"), n.push(r + " " + l + " " + l + " " + r + " 0 " + r + " c"), n.push("-" + l + " " + r + " -" + r + " " + l + " -" + r + " 0 c"), n.push("-" + r + " -" + l + " -" + l + " -" + r + " 0 -" + r + " c"), n.push(l + " -" + r + " " + r + " -" + l + " " + r + " 0 c"), n.push("f"), n.push("Q"), e.stream = n.join(`
 `), e;
 }, OffPushDown: function(i) {
   var e = Xn(i);
@@ -3100,7 +3100,7 @@ var Bt = { CheckBox: { createAppearanceStream: function() {
   var n = [], r = Bt.internal.getWidth(i) <= Bt.internal.getHeight(i) ? Bt.internal.getWidth(i) / 4 : Bt.internal.getHeight(i) / 4;
   r = Number((0.9 * r).toFixed(5));
   var s = Number((2 * r).toFixed(5)), o = Number((s * Bt.internal.Bezier_C).toFixed(5));
-  return n.push("0.749023 g"), n.push("q"), n.push("1 0 0 1 " + Cr(Bt.internal.getWidth(i) / 2) + " " + Cr(Bt.internal.getHeight(i) / 2) + " cm"), n.push(s + " 0 m"), n.push(s + " " + o + " " + o + " " + s + " 0 " + s + " c"), n.push("-" + o + " " + s + " -" + s + " " + o + " -" + s + " 0 c"), n.push("-" + s + " -" + o + " -" + o + " -" + s + " 0 -" + s + " c"), n.push(o + " -" + s + " " + s + " -" + o + " " + s + " 0 c"), n.push("f"), n.push("Q"), e.stream = n.join(`
+  return n.push("0.749023 g"), n.push("q"), n.push("1 0 0 1 " + Ir(Bt.internal.getWidth(i) / 2) + " " + Ir(Bt.internal.getHeight(i) / 2) + " cm"), n.push(s + " 0 m"), n.push(s + " " + o + " " + o + " " + s + " 0 " + s + " c"), n.push("-" + o + " " + s + " -" + s + " " + o + " -" + s + " 0 c"), n.push("-" + s + " -" + o + " -" + o + " -" + s + " 0 -" + s + " c"), n.push(o + " -" + s + " " + s + " -" + o + " " + s + " 0 c"), n.push("f"), n.push("Q"), e.stream = n.join(`
 `), e;
 } }, Cross: { createAppearanceStream: function(i) {
   var e = { D: { Off: Bt.RadioButton.Cross.OffPushDown }, N: {} };
@@ -3144,7 +3144,7 @@ var Sh = ke.addField = function(i) {
   var e;
   return (e = i).scope.internal.acroformPlugin.printedOut && (e.scope.internal.acroformPlugin.printedOut = !1, e.scope.internal.acroformPlugin.acroFormDictionaryRoot = null), e.scope.internal.acroformPlugin.acroFormDictionaryRoot.Fields.push(e), i.page = i.scope.internal.getCurrentPageInfo().pageNumber, this;
 };
-ke.AcroFormChoiceField = ki, ke.AcroFormListBox = Ci, ke.AcroFormComboBox = Ii, ke.AcroFormEditBox = ao, ke.AcroFormButton = He, ke.AcroFormPushButton = oo, ke.AcroFormRadioButton = Fi, ke.AcroFormCheckBox = so, ke.AcroFormTextField = Vr, ke.AcroFormPasswordField = co, ke.AcroFormAppearance = Bt, ke.AcroForm = { ChoiceField: ki, ListBox: Ci, ComboBox: Ii, EditBox: ao, Button: He, PushButton: oo, RadioButton: Fi, CheckBox: so, TextField: Vr, PasswordField: co, Appearance: Bt }, Ut.AcroForm = { ChoiceField: ki, ListBox: Ci, ComboBox: Ii, EditBox: ao, Button: He, PushButton: oo, RadioButton: Fi, CheckBox: so, TextField: Vr, PasswordField: co, Appearance: Bt };
+ke.AcroFormChoiceField = ki, ke.AcroFormListBox = Ii, ke.AcroFormComboBox = Ci, ke.AcroFormEditBox = ao, ke.AcroFormButton = He, ke.AcroFormPushButton = oo, ke.AcroFormRadioButton = Fi, ke.AcroFormCheckBox = so, ke.AcroFormTextField = Vr, ke.AcroFormPasswordField = co, ke.AcroFormAppearance = Bt, ke.AcroForm = { ChoiceField: ki, ListBox: Ii, ComboBox: Ci, EditBox: ao, Button: He, PushButton: oo, RadioButton: Fi, CheckBox: so, TextField: Vr, PasswordField: co, Appearance: Bt }, Ut.AcroForm = { ChoiceField: ki, ListBox: Ii, ComboBox: Ci, EditBox: ao, Button: He, PushButton: oo, RadioButton: Fi, CheckBox: so, TextField: Vr, PasswordField: co, Appearance: Bt };
 function Wc(i) {
   return i.reduce(function(e, n, r) {
     return e[n] = r, e;
@@ -3152,11 +3152,11 @@ function Wc(i) {
 }
 (function(i) {
   i.__addimage__ = {};
-  var e = "UNKNOWN", n = { PNG: [[137, 80, 78, 71]], TIFF: [[77, 77, 0, 42], [73, 73, 42, 0]], JPEG: [[255, 216, 255, 224, void 0, void 0, 74, 70, 73, 70, 0], [255, 216, 255, 225, void 0, void 0, 69, 120, 105, 102, 0, 0], [255, 216, 255, 219], [255, 216, 255, 238]], JPEG2000: [[0, 0, 0, 12, 106, 80, 32, 32]], GIF87a: [[71, 73, 70, 56, 55, 97]], GIF89a: [[71, 73, 70, 56, 57, 97]], WEBP: [[82, 73, 70, 70, void 0, void 0, void 0, void 0, 87, 69, 66, 80]], BMP: [[66, 77], [66, 65], [67, 73], [67, 80], [73, 67], [80, 84]] }, r = i.__addimage__.getImageFileTypeByImageData = function(I, k) {
+  var e = "UNKNOWN", n = { PNG: [[137, 80, 78, 71]], TIFF: [[77, 77, 0, 42], [73, 73, 42, 0]], JPEG: [[255, 216, 255, 224, void 0, void 0, 74, 70, 73, 70, 0], [255, 216, 255, 225, void 0, void 0, 69, 120, 105, 102, 0, 0], [255, 216, 255, 219], [255, 216, 255, 238]], JPEG2000: [[0, 0, 0, 12, 106, 80, 32, 32]], GIF87a: [[71, 73, 70, 56, 55, 97]], GIF89a: [[71, 73, 70, 56, 57, 97]], WEBP: [[82, 73, 70, 70, void 0, void 0, void 0, void 0, 87, 69, 66, 80]], BMP: [[66, 77], [66, 65], [67, 73], [67, 80], [73, 67], [80, 84]] }, r = i.__addimage__.getImageFileTypeByImageData = function(C, k) {
     var z, q, ot, nt, ht, Z = e;
-    if ((k = k || e) === "RGBA" || I.data !== void 0 && I.data instanceof Uint8ClampedArray && "height" in I && "width" in I) return "RGBA";
-    if (yt(I)) for (ht in n) for (ot = n[ht], z = 0; z < ot.length; z += 1) {
-      for (nt = !0, q = 0; q < ot[z].length; q += 1) if (ot[z][q] !== void 0 && ot[z][q] !== I[q]) {
+    if ((k = k || e) === "RGBA" || C.data !== void 0 && C.data instanceof Uint8ClampedArray && "height" in C && "width" in C) return "RGBA";
+    if (yt(C)) for (ht in n) for (ot = n[ht], z = 0; z < ot.length; z += 1) {
+      for (nt = !0, q = 0; q < ot[z].length; q += 1) if (ot[z][q] !== void 0 && ot[z][q] !== C[q]) {
         nt = !1;
         break;
       }
@@ -3166,7 +3166,7 @@ function Wc(i) {
       }
     }
     else for (ht in n) for (ot = n[ht], z = 0; z < ot.length; z += 1) {
-      for (nt = !0, q = 0; q < ot[z].length; q += 1) if (ot[z][q] !== void 0 && ot[z][q] !== I.charCodeAt(q)) {
+      for (nt = !0, q = 0; q < ot[z].length; q += 1) if (ot[z][q] !== void 0 && ot[z][q] !== C.charCodeAt(q)) {
         nt = !1;
         break;
       }
@@ -3176,7 +3176,7 @@ function Wc(i) {
       }
     }
     return Z === e && k !== e && (Z = k), Z;
-  }, s = function I(k) {
+  }, s = function C(k) {
     for (var z = this.internal.write, q = this.internal.putStream, ot = (0, this.internal.getFilters)(); ot.indexOf("FlateEncode") !== -1; ) ot.splice(ot.indexOf("FlateEncode"), 1);
     k.objectId = this.internal.newObject();
     var nt = [];
@@ -3188,38 +3188,38 @@ function Wc(i) {
     var ut = k.filter !== void 0 ? ["/" + k.filter] : void 0;
     if (q({ data: k.data, additionalKeyValues: nt, alreadyAppliedFilters: ut, objectId: k.objectId }), z("endobj"), "sMask" in k && k.sMask !== void 0) {
       var kt = "/Predictor " + k.predictor + " /Colors 1 /BitsPerComponent " + k.bitsPerComponent + " /Columns " + k.width, L = { width: k.width, height: k.height, colorSpace: "DeviceGray", bitsPerComponent: k.bitsPerComponent, decodeParameters: kt, data: k.sMask };
-      "filter" in k && (L.filter = k.filter), I.call(this, L);
+      "filter" in k && (L.filter = k.filter), C.call(this, L);
     }
     if (k.colorSpace === B.INDEXED) {
       var j = this.internal.newObject();
       q({ data: R(new Uint8Array(k.palette)), objectId: j }), z("endobj");
     }
   }, o = function() {
-    var I = this.internal.collections.addImage_images;
-    for (var k in I) s.call(this, I[k]);
+    var C = this.internal.collections.addImage_images;
+    for (var k in C) s.call(this, C[k]);
   }, l = function() {
-    var I, k = this.internal.collections.addImage_images, z = this.internal.write;
-    for (var q in k) z("/I" + (I = k[q]).index, I.objectId, "0", "R");
+    var C, k = this.internal.collections.addImage_images, z = this.internal.write;
+    for (var q in k) z("/I" + (C = k[q]).index, C.objectId, "0", "R");
   }, h = function() {
     this.internal.collections.addImage_images || (this.internal.collections.addImage_images = {}, this.internal.events.subscribe("putResources", o), this.internal.events.subscribe("putXobjectDict", l));
   }, f = function() {
-    var I = this.internal.collections.addImage_images;
-    return h.call(this), I;
+    var C = this.internal.collections.addImage_images;
+    return h.call(this), C;
   }, g = function() {
     return Object.keys(this.internal.collections.addImage_images).length;
-  }, m = function(I) {
-    return typeof i["process" + I.toUpperCase()] == "function";
-  }, w = function(I) {
-    return pe(I) === "object" && I.nodeType === 1;
-  }, S = function(I, k) {
-    if (I.nodeName === "IMG" && I.hasAttribute("src")) {
-      var z = "" + I.getAttribute("src");
+  }, m = function(C) {
+    return typeof i["process" + C.toUpperCase()] == "function";
+  }, w = function(C) {
+    return pe(C) === "object" && C.nodeType === 1;
+  }, S = function(C, k) {
+    if (C.nodeName === "IMG" && C.hasAttribute("src")) {
+      var z = "" + C.getAttribute("src");
       if (z.indexOf("data:image/") === 0) return ha(unescape(z).split("base64,").pop());
       var q = i.loadFile(z, !0);
       if (q !== void 0) return q;
     }
-    if (I.nodeName === "CANVAS") {
-      if (I.width === 0 || I.height === 0) throw new Error("Given canvas must have data. Canvas width: " + I.width + ", height: " + I.height);
+    if (C.nodeName === "CANVAS") {
+      if (C.width === 0 || C.height === 0) throw new Error("Given canvas must have data. Canvas width: " + C.width + ", height: " + C.height);
       var ot;
       switch (k) {
         case "PNG":
@@ -3233,16 +3233,16 @@ function Wc(i) {
         default:
           ot = "image/jpeg";
       }
-      return ha(I.toDataURL(ot, 1).split("base64,").pop());
+      return ha(C.toDataURL(ot, 1).split("base64,").pop());
     }
-  }, d = function(I) {
+  }, d = function(C) {
     var k = this.internal.collections.addImage_images;
     if (k) {
-      for (var z in k) if (I === k[z].alias) return k[z];
+      for (var z in k) if (C === k[z].alias) return k[z];
     }
-  }, O = function(I, k, z) {
-    return I || k || (I = -96, k = -96), I < 0 && (I = -1 * z.width * 72 / I / this.internal.scaleFactor), k < 0 && (k = -1 * z.height * 72 / k / this.internal.scaleFactor), I === 0 && (I = k * z.width / z.height), k === 0 && (k = I * z.height / z.width), [I, k];
-  }, P = function(I, k, z, q, ot, nt) {
+  }, O = function(C, k, z) {
+    return C || k || (C = -96, k = -96), C < 0 && (C = -1 * z.width * 72 / C / this.internal.scaleFactor), k < 0 && (k = -1 * z.height * 72 / k / this.internal.scaleFactor), C === 0 && (C = k * z.width / z.height), k === 0 && (k = C * z.height / z.width), [C, k];
+  }, P = function(C, k, z, q, ot, nt) {
     var ht = O.call(this, z, q, ot), Z = this.internal.getCoordinateString, ft = this.internal.getVerticalCoordinateString, ut = f.call(this);
     if (z = ht[0], q = ht[1], ut[ot.index] = ot, nt) {
       nt *= Math.PI / 180;
@@ -3250,20 +3250,20 @@ function Wc(i) {
         return W.toFixed(4);
       }, M = [j(kt), j(L), j(-1 * L), j(kt), 0, 0, "cm"];
     }
-    this.internal.write("q"), nt ? (this.internal.write([1, "0", "0", 1, Z(I), ft(k + q), "cm"].join(" ")), this.internal.write(M.join(" ")), this.internal.write([Z(z), "0", "0", Z(q), "0", "0", "cm"].join(" "))) : this.internal.write([Z(z), "0", "0", Z(q), Z(I), ft(k + q), "cm"].join(" ")), this.isAdvancedAPI() && this.internal.write([1, 0, 0, -1, 0, 0, "cm"].join(" ")), this.internal.write("/I" + ot.index + " Do"), this.internal.write("Q");
+    this.internal.write("q"), nt ? (this.internal.write([1, "0", "0", 1, Z(C), ft(k + q), "cm"].join(" ")), this.internal.write(M.join(" ")), this.internal.write([Z(z), "0", "0", Z(q), "0", "0", "cm"].join(" "))) : this.internal.write([Z(z), "0", "0", Z(q), Z(C), ft(k + q), "cm"].join(" ")), this.isAdvancedAPI() && this.internal.write([1, 0, 0, -1, 0, 0, "cm"].join(" ")), this.internal.write("/I" + ot.index + " Do"), this.internal.write("Q");
   }, B = i.color_spaces = { DEVICE_RGB: "DeviceRGB", DEVICE_GRAY: "DeviceGray", DEVICE_CMYK: "DeviceCMYK", CAL_GREY: "CalGray", CAL_RGB: "CalRGB", LAB: "Lab", ICC_BASED: "ICCBased", INDEXED: "Indexed", PATTERN: "Pattern", SEPARATION: "Separation", DEVICE_N: "DeviceN" };
   i.decode = { DCT_DECODE: "DCTDecode", FLATE_DECODE: "FlateDecode", LZW_DECODE: "LZWDecode", JPX_DECODE: "JPXDecode", JBIG2_DECODE: "JBIG2Decode", ASCII85_DECODE: "ASCII85Decode", ASCII_HEX_DECODE: "ASCIIHexDecode", RUN_LENGTH_DECODE: "RunLengthDecode", CCITT_FAX_DECODE: "CCITTFaxDecode" };
-  var _ = i.image_compression = { NONE: "NONE", FAST: "FAST", MEDIUM: "MEDIUM", SLOW: "SLOW" }, E = i.__addimage__.sHashCode = function(I) {
+  var _ = i.image_compression = { NONE: "NONE", FAST: "FAST", MEDIUM: "MEDIUM", SLOW: "SLOW" }, E = i.__addimage__.sHashCode = function(C) {
     var k, z, q = 0;
-    if (typeof I == "string") for (z = I.length, k = 0; k < z; k++) q = (q << 5) - q + I.charCodeAt(k), q |= 0;
-    else if (yt(I)) for (z = I.byteLength / 2, k = 0; k < z; k++) q = (q << 5) - q + I[k], q |= 0;
+    if (typeof C == "string") for (z = C.length, k = 0; k < z; k++) q = (q << 5) - q + C.charCodeAt(k), q |= 0;
+    else if (yt(C)) for (z = C.byteLength / 2, k = 0; k < z; k++) q = (q << 5) - q + C[k], q |= 0;
     return q;
-  }, Y = i.__addimage__.validateStringAsBase64 = function(I) {
-    (I = I || "").toString().trim();
+  }, Y = i.__addimage__.validateStringAsBase64 = function(C) {
+    (C = C || "").toString().trim();
     var k = !0;
-    return I.length === 0 && (k = !1), I.length % 4 != 0 && (k = !1), /^[A-Za-z0-9+/]+$/.test(I.substr(0, I.length - 2)) === !1 && (k = !1), /^[A-Za-z0-9/][A-Za-z0-9+/]|[A-Za-z0-9+/]=|==$/.test(I.substr(-2)) === !1 && (k = !1), k;
-  }, at = i.__addimage__.extractImageFromDataUrl = function(I) {
-    var k = (I = I || "").split("base64,"), z = null;
+    return C.length === 0 && (k = !1), C.length % 4 != 0 && (k = !1), /^[A-Za-z0-9+/]+$/.test(C.substr(0, C.length - 2)) === !1 && (k = !1), /^[A-Za-z0-9/][A-Za-z0-9+/]|[A-Za-z0-9+/]=|==$/.test(C.substr(-2)) === !1 && (k = !1), k;
+  }, at = i.__addimage__.extractImageFromDataUrl = function(C) {
+    var k = (C = C || "").split("base64,"), z = null;
     if (k.length === 2) {
       var q = /^data:(\w*\/\w*);*(charset=(?!charset=)[\w=-]*)*;*$/.exec(k[0]);
       Array.isArray(q) && (z = { mimeType: q[1], charset: q[2], data: k[1] });
@@ -3272,50 +3272,50 @@ function Wc(i) {
   }, lt = i.__addimage__.supportsArrayBuffer = function() {
     return typeof ArrayBuffer < "u" && typeof Uint8Array < "u";
   };
-  i.__addimage__.isArrayBuffer = function(I) {
-    return lt() && I instanceof ArrayBuffer;
+  i.__addimage__.isArrayBuffer = function(C) {
+    return lt() && C instanceof ArrayBuffer;
   };
-  var yt = i.__addimage__.isArrayBufferView = function(I) {
-    return lt() && typeof Uint32Array < "u" && (I instanceof Int8Array || I instanceof Uint8Array || typeof Uint8ClampedArray < "u" && I instanceof Uint8ClampedArray || I instanceof Int16Array || I instanceof Uint16Array || I instanceof Int32Array || I instanceof Uint32Array || I instanceof Float32Array || I instanceof Float64Array);
-  }, tt = i.__addimage__.binaryStringToUint8Array = function(I) {
-    for (var k = I.length, z = new Uint8Array(k), q = 0; q < k; q++) z[q] = I.charCodeAt(q);
+  var yt = i.__addimage__.isArrayBufferView = function(C) {
+    return lt() && typeof Uint32Array < "u" && (C instanceof Int8Array || C instanceof Uint8Array || typeof Uint8ClampedArray < "u" && C instanceof Uint8ClampedArray || C instanceof Int16Array || C instanceof Uint16Array || C instanceof Int32Array || C instanceof Uint32Array || C instanceof Float32Array || C instanceof Float64Array);
+  }, tt = i.__addimage__.binaryStringToUint8Array = function(C) {
+    for (var k = C.length, z = new Uint8Array(k), q = 0; q < k; q++) z[q] = C.charCodeAt(q);
     return z;
-  }, R = i.__addimage__.arrayBufferToBinaryString = function(I) {
-    for (var k = "", z = yt(I) ? I : new Uint8Array(I), q = 0; q < z.length; q += 8192) k += String.fromCharCode.apply(null, z.subarray(q, q + 8192));
+  }, R = i.__addimage__.arrayBufferToBinaryString = function(C) {
+    for (var k = "", z = yt(C) ? C : new Uint8Array(C), q = 0; q < z.length; q += 8192) k += String.fromCharCode.apply(null, z.subarray(q, q + 8192));
     return k;
   };
   i.addImage = function() {
-    var I, k, z, q, ot, nt, ht, Z, ft;
-    if (typeof arguments[1] == "number" ? (k = e, z = arguments[1], q = arguments[2], ot = arguments[3], nt = arguments[4], ht = arguments[5], Z = arguments[6], ft = arguments[7]) : (k = arguments[1], z = arguments[2], q = arguments[3], ot = arguments[4], nt = arguments[5], ht = arguments[6], Z = arguments[7], ft = arguments[8]), pe(I = arguments[0]) === "object" && !w(I) && "imageData" in I) {
-      var ut = I;
-      I = ut.imageData, k = ut.format || k || e, z = ut.x || z || 0, q = ut.y || q || 0, ot = ut.w || ut.width || ot, nt = ut.h || ut.height || nt, ht = ut.alias || ht, Z = ut.compression || Z, ft = ut.rotation || ut.angle || ft;
+    var C, k, z, q, ot, nt, ht, Z, ft;
+    if (typeof arguments[1] == "number" ? (k = e, z = arguments[1], q = arguments[2], ot = arguments[3], nt = arguments[4], ht = arguments[5], Z = arguments[6], ft = arguments[7]) : (k = arguments[1], z = arguments[2], q = arguments[3], ot = arguments[4], nt = arguments[5], ht = arguments[6], Z = arguments[7], ft = arguments[8]), pe(C = arguments[0]) === "object" && !w(C) && "imageData" in C) {
+      var ut = C;
+      C = ut.imageData, k = ut.format || k || e, z = ut.x || z || 0, q = ut.y || q || 0, ot = ut.w || ut.width || ot, nt = ut.h || ut.height || nt, ht = ut.alias || ht, Z = ut.compression || Z, ft = ut.rotation || ut.angle || ft;
     }
     var kt = this.internal.getFilters();
     if (Z === void 0 && kt.indexOf("FlateEncode") !== -1 && (Z = "SLOW"), isNaN(z) || isNaN(q)) throw new Error("Invalid coordinates passed to jsPDF.addImage");
     h.call(this);
-    var L = gt.call(this, I, k, ht, Z);
+    var L = gt.call(this, C, k, ht, Z);
     return P.call(this, z, q, ot, nt, L, ft), this;
   };
-  var gt = function(I, k, z, q) {
+  var gt = function(C, k, z, q) {
     var ot, nt, ht;
-    if (typeof I == "string" && r(I) === e) {
-      I = unescape(I);
-      var Z = pt(I, !1);
-      (Z !== "" || (Z = i.loadFile(I, !0)) !== void 0) && (I = Z);
+    if (typeof C == "string" && r(C) === e) {
+      C = unescape(C);
+      var Z = pt(C, !1);
+      (Z !== "" || (Z = i.loadFile(C, !0)) !== void 0) && (C = Z);
     }
-    if (w(I) && (I = S(I, k)), k = r(I, k), !m(k)) throw new Error("addImage does not support files of type '" + k + "', please ensure that a plugin for '" + k + "' support is added.");
+    if (w(C) && (C = S(C, k)), k = r(C, k), !m(k)) throw new Error("addImage does not support files of type '" + k + "', please ensure that a plugin for '" + k + "' support is added.");
     if (((ht = z) == null || ht.length === 0) && (z = function(ft) {
       return typeof ft == "string" || yt(ft) ? E(ft) : yt(ft.data) ? E(ft.data) : null;
-    }(I)), (ot = d.call(this, z)) || (lt() && (I instanceof Uint8Array || k === "RGBA" || (nt = I, I = tt(I))), ot = this["process" + k.toUpperCase()](I, g.call(this), z, function(ft) {
+    }(C)), (ot = d.call(this, z)) || (lt() && (C instanceof Uint8Array || k === "RGBA" || (nt = C, C = tt(C))), ot = this["process" + k.toUpperCase()](C, g.call(this), z, function(ft) {
       return ft && typeof ft == "string" && (ft = ft.toUpperCase()), ft in i.image_compression ? ft : _.NONE;
     }(q), nt)), !ot) throw new Error("An unknown error occurred whilst processing the image.");
     return ot;
-  }, pt = i.__addimage__.convertBase64ToBinaryString = function(I, k) {
+  }, pt = i.__addimage__.convertBase64ToBinaryString = function(C, k) {
     var z;
     k = typeof k != "boolean" || k;
     var q, ot = "";
-    if (typeof I == "string") {
-      q = (z = at(I)) !== null ? z.data : I;
+    if (typeof C == "string") {
+      q = (z = at(C)) !== null ? z.data : C;
       try {
         ot = ha(q);
       } catch (nt) {
@@ -3324,10 +3324,10 @@ function Wc(i) {
     }
     return ot;
   };
-  i.getImageProperties = function(I) {
+  i.getImageProperties = function(C) {
     var k, z, q = "";
-    if (w(I) && (I = S(I)), typeof I == "string" && r(I) === e && ((q = pt(I, !1)) === "" && (q = i.loadFile(I) || ""), I = q), z = r(I), !m(z)) throw new Error("addImage does not support files of type '" + z + "', please ensure that a plugin for '" + z + "' support is added.");
-    if (!lt() || I instanceof Uint8Array || (I = tt(I)), !(k = this["process" + z.toUpperCase()](I))) throw new Error("An unknown error occurred whilst processing the image");
+    if (w(C) && (C = S(C)), typeof C == "string" && r(C) === e && ((q = pt(C, !1)) === "" && (q = i.loadFile(C) || ""), C = q), z = r(C), !m(z)) throw new Error("addImage does not support files of type '" + z + "', please ensure that a plugin for '" + z + "' support is added.");
+    if (!lt() || C instanceof Uint8Array || (C = tt(C)), !(k = this["process" + z.toUpperCase()](C))) throw new Error("An unknown error occurred whilst processing the image");
     return k.fileType = z, k;
   };
 })(Ut.API), /**
@@ -3628,8 +3628,8 @@ function(i) {
   };
   i.table = function(f, g, m, w, S) {
     if (r.call(this), !m) throw new Error("No data for PDF table.");
-    var d, O, P, B, _ = [], E = [], Y = [], at = {}, lt = {}, yt = [], tt = [], R = (S = S || {}).autoSize || !1, gt = S.printHeaders !== !1, pt = S.css && S.css["font-size"] !== void 0 ? 16 * S.css["font-size"] : S.fontSize || 12, I = S.margins || Object.assign({ width: this.getPageWidth() }, e), k = typeof S.padding == "number" ? S.padding : 3, z = S.headerBackgroundColor || "#c8c8c8", q = S.headerTextColor || "#000";
-    if (s.call(this), this.internal.__cell__.printHeaders = gt, this.internal.__cell__.margins = I, this.internal.__cell__.table_font_size = pt, this.internal.__cell__.padding = k, this.internal.__cell__.headerBackgroundColor = z, this.internal.__cell__.headerTextColor = q, this.setFontSize(pt), w == null) E = _ = Object.keys(m[0]), Y = _.map(function() {
+    var d, O, P, B, _ = [], E = [], Y = [], at = {}, lt = {}, yt = [], tt = [], R = (S = S || {}).autoSize || !1, gt = S.printHeaders !== !1, pt = S.css && S.css["font-size"] !== void 0 ? 16 * S.css["font-size"] : S.fontSize || 12, C = S.margins || Object.assign({ width: this.getPageWidth() }, e), k = typeof S.padding == "number" ? S.padding : 3, z = S.headerBackgroundColor || "#c8c8c8", q = S.headerTextColor || "#000";
+    if (s.call(this), this.internal.__cell__.printHeaders = gt, this.internal.__cell__.margins = C, this.internal.__cell__.table_font_size = pt, this.internal.__cell__.padding = k, this.internal.__cell__.headerBackgroundColor = z, this.internal.__cell__.headerTextColor = q, this.setFontSize(pt), w == null) E = _ = Object.keys(m[0]), Y = _.map(function() {
       return "left";
     });
     else if (Array.isArray(w) && pe(w[0]) === "object") for (_ = w.map(function(ut) {
@@ -3755,14 +3755,14 @@ function kh(i, e, n) {
 function Ac(i) {
   return i.trimLeft();
 }
-function Ch(i, e) {
+function Ih(i, e) {
   for (var n = 0; n < i.length; ) {
     if (i.charAt(n) === e) return [i.substring(0, n), i.substring(n + 1)];
     n += 1;
   }
   return null;
 }
-function Ih(i) {
+function Ch(i) {
   var e = i.match(/^(-[a-z_]|[a-z_])[a-z0-9_-]*/i);
   return e === null ? null : [e[0], i.substring(e[0].length)];
 }
@@ -3883,9 +3883,9 @@ var ro, Nc, Sc, ds = ["times"];
         var Xt = function(Mt) {
           var xt = [];
           return Object.keys(Mt).forEach(function(Nt) {
-            Mt[Nt].forEach(function(Ct) {
+            Mt[Nt].forEach(function(It) {
               var Pt = null;
-              switch (Ct) {
+              switch (It) {
                 case "bold":
                   Pt = { family: Nt, weight: "bold" };
                   break;
@@ -3899,14 +3899,14 @@ var ro, Nc, Sc, ds = ["times"];
                 case "normal":
                   Pt = { family: Nt };
               }
-              Pt !== null && (Pt.ref = { name: Nt, style: Ct }, xt.push(Pt));
+              Pt !== null && (Pt.ref = { name: Nt, style: It }, xt.push(Pt));
             });
           }), xt;
         }(ct.getFontList());
         Ft = function(Mt) {
           for (var xt = {}, Nt = 0; Nt < Mt.length; ++Nt) {
-            var Ct = Ps(Mt[Nt]), Pt = Ct.family, Dt = Ct.stretch, Vt = Ct.style, Zt = Ct.weight;
-            xt[Pt] = xt[Pt] || {}, xt[Pt][Dt] = xt[Pt][Dt] || {}, xt[Pt][Dt][Vt] = xt[Pt][Dt][Vt] || {}, xt[Pt][Dt][Vt][Zt] = Ct;
+            var It = Ps(Mt[Nt]), Pt = It.family, Dt = It.stretch, Vt = It.style, Zt = It.weight;
+            xt[Pt] = xt[Pt] || {}, xt[Pt][Dt] = xt[Pt][Dt] || {}, xt[Pt][Dt][Vt] = xt[Pt][Dt][Vt] || {}, xt[Pt][Dt][Vt][Zt] = It;
           }
           return xt;
         }(Xt.concat(D));
@@ -3923,22 +3923,22 @@ var ro, Nc, Sc, ds = ["times"];
     }, set: function(ct) {
       var D;
       if (this.ctx.font = ct, (D = /^\s*(?=(?:(?:[-a-z]+\s*){0,2}(italic|oblique))?)(?=(?:(?:[-a-z]+\s*){0,2}(small-caps))?)(?=(?:(?:[-a-z]+\s*){0,2}(bold(?:er)?|lighter|[1-9]00))?)(?:(?:normal|\1|\2|\3)\s*){0,3}((?:xx?-)?(?:small|large)|medium|smaller|larger|[.\d]+(?:\%|in|[cem]m|ex|p[ctx]))(?:\s*\/\s*(normal|[.\d]+(?:\%|in|[cem]m|ex|p[ctx])))?\s*([-_,\"\'\sa-z]+?)\s*$/i.exec(ct)) !== null) {
-        var Xt = D[1], Mt = (D[2], D[3]), xt = D[4], Nt = (D[5], D[6]), Ct = /^([.\d]+)((?:%|in|[cem]m|ex|p[ctx]))$/i.exec(xt)[2];
-        xt = Math.floor(Ct === "px" ? parseFloat(xt) * this.pdf.internal.scaleFactor : Ct === "em" ? parseFloat(xt) * this.pdf.getFontSize() : parseFloat(xt) * this.pdf.internal.scaleFactor), this.pdf.setFontSize(xt);
+        var Xt = D[1], Mt = (D[2], D[3]), xt = D[4], Nt = (D[5], D[6]), It = /^([.\d]+)((?:%|in|[cem]m|ex|p[ctx]))$/i.exec(xt)[2];
+        xt = Math.floor(It === "px" ? parseFloat(xt) * this.pdf.internal.scaleFactor : It === "em" ? parseFloat(xt) * this.pdf.getFontSize() : parseFloat(xt) * this.pdf.internal.scaleFactor), this.pdf.setFontSize(xt);
         var Pt = function(Wt) {
-          var ee, It, Ve = [], se = Wt.trim();
+          var ee, Ct, Ve = [], se = Wt.trim();
           if (se === "") return ds;
           if (se in xc) return [xc[se]];
           for (; se !== ""; ) {
-            switch (It = null, ee = (se = Ac(se)).charAt(0)) {
+            switch (Ct = null, ee = (se = Ac(se)).charAt(0)) {
               case '"':
               case "'":
-                It = Ch(se.substring(1), ee);
+                Ct = Ih(se.substring(1), ee);
                 break;
               default:
-                It = Ih(se);
+                Ct = Ch(se);
             }
-            if (It === null || (Ve.push(It[0]), (se = Ac(It[1])) !== "" && se.charAt(0) !== ",")) return ds;
+            if (Ct === null || (Ve.push(Ct[0]), (se = Ac(Ct[1])) !== "" && se.charAt(0) !== ",")) return ds;
             se = se.replace(/^,/, "");
           }
           return Ve;
@@ -4138,16 +4138,16 @@ var ro, Nc, Sc, ds = ["times"];
   w.prototype.drawImage = function(L, j, M, W, J, Q, et, rt, At) {
     var Lt = this.pdf.getImageProperties(L), Ft = 1, Et = 1, zt = 1, ct = 1;
     W !== void 0 && rt !== void 0 && (zt = rt / W, ct = At / J, Ft = Lt.width / W * rt / W, Et = Lt.height / J * At / J), Q === void 0 && (Q = j, et = M, j = 0, M = 0), W !== void 0 && rt === void 0 && (rt = W, At = J), W === void 0 && rt === void 0 && (rt = Lt.width, At = Lt.height);
-    for (var D, Xt = this.ctx.transform.decompose(), Mt = Z(Xt.rotate.shx), xt = new f(), Nt = (xt = (xt = (xt = xt.multiply(Xt.translate)).multiply(Xt.skew)).multiply(Xt.scale)).applyToRectangle(new h(Q - j * zt, et - M * ct, W * Ft, J * Et)), Ct = B.call(this, Nt), Pt = [], Dt = 0; Dt < Ct.length; Dt += 1) Pt.indexOf(Ct[Dt]) === -1 && Pt.push(Ct[Dt]);
+    for (var D, Xt = this.ctx.transform.decompose(), Mt = Z(Xt.rotate.shx), xt = new f(), Nt = (xt = (xt = (xt = xt.multiply(Xt.translate)).multiply(Xt.skew)).multiply(Xt.scale)).applyToRectangle(new h(Q - j * zt, et - M * ct, W * Ft, J * Et)), It = B.call(this, Nt), Pt = [], Dt = 0; Dt < It.length; Dt += 1) Pt.indexOf(It[Dt]) === -1 && Pt.push(It[Dt]);
     if (Y(Pt), this.autoPaging) for (var Vt = Pt[0], Zt = Pt[Pt.length - 1], te = Vt; te < Zt + 1; te++) {
       this.pdf.setPage(te);
-      var ae = this.pdf.internal.pageSize.width - this.margin[3] - this.margin[1], de = te === 1 ? this.posY + this.margin[0] : this.margin[0], Wt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], ee = this.pdf.internal.pageSize.height - this.margin[0] - this.margin[2], It = te === 1 ? 0 : Wt + (te - 2) * ee;
+      var ae = this.pdf.internal.pageSize.width - this.margin[3] - this.margin[1], de = te === 1 ? this.posY + this.margin[0] : this.margin[0], Wt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], ee = this.pdf.internal.pageSize.height - this.margin[0] - this.margin[2], Ct = te === 1 ? 0 : Wt + (te - 2) * ee;
       if (this.ctx.clip_path.length !== 0) {
         var Ve = this.path;
-        D = JSON.parse(JSON.stringify(this.ctx.clip_path)), this.path = E(D, this.posX + this.margin[3], -It + de + this.ctx.prevPageLastElemOffset), lt.call(this, "fill", !0), this.path = Ve;
+        D = JSON.parse(JSON.stringify(this.ctx.clip_path)), this.path = E(D, this.posX + this.margin[3], -Ct + de + this.ctx.prevPageLastElemOffset), lt.call(this, "fill", !0), this.path = Ve;
       }
       var se = JSON.parse(JSON.stringify(Nt));
-      se = E([se], this.posX + this.margin[3], -It + de + this.ctx.prevPageLastElemOffset)[0];
+      se = E([se], this.posX + this.margin[3], -Ct + de + this.ctx.prevPageLastElemOffset)[0];
       var xn = (te > Vt || te < Zt) && P.call(this);
       xn && (this.pdf.saveGraphicsState(), this.pdf.rect(this.margin[3], this.margin[0], ae, ee, null).clip().discardPath()), this.pdf.addImage(L, "JPEG", se.x, se.y, se.w, se.h, null, null, Mt), xn && this.pdf.restoreGraphicsState();
     }
@@ -4202,15 +4202,15 @@ var ro, Nc, Sc, ds = ["times"];
   }, at = function(L, j) {
     for (var M, W, J = this.fillStyle, Q = this.strokeStyle, et = this.lineCap, rt = this.lineWidth, At = Math.abs(rt * this.ctx.transform.scaleX), Lt = this.lineJoin, Ft = JSON.parse(JSON.stringify(this.path)), Et = JSON.parse(JSON.stringify(this.path)), zt = [], ct = 0; ct < Et.length; ct++) if (Et[ct].x !== void 0) for (var D = B.call(this, Et[ct]), Xt = 0; Xt < D.length; Xt += 1) zt.indexOf(D[Xt]) === -1 && zt.push(D[Xt]);
     for (var Mt = 0; Mt < zt.length; Mt++) for (; this.pdf.internal.getNumberOfPages() < zt[Mt]; ) _.call(this);
-    if (Y(zt), this.autoPaging) for (var xt = zt[0], Nt = zt[zt.length - 1], Ct = xt; Ct < Nt + 1; Ct++) {
-      this.pdf.setPage(Ct), this.fillStyle = J, this.strokeStyle = Q, this.lineCap = et, this.lineWidth = At, this.lineJoin = Lt;
-      var Pt = this.pdf.internal.pageSize.width - this.margin[3] - this.margin[1], Dt = Ct === 1 ? this.posY + this.margin[0] : this.margin[0], Vt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], Zt = this.pdf.internal.pageSize.height - this.margin[0] - this.margin[2], te = Ct === 1 ? 0 : Vt + (Ct - 2) * Zt;
+    if (Y(zt), this.autoPaging) for (var xt = zt[0], Nt = zt[zt.length - 1], It = xt; It < Nt + 1; It++) {
+      this.pdf.setPage(It), this.fillStyle = J, this.strokeStyle = Q, this.lineCap = et, this.lineWidth = At, this.lineJoin = Lt;
+      var Pt = this.pdf.internal.pageSize.width - this.margin[3] - this.margin[1], Dt = It === 1 ? this.posY + this.margin[0] : this.margin[0], Vt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], Zt = this.pdf.internal.pageSize.height - this.margin[0] - this.margin[2], te = It === 1 ? 0 : Vt + (It - 2) * Zt;
       if (this.ctx.clip_path.length !== 0) {
         var ae = this.path;
         M = JSON.parse(JSON.stringify(this.ctx.clip_path)), this.path = E(M, this.posX + this.margin[3], -te + Dt + this.ctx.prevPageLastElemOffset), lt.call(this, L, !0), this.path = ae;
       }
-      if (W = JSON.parse(JSON.stringify(Ft)), this.path = E(W, this.posX + this.margin[3], -te + Dt + this.ctx.prevPageLastElemOffset), j === !1 || Ct === 0) {
-        var de = (Ct > xt || Ct < Nt) && P.call(this);
+      if (W = JSON.parse(JSON.stringify(Ft)), this.path = E(W, this.posX + this.margin[3], -te + Dt + this.ctx.prevPageLastElemOffset), j === !1 || It === 0) {
+        var de = (It > xt || It < Nt) && P.call(this);
         de && (this.pdf.saveGraphicsState(), this.pdf.rect(this.margin[3], this.margin[0], Pt, Zt, null).clip().discardPath()), lt.call(this, L, j), de && this.pdf.restoreGraphicsState();
       }
       this.lineWidth = rt;
@@ -4253,8 +4253,8 @@ var ro, Nc, Sc, ds = ["times"];
       }
       W = j ? null : L === "stroke" ? "stroke" : "fill";
       for (var Xt = !1, Mt = 0; Mt < J.length; Mt++) if (J[Mt].arc) for (var xt = J[Mt].abs, Nt = 0; Nt < xt.length; Nt++) {
-        var Ct = xt[Nt];
-        Ct.type === "arc" ? R.call(this, Ct.x, Ct.y, Ct.radius, Ct.startAngle, Ct.endAngle, Ct.counterclockwise, void 0, j, !Xt) : z.call(this, Ct.x, Ct.y), Xt = !0;
+        var It = xt[Nt];
+        It.type === "arc" ? R.call(this, It.x, It.y, It.radius, It.startAngle, It.endAngle, It.counterclockwise, void 0, j, !Xt) : z.call(this, It.x, It.y), Xt = !0;
       }
       else if (J[Mt].close === !0) this.pdf.internal.out("h"), Xt = !1;
       else if (J[Mt].begin !== !0) {
@@ -4299,7 +4299,7 @@ var ro, Nc, Sc, ds = ["times"];
   var R = function(L, j, M, W, J, Q, et, rt, At) {
     for (var Lt = nt.call(this, M, W, J, Q), Ft = 0; Ft < Lt.length; Ft++) {
       var Et = Lt[Ft];
-      Ft === 0 && (At ? I.call(this, Et.x1 + L, Et.y1 + j) : z.call(this, Et.x1 + L, Et.y1 + j)), ot.call(this, L, j, Et.x2, Et.y2, Et.x3, Et.y3, Et.x4, Et.y4);
+      Ft === 0 && (At ? C.call(this, Et.x1 + L, Et.y1 + j) : z.call(this, Et.x1 + L, Et.y1 + j)), ot.call(this, L, j, Et.x2, Et.y2, Et.x3, Et.y3, Et.x4, Et.y4);
     }
     rt ? pt.call(this) : gt.call(this, et);
   }, gt = function(L) {
@@ -4312,7 +4312,7 @@ var ro, Nc, Sc, ds = ["times"];
     }
   }, pt = function() {
     this.pdf.clip(), this.pdf.discardPath();
-  }, I = function(L, j) {
+  }, C = function(L, j) {
     this.pdf.internal.out(n(L) + " " + r(j) + " m");
   }, k = function(L) {
     var j;
@@ -4334,18 +4334,18 @@ var ro, Nc, Sc, ds = ["times"];
     for (var At, Lt, Ft, Et = this.ctx.transform.applyToRectangle(new h(L.x, W, M.w, M.h)), zt = rt.applyToRectangle(new h(L.x, J, M.w, M.h)), ct = B.call(this, zt), D = [], Xt = 0; Xt < ct.length; Xt += 1) D.indexOf(ct[Xt]) === -1 && D.push(ct[Xt]);
     if (Y(D), this.autoPaging) for (var Mt = D[0], xt = D[D.length - 1], Nt = Mt; Nt < xt + 1; Nt++) {
       this.pdf.setPage(Nt);
-      var Ct = Nt === 1 ? this.posY + this.margin[0] : this.margin[0], Pt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], Dt = this.pdf.internal.pageSize.height - this.margin[2], Vt = Dt - this.margin[0], Zt = this.pdf.internal.pageSize.width - this.margin[1], te = Zt - this.margin[3], ae = Nt === 1 ? 0 : Pt + (Nt - 2) * Vt;
+      var It = Nt === 1 ? this.posY + this.margin[0] : this.margin[0], Pt = this.pdf.internal.pageSize.height - this.posY - this.margin[0] - this.margin[2], Dt = this.pdf.internal.pageSize.height - this.margin[2], Vt = Dt - this.margin[0], Zt = this.pdf.internal.pageSize.width - this.margin[1], te = Zt - this.margin[3], ae = Nt === 1 ? 0 : Pt + (Nt - 2) * Vt;
       if (this.ctx.clip_path.length !== 0) {
         var de = this.path;
-        At = JSON.parse(JSON.stringify(this.ctx.clip_path)), this.path = E(At, this.posX + this.margin[3], -1 * ae + Ct), lt.call(this, "fill", !0), this.path = de;
+        At = JSON.parse(JSON.stringify(this.ctx.clip_path)), this.path = E(At, this.posX + this.margin[3], -1 * ae + It), lt.call(this, "fill", !0), this.path = de;
       }
-      var Wt = E([JSON.parse(JSON.stringify(zt))], this.posX + this.margin[3], -ae + Ct + this.ctx.prevPageLastElemOffset)[0];
+      var Wt = E([JSON.parse(JSON.stringify(zt))], this.posX + this.margin[3], -ae + It + this.ctx.prevPageLastElemOffset)[0];
       L.scale >= 0.01 && (Lt = this.pdf.internal.getFontSize(), this.pdf.setFontSize(Lt * L.scale), Ft = this.lineWidth, this.lineWidth = Ft * L.scale);
       var ee = this.autoPaging !== "text";
       if (ee || Wt.y + Wt.h <= Dt) {
-        if (ee || Wt.y >= Ct && Wt.x <= Zt) {
-          var It = ee ? L.text : this.pdf.splitTextToSize(L.text, L.maxWidth || Zt - Wt.x)[0], Ve = E([JSON.parse(JSON.stringify(Et))], this.posX + this.margin[3], -ae + Ct + this.ctx.prevPageLastElemOffset)[0], se = ee && (Nt > Mt || Nt < xt) && P.call(this);
-          se && (this.pdf.saveGraphicsState(), this.pdf.rect(this.margin[3], this.margin[0], te, Vt, null).clip().discardPath()), this.pdf.text(It, Ve.x, Ve.y, { angle: L.angle, align: j, renderingMode: L.renderingMode }), se && this.pdf.restoreGraphicsState();
+        if (ee || Wt.y >= It && Wt.x <= Zt) {
+          var Ct = ee ? L.text : this.pdf.splitTextToSize(L.text, L.maxWidth || Zt - Wt.x)[0], Ve = E([JSON.parse(JSON.stringify(Et))], this.posX + this.margin[3], -ae + It + this.ctx.prevPageLastElemOffset)[0], se = ee && (Nt > Mt || Nt < xt) && P.call(this);
+          se && (this.pdf.saveGraphicsState(), this.pdf.rect(this.margin[3], this.margin[0], te, Vt, null).clip().discardPath()), this.pdf.text(Ct, Ve.x, Ve.y, { angle: L.angle, align: j, renderingMode: L.renderingMode }), se && this.pdf.restoreGraphicsState();
         }
       } else Wt.y < Dt && (this.ctx.prevPageLastElemOffset += Dt - Wt.y);
       L.scale >= 0.01 && (this.pdf.setFontSize(Lt), this.lineWidth = Ft);
@@ -4375,9 +4375,9 @@ var ro, Nc, Sc, ds = ["times"];
     var et = L + 0.5 * (M - L), rt = j + 0.5 * (W - j), At = J + 0.5 * (M - J), Lt = Q + 0.5 * (W - Q), Ft = Math.min(L, J, et, At), Et = Math.max(L, J, et, At), zt = Math.min(j, Q, rt, Lt), ct = Math.max(j, Q, rt, Lt);
     return new h(Ft, zt, Et - Ft, ct - zt);
   }, ut = function(L, j, M, W, J, Q, et, rt) {
-    var At, Lt, Ft, Et, zt, ct, D, Xt, Mt, xt, Nt, Ct, Pt, Dt, Vt = M - L, Zt = W - j, te = J - M, ae = Q - W, de = et - J, Wt = rt - Q;
-    for (Lt = 0; Lt < 41; Lt++) Mt = (D = (Ft = L + (At = Lt / 40) * Vt) + At * ((zt = M + At * te) - Ft)) + At * (zt + At * (J + At * de - zt) - D), xt = (Xt = (Et = j + At * Zt) + At * ((ct = W + At * ae) - Et)) + At * (ct + At * (Q + At * Wt - ct) - Xt), Lt == 0 ? (Nt = Mt, Ct = xt, Pt = Mt, Dt = xt) : (Nt = Math.min(Nt, Mt), Ct = Math.min(Ct, xt), Pt = Math.max(Pt, Mt), Dt = Math.max(Dt, xt));
-    return new h(Math.round(Nt), Math.round(Ct), Math.round(Pt - Nt), Math.round(Dt - Ct));
+    var At, Lt, Ft, Et, zt, ct, D, Xt, Mt, xt, Nt, It, Pt, Dt, Vt = M - L, Zt = W - j, te = J - M, ae = Q - W, de = et - J, Wt = rt - Q;
+    for (Lt = 0; Lt < 41; Lt++) Mt = (D = (Ft = L + (At = Lt / 40) * Vt) + At * ((zt = M + At * te) - Ft)) + At * (zt + At * (J + At * de - zt) - D), xt = (Xt = (Et = j + At * Zt) + At * ((ct = W + At * ae) - Et)) + At * (ct + At * (Q + At * Wt - ct) - Xt), Lt == 0 ? (Nt = Mt, It = xt, Pt = Mt, Dt = xt) : (Nt = Math.min(Nt, Mt), It = Math.min(It, xt), Pt = Math.max(Pt, Mt), Dt = Math.max(Dt, xt));
+    return new h(Math.round(Nt), Math.round(It), Math.round(Pt - Nt), Math.round(Dt - It));
   }, kt = function() {
     if (this.prevLineDash || this.ctx.lineDash.length || this.ctx.lineDashOffset) {
       var L, j, M = (L = this.ctx.lineDash, j = this.ctx.lineDashOffset, JSON.stringify({ lineDash: L, lineDashOffset: j }));
@@ -4969,8 +4969,8 @@ var Ai, io, _c, Pc, kc, Fh = function() {
     var l = this.pixelBitlength / 8, h = new Uint8Array(this.width * this.height * l), f = 0, g = this;
     if (o == null && (o = this.imgData), o.length === 0) return new Uint8Array(0);
     function m(w, S, d, O) {
-      var P, B, _, E, Y, at, lt, yt, tt, R, gt, pt, I, k, z, q, ot, nt, ht, Z, ft, ut = Math.ceil((g.width - w) / d), kt = Math.ceil((g.height - S) / O), L = g.width == ut && g.height == kt;
-      for (k = l * ut, pt = L ? h : new Uint8Array(k * kt), at = o.length, I = 0, B = 0; I < kt && f < at; ) {
+      var P, B, _, E, Y, at, lt, yt, tt, R, gt, pt, C, k, z, q, ot, nt, ht, Z, ft, ut = Math.ceil((g.width - w) / d), kt = Math.ceil((g.height - S) / O), L = g.width == ut && g.height == kt;
+      for (k = l * ut, pt = L ? h : new Uint8Array(k * kt), at = o.length, C = 0, B = 0; C < kt && f < at; ) {
         switch (o[f++]) {
           case 0:
             for (E = ot = 0; ot < k; E = ot += 1) pt[B++] = o[f++];
@@ -4979,25 +4979,25 @@ var Ai, io, _c, Pc, kc, Fh = function() {
             for (E = nt = 0; nt < k; E = nt += 1) P = o[f++], Y = E < l ? 0 : pt[B - l], pt[B++] = (P + Y) % 256;
             break;
           case 2:
-            for (E = ht = 0; ht < k; E = ht += 1) P = o[f++], _ = (E - E % l) / l, z = I && pt[(I - 1) * k + _ * l + E % l], pt[B++] = (z + P) % 256;
+            for (E = ht = 0; ht < k; E = ht += 1) P = o[f++], _ = (E - E % l) / l, z = C && pt[(C - 1) * k + _ * l + E % l], pt[B++] = (z + P) % 256;
             break;
           case 3:
-            for (E = Z = 0; Z < k; E = Z += 1) P = o[f++], _ = (E - E % l) / l, Y = E < l ? 0 : pt[B - l], z = I && pt[(I - 1) * k + _ * l + E % l], pt[B++] = (P + Math.floor((Y + z) / 2)) % 256;
+            for (E = Z = 0; Z < k; E = Z += 1) P = o[f++], _ = (E - E % l) / l, Y = E < l ? 0 : pt[B - l], z = C && pt[(C - 1) * k + _ * l + E % l], pt[B++] = (P + Math.floor((Y + z) / 2)) % 256;
             break;
           case 4:
-            for (E = ft = 0; ft < k; E = ft += 1) P = o[f++], _ = (E - E % l) / l, Y = E < l ? 0 : pt[B - l], I === 0 ? z = q = 0 : (z = pt[(I - 1) * k + _ * l + E % l], q = _ && pt[(I - 1) * k + (_ - 1) * l + E % l]), lt = Y + z - q, yt = Math.abs(lt - Y), R = Math.abs(lt - z), gt = Math.abs(lt - q), tt = yt <= R && yt <= gt ? Y : R <= gt ? z : q, pt[B++] = (P + tt) % 256;
+            for (E = ft = 0; ft < k; E = ft += 1) P = o[f++], _ = (E - E % l) / l, Y = E < l ? 0 : pt[B - l], C === 0 ? z = q = 0 : (z = pt[(C - 1) * k + _ * l + E % l], q = _ && pt[(C - 1) * k + (_ - 1) * l + E % l]), lt = Y + z - q, yt = Math.abs(lt - Y), R = Math.abs(lt - z), gt = Math.abs(lt - q), tt = yt <= R && yt <= gt ? Y : R <= gt ? z : q, pt[B++] = (P + tt) % 256;
             break;
           default:
             throw new Error("Invalid filter algorithm: " + o[f - 1]);
         }
         if (!L) {
-          var j = ((S + I * O) * g.width + w) * l, M = I * k;
+          var j = ((S + C * O) * g.width + w) * l, M = C * k;
           for (E = 0; E < ut; E += 1) {
             for (var W = 0; W < l; W += 1) h[j++] = pt[M++];
             j += (d - 1) * l;
           }
         }
-        I++;
+        C++;
       }
     }
     return o = uh(o), g.interlaceMethod == 1 ? (m(0, 0, 8, 8), m(4, 0, 8, 8), m(0, 4, 4, 8), m(2, 0, 4, 4), m(0, 2, 2, 4), m(1, 0, 2, 2), m(0, 1, 1, 2)) : m(0, 0, 1, 1), h;
@@ -5118,9 +5118,9 @@ function jh(i) {
         case 255:
           if (i[e] !== 11 || i[e + 1] == 78 && i[e + 2] == 69 && i[e + 3] == 84 && i[e + 4] == 83 && i[e + 5] == 67 && i[e + 6] == 65 && i[e + 7] == 80 && i[e + 8] == 69 && i[e + 9] == 50 && i[e + 10] == 46 && i[e + 11] == 48 && i[e + 12] == 3 && i[e + 13] == 1 && i[e + 16] == 0) e += 14, O = i[e++] | i[e++] << 8, e++;
           else for (e += 12; ; ) {
-            if (!((I = i[e++]) >= 0)) throw Error("Invalid block size");
-            if (I === 0) break;
-            e += I;
+            if (!((C = i[e++]) >= 0)) throw Error("Invalid block size");
+            if (C === 0) break;
+            e += C;
           }
           break;
         case 249:
@@ -5130,9 +5130,9 @@ function jh(i) {
           break;
         case 254:
           for (; ; ) {
-            if (!((I = i[e++]) >= 0)) throw Error("Invalid block size");
-            if (I === 0) break;
-            e += I;
+            if (!((C = i[e++]) >= 0)) throw Error("Invalid block size");
+            if (C === 0) break;
+            e += C;
           }
           break;
         default:
@@ -5144,10 +5144,10 @@ function jh(i) {
       at >> 7 && (gt = !0, tt = e, R = yt, e += 3 * yt);
       var pt = e;
       for (e++; ; ) {
-        var I;
-        if (!((I = i[e++]) >= 0)) throw Error("Invalid block size");
-        if (I === 0) break;
-        e += I;
+        var C;
+        if (!((C = i[e++]) >= 0)) throw Error("Invalid block size");
+        if (C === 0) break;
+        e += C;
       }
       m.push({ x: B, y: _, width: E, height: Y, has_local_palette: gt, palette_offset: tt, palette_size: R, data_offset: pt, data_length: e - pt, transparent_index: S, interlaced: !!lt, delay: w, disposal: d });
       break;
@@ -5166,7 +5166,7 @@ function jh(i) {
     return m[k];
   }, this.decodeAndBlitFrameBGRA = function(k, z) {
     var q = this.frameInfo(k), ot = q.width * q.height, nt = new Uint8Array(ot);
-    Cc(i, q.data_offset, nt, ot);
+    Ic(i, q.data_offset, nt, ot);
     var ht = q.palette_offset, Z = q.transparent_index;
     Z === null && (Z = 256);
     var ft = q.width, ut = n - ft, kt = ft, L = 4 * (q.y * n + q.x), j = 4 * ((q.y + q.height) * n + q.x), M = L, W = 4 * ut;
@@ -5182,7 +5182,7 @@ function jh(i) {
     }
   }, this.decodeAndBlitFrameRGBA = function(k, z) {
     var q = this.frameInfo(k), ot = q.width * q.height, nt = new Uint8Array(ot);
-    Cc(i, q.data_offset, nt, ot);
+    Ic(i, q.data_offset, nt, ot);
     var ht = q.palette_offset, Z = q.transparent_index;
     Z === null && (Z = 256);
     var ft = q.width, ut = n - ft, kt = ft, L = 4 * (q.y * n + q.x), j = 4 * ((q.y + q.height) * n + q.x), M = L, W = 4 * ut;
@@ -5198,7 +5198,7 @@ function jh(i) {
     }
   };
 }
-function Cc(i, e, n, r) {
+function Ic(i, e, n, r) {
   for (var s = i[e++], o = 1 << s, l = o + 1, h = l + 1, f = s + 1, g = (1 << f) - 1, m = 0, w = 0, S = 0, d = i[e++], O = new Int32Array(4096), P = null; ; ) {
     for (; m < 16 && d !== 0; ) w |= i[e++] << m, m += 8, d === 1 ? d = i[e++] : --d;
     if (m < f) break;
@@ -5249,7 +5249,7 @@ function Cc(i, e, n, r) {
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 function gs(i) {
-  var e, n, r, s, o, l = Math.floor, h = new Array(64), f = new Array(64), g = new Array(64), m = new Array(64), w = new Array(65535), S = new Array(65535), d = new Array(64), O = new Array(64), P = [], B = 0, _ = 7, E = new Array(64), Y = new Array(64), at = new Array(64), lt = new Array(256), yt = new Array(2048), tt = [0, 1, 5, 6, 14, 15, 27, 28, 2, 4, 7, 13, 16, 26, 29, 42, 3, 8, 12, 17, 25, 30, 41, 43, 9, 11, 18, 24, 31, 40, 44, 53, 10, 19, 23, 32, 39, 45, 52, 54, 20, 22, 33, 38, 46, 51, 55, 60, 21, 34, 37, 47, 50, 56, 59, 61, 35, 36, 48, 49, 57, 58, 62, 63], R = [0, 0, 1, 5, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], gt = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], pt = [0, 0, 2, 1, 3, 3, 2, 4, 3, 5, 5, 4, 4, 0, 0, 1, 125], I = [1, 2, 3, 0, 4, 17, 5, 18, 33, 49, 65, 6, 19, 81, 97, 7, 34, 113, 20, 50, 129, 145, 161, 8, 35, 66, 177, 193, 21, 82, 209, 240, 36, 51, 98, 114, 130, 9, 10, 22, 23, 24, 25, 26, 37, 38, 39, 40, 41, 42, 52, 53, 54, 55, 56, 57, 58, 67, 68, 69, 70, 71, 72, 73, 74, 83, 84, 85, 86, 87, 88, 89, 90, 99, 100, 101, 102, 103, 104, 105, 106, 115, 116, 117, 118, 119, 120, 121, 122, 131, 132, 133, 134, 135, 136, 137, 138, 146, 147, 148, 149, 150, 151, 152, 153, 154, 162, 163, 164, 165, 166, 167, 168, 169, 170, 178, 179, 180, 181, 182, 183, 184, 185, 186, 194, 195, 196, 197, 198, 199, 200, 201, 202, 210, 211, 212, 213, 214, 215, 216, 217, 218, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250], k = [0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], z = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], q = [0, 0, 2, 1, 2, 4, 4, 3, 4, 7, 5, 4, 4, 0, 1, 2, 119], ot = [0, 1, 2, 3, 17, 4, 5, 33, 49, 6, 18, 65, 81, 7, 97, 113, 19, 34, 50, 129, 8, 20, 66, 145, 161, 177, 193, 9, 35, 51, 82, 240, 21, 98, 114, 209, 10, 22, 36, 52, 225, 37, 241, 23, 24, 25, 26, 38, 39, 40, 41, 42, 53, 54, 55, 56, 57, 58, 67, 68, 69, 70, 71, 72, 73, 74, 83, 84, 85, 86, 87, 88, 89, 90, 99, 100, 101, 102, 103, 104, 105, 106, 115, 116, 117, 118, 119, 120, 121, 122, 130, 131, 132, 133, 134, 135, 136, 137, 138, 146, 147, 148, 149, 150, 151, 152, 153, 154, 162, 163, 164, 165, 166, 167, 168, 169, 170, 178, 179, 180, 181, 182, 183, 184, 185, 186, 194, 195, 196, 197, 198, 199, 200, 201, 202, 210, 211, 212, 213, 214, 215, 216, 217, 218, 226, 227, 228, 229, 230, 231, 232, 233, 234, 242, 243, 244, 245, 246, 247, 248, 249, 250];
+  var e, n, r, s, o, l = Math.floor, h = new Array(64), f = new Array(64), g = new Array(64), m = new Array(64), w = new Array(65535), S = new Array(65535), d = new Array(64), O = new Array(64), P = [], B = 0, _ = 7, E = new Array(64), Y = new Array(64), at = new Array(64), lt = new Array(256), yt = new Array(2048), tt = [0, 1, 5, 6, 14, 15, 27, 28, 2, 4, 7, 13, 16, 26, 29, 42, 3, 8, 12, 17, 25, 30, 41, 43, 9, 11, 18, 24, 31, 40, 44, 53, 10, 19, 23, 32, 39, 45, 52, 54, 20, 22, 33, 38, 46, 51, 55, 60, 21, 34, 37, 47, 50, 56, 59, 61, 35, 36, 48, 49, 57, 58, 62, 63], R = [0, 0, 1, 5, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], gt = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], pt = [0, 0, 2, 1, 3, 3, 2, 4, 3, 5, 5, 4, 4, 0, 0, 1, 125], C = [1, 2, 3, 0, 4, 17, 5, 18, 33, 49, 65, 6, 19, 81, 97, 7, 34, 113, 20, 50, 129, 145, 161, 8, 35, 66, 177, 193, 21, 82, 209, 240, 36, 51, 98, 114, 130, 9, 10, 22, 23, 24, 25, 26, 37, 38, 39, 40, 41, 42, 52, 53, 54, 55, 56, 57, 58, 67, 68, 69, 70, 71, 72, 73, 74, 83, 84, 85, 86, 87, 88, 89, 90, 99, 100, 101, 102, 103, 104, 105, 106, 115, 116, 117, 118, 119, 120, 121, 122, 131, 132, 133, 134, 135, 136, 137, 138, 146, 147, 148, 149, 150, 151, 152, 153, 154, 162, 163, 164, 165, 166, 167, 168, 169, 170, 178, 179, 180, 181, 182, 183, 184, 185, 186, 194, 195, 196, 197, 198, 199, 200, 201, 202, 210, 211, 212, 213, 214, 215, 216, 217, 218, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250], k = [0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], z = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], q = [0, 0, 2, 1, 2, 4, 4, 3, 4, 7, 5, 4, 4, 0, 1, 2, 119], ot = [0, 1, 2, 3, 17, 4, 5, 33, 49, 6, 18, 65, 81, 7, 97, 113, 19, 34, 50, 129, 8, 20, 66, 145, 161, 177, 193, 9, 35, 51, 82, 240, 21, 98, 114, 209, 10, 22, 36, 52, 225, 37, 241, 23, 24, 25, 26, 38, 39, 40, 41, 42, 53, 54, 55, 56, 57, 58, 67, 68, 69, 70, 71, 72, 73, 74, 83, 84, 85, 86, 87, 88, 89, 90, 99, 100, 101, 102, 103, 104, 105, 106, 115, 116, 117, 118, 119, 120, 121, 122, 130, 131, 132, 133, 134, 135, 136, 137, 138, 146, 147, 148, 149, 150, 151, 152, 153, 154, 162, 163, 164, 165, 166, 167, 168, 169, 170, 178, 179, 180, 181, 182, 183, 184, 185, 186, 194, 195, 196, 197, 198, 199, 200, 201, 202, 210, 211, 212, 213, 214, 215, 216, 217, 218, 226, 227, 228, 229, 230, 231, 232, 233, 234, 242, 243, 244, 245, 246, 247, 248, 249, 250];
   function nt(L, j) {
     for (var M = 0, W = 0, J = new Array(), Q = 1; Q <= 16; Q++) {
       for (var et = 1; et <= L[Q]; et++) J[j[W]] = [], J[j[W]][0] = M, J[j[W]][1] = Q, W++, M++;
@@ -5268,24 +5268,24 @@ function gs(i) {
   }
   function ut(L, j, M, W, J) {
     for (var Q, et = J[0], rt = J[240], At = function(xt, Nt) {
-      var Ct, Pt, Dt, Vt, Zt, te, ae, de, Wt, ee, It = 0;
+      var It, Pt, Dt, Vt, Zt, te, ae, de, Wt, ee, Ct = 0;
       for (Wt = 0; Wt < 8; ++Wt) {
-        Ct = xt[It], Pt = xt[It + 1], Dt = xt[It + 2], Vt = xt[It + 3], Zt = xt[It + 4], te = xt[It + 5], ae = xt[It + 6];
-        var Ve = Ct + (de = xt[It + 7]), se = Ct - de, xn = Pt + ae, me = Pt - ae, Le = Dt + te, Tn = Dt - te, le = Vt + Zt, Er = Vt - Zt, Ne = Ve + le, Ln = Ve - le, Qn = xn + Le, Se = xn - Le;
-        xt[It] = Ne + Qn, xt[It + 4] = Ne - Qn;
+        It = xt[Ct], Pt = xt[Ct + 1], Dt = xt[Ct + 2], Vt = xt[Ct + 3], Zt = xt[Ct + 4], te = xt[Ct + 5], ae = xt[Ct + 6];
+        var Ve = It + (de = xt[Ct + 7]), se = It - de, xn = Pt + ae, me = Pt - ae, Le = Dt + te, Tn = Dt - te, le = Vt + Zt, Er = Vt - Zt, Ne = Ve + le, Ln = Ve - le, Qn = xn + Le, Se = xn - Le;
+        xt[Ct] = Ne + Qn, xt[Ct + 4] = Ne - Qn;
         var Yt = 0.707106781 * (Se + Ln);
-        xt[It + 2] = Ln + Yt, xt[It + 6] = Ln - Yt;
+        xt[Ct + 2] = Ln + Yt, xt[Ct + 6] = Ln - Yt;
         var he = 0.382683433 * ((Ne = Er + Tn) - (Se = me + se)), Br = 0.5411961 * Ne + he, We = 1.306562965 * Se + he, zn = 0.707106781 * (Qn = Tn + me), Un = se + zn, Tt = se - zn;
-        xt[It + 5] = Tt + Br, xt[It + 3] = Tt - Br, xt[It + 1] = Un + We, xt[It + 7] = Un - We, It += 8;
+        xt[Ct + 5] = Tt + Br, xt[Ct + 3] = Tt - Br, xt[Ct + 1] = Un + We, xt[Ct + 7] = Un - We, Ct += 8;
       }
-      for (It = 0, Wt = 0; Wt < 8; ++Wt) {
-        Ct = xt[It], Pt = xt[It + 8], Dt = xt[It + 16], Vt = xt[It + 24], Zt = xt[It + 32], te = xt[It + 40], ae = xt[It + 48];
-        var An = Ct + (de = xt[It + 56]), Hn = Ct - de, en = Pt + ae, qe = Pt - ae, Ee = Dt + te, hn = Dt - te, Jr = Vt + Zt, tr = Vt - Zt, Nn = An + Jr, Sn = An - Jr, _n = en + Ee, Wn = en - Ee;
-        xt[It] = Nn + _n, xt[It + 32] = Nn - _n;
+      for (Ct = 0, Wt = 0; Wt < 8; ++Wt) {
+        It = xt[Ct], Pt = xt[Ct + 8], Dt = xt[Ct + 16], Vt = xt[Ct + 24], Zt = xt[Ct + 32], te = xt[Ct + 40], ae = xt[Ct + 48];
+        var An = It + (de = xt[Ct + 56]), Hn = It - de, en = Pt + ae, qe = Pt - ae, Ee = Dt + te, hn = Dt - te, Jr = Vt + Zt, tr = Vt - Zt, Nn = An + Jr, Sn = An - Jr, _n = en + Ee, Wn = en - Ee;
+        xt[Ct] = Nn + _n, xt[Ct + 32] = Nn - _n;
         var gn = 0.707106781 * (Wn + Sn);
-        xt[It + 16] = Sn + gn, xt[It + 48] = Sn - gn;
+        xt[Ct + 16] = Sn + gn, xt[Ct + 48] = Sn - gn;
         var Gn = 0.382683433 * ((Nn = tr + hn) - (Wn = qe + Hn)), Mr = 0.5411961 * Nn + Gn, Xr = 1.306562965 * Wn + Gn, $r = 0.707106781 * (_n = hn + qe), Kr = Hn + $r, Zr = Hn - $r;
-        xt[It + 40] = Zr + Mr, xt[It + 24] = Zr - Mr, xt[It + 8] = Kr + Xr, xt[It + 56] = Kr - Xr, It++;
+        xt[Ct + 40] = Zr + Mr, xt[Ct + 24] = Zr - Mr, xt[Ct + 8] = Kr + Xr, xt[Ct + 56] = Kr - Xr, Ct++;
       }
       for (Wt = 0; Wt < 64; ++Wt) ee = xt[Wt] * Nt[Wt], d[Wt] = ee > 0 ? ee + 0.5 | 0 : ee - 0.5 | 0;
       return d;
@@ -5333,7 +5333,7 @@ function gs(i) {
       for (var Dt = 0; Dt <= 11; Dt++) Z(gt[Dt]);
       Z(16);
       for (var Vt = 0; Vt < 16; Vt++) Z(pt[Vt + 1]);
-      for (var Zt = 0; Zt <= 161; Zt++) Z(I[Zt]);
+      for (var Zt = 0; Zt <= 161; Zt++) Z(C[Zt]);
       Z(1);
       for (var te = 0; te < 16; te++) Z(k[te + 1]);
       for (var ae = 0; ae <= 11; ae++) Z(z[ae]);
@@ -5351,13 +5351,13 @@ function gs(i) {
       Nt += 8;
     }
     if (_ >= 0) {
-      var Ct = [];
-      Ct[1] = _ + 1, Ct[0] = (1 << _ + 1) - 1, ht(Ct);
+      var It = [];
+      It[1] = _ + 1, It[0] = (1 << _ + 1) - 1, ht(It);
     }
     return ft(65497), new Uint8Array(P);
   }, i = i || 50, function() {
     for (var L = String.fromCharCode, j = 0; j < 256; j++) lt[j] = L(j);
-  }(), e = nt(R, gt), n = nt(k, z), r = nt(pt, I), s = nt(q, ot), function() {
+  }(), e = nt(R, gt), n = nt(k, z), r = nt(pt, C), s = nt(q, ot), function() {
     for (var L = 1, j = 2, M = 1; M <= 15; M++) {
       for (var W = L; W < j; W++) S[32767 + W] = M, w[32767 + W] = [], w[32767 + W][1] = M, w[32767 + W][0] = W;
       for (var J = -(j - 1); J <= -L; J++) S[32767 + J] = M, w[32767 + J] = [], w[32767 + J][1] = M, w[32767 + J][0] = j - 1 + J;
@@ -5378,31 +5378,31 @@ function Dn(i, e) {
   if (this.pos = 0, this.buffer = i, this.datav = new DataView(i.buffer), this.is_with_alpha = !!e, this.bottom_up = !0, this.flag = String.fromCharCode(this.buffer[0]) + String.fromCharCode(this.buffer[1]), this.pos += 2, ["BM", "BA", "CI", "CP", "IC", "PT"].indexOf(this.flag) === -1) throw new Error("Invalid BMP File");
   this.parseHeader(), this.parseBGR();
 }
-function Ic(i) {
+function Cc(i) {
   function e(R) {
     if (!R) throw Error("assert :P");
   }
   function n(R, gt, pt) {
-    for (var I = 0; 4 > I; I++) if (R[gt + I] != pt.charCodeAt(I)) return !0;
+    for (var C = 0; 4 > C; C++) if (R[gt + C] != pt.charCodeAt(C)) return !0;
     return !1;
   }
-  function r(R, gt, pt, I, k) {
-    for (var z = 0; z < k; z++) R[gt + z] = pt[I + z];
+  function r(R, gt, pt, C, k) {
+    for (var z = 0; z < k; z++) R[gt + z] = pt[C + z];
   }
-  function s(R, gt, pt, I) {
-    for (var k = 0; k < I; k++) R[gt + k] = pt;
+  function s(R, gt, pt, C) {
+    for (var k = 0; k < C; k++) R[gt + k] = pt;
   }
   function o(R) {
     return new Int32Array(R);
   }
   function l(R, gt) {
-    for (var pt = [], I = 0; I < R; I++) pt.push(new gt());
+    for (var pt = [], C = 0; C < R; C++) pt.push(new gt());
     return pt;
   }
   function h(R, gt) {
     var pt = [];
-    return function I(k, z, q) {
-      for (var ot = q[z], nt = 0; nt < ot && (k.push(q.length > z + 1 ? [] : new gt()), !(q.length < z + 1)); nt++) I(k[nt], z + 1, q);
+    return function C(k, z, q) {
+      for (var ot = q[z], nt = 0; nt < ot && (k.push(q.length > z + 1 ? [] : new gt()), !(q.length < z + 1)); nt++) C(k[nt], z + 1, q);
     }(pt, 0, R), pt;
   }
   var f = function() {
@@ -5417,35 +5417,35 @@ function Ic(i) {
         t[a + (p -= u)] = v;
       while (0 < p);
     }
-    function I(t, a, u, p, v) {
+    function C(t, a, u, p, v) {
       if (e(2328 >= v), 512 >= v) var y = o(512);
       else if ((y = o(v)) == null) return 0;
-      return function(x, A, N, C, U, $) {
+      return function(x, A, N, I, U, $) {
         var K, V, vt = A, it = 1 << N, H = o(16), G = o(16);
-        for (e(U != 0), e(C != null), e(x != null), e(0 < N), V = 0; V < U; ++V) {
-          if (15 < C[V]) return 0;
-          ++H[C[V]];
+        for (e(U != 0), e(I != null), e(x != null), e(0 < N), V = 0; V < U; ++V) {
+          if (15 < I[V]) return 0;
+          ++H[I[V]];
         }
         if (H[0] == U) return 0;
         for (G[1] = 0, K = 1; 15 > K; ++K) {
           if (H[K] > 1 << K) return 0;
           G[K + 1] = G[K] + H[K];
         }
-        for (V = 0; V < U; ++V) K = C[V], 0 < C[V] && ($[G[K]++] = V);
-        if (G[15] == 1) return (C = new k()).g = 0, C.value = $[0], pt(x, vt, 1, it, C), it;
+        for (V = 0; V < U; ++V) K = I[V], 0 < I[V] && ($[G[K]++] = V);
+        if (G[15] == 1) return (I = new k()).g = 0, I.value = $[0], pt(x, vt, 1, it, I), it;
         var dt, bt = -1, mt = it - 1, Ot = 0, St = 1, Rt = 1, _t = 1 << N;
         for (V = 0, K = 1, U = 2; K <= N; ++K, U <<= 1) {
           if (St += Rt <<= 1, 0 > (Rt -= H[K])) return 0;
-          for (; 0 < H[K]; --H[K]) (C = new k()).g = K, C.value = $[V++], pt(x, vt + Ot, U, _t, C), Ot = gt(Ot, K);
+          for (; 0 < H[K]; --H[K]) (I = new k()).g = K, I.value = $[V++], pt(x, vt + Ot, U, _t, I), Ot = gt(Ot, K);
         }
         for (K = N + 1, U = 2; 15 >= K; ++K, U <<= 1) {
           if (St += Rt <<= 1, 0 > (Rt -= H[K])) return 0;
           for (; 0 < H[K]; --H[K]) {
-            if (C = new k(), (Ot & mt) != bt) {
+            if (I = new k(), (Ot & mt) != bt) {
               for (vt += _t, dt = 1 << (bt = K) - N; 15 > bt && !(0 >= (dt -= H[bt])); ) ++bt, dt <<= 1;
               it += _t = 1 << (dt = bt - N), x[A + (bt = Ot & mt)].g = dt + N, x[A + bt].value = vt - A - bt;
             }
-            C.g = K - N, C.value = $[V++], pt(x, vt + (Ot >> N), U, _t, C), Ot = gt(Ot, K);
+            I.g = K - N, I.value = $[V++], pt(x, vt + (Ot >> N), U, _t, I), Ot = gt(Ot, K);
           }
         }
         return St != 2 * G[15] - 1 ? 0 : it;
@@ -5553,14 +5553,14 @@ function Ic(i) {
     }
     function Nt(t, a) {
       R[a] = function(u, p, v, y, x, A, N) {
-        var C;
-        for (C = 0; C < x; ++C) {
-          var U = R[t](A[N + C - 1], v, y + C);
-          A[N + C] = xt(u[p + C], U);
+        var I;
+        for (I = 0; I < x; ++I) {
+          var U = R[t](A[N + I - 1], v, y + I);
+          A[N + I] = xt(u[p + I], U);
         }
       };
     }
-    function Ct() {
+    function It() {
       this.ud = this.hd = this.jd = 0;
     }
     function Pt(t, a) {
@@ -5591,23 +5591,23 @@ function Ic(i) {
     function Wt(t, a, u, p, v, y) {
       var x;
       for (x = 0; x < p; ++x) {
-        var A = a[u + x], N = A >>> 8, C = A, U = 255 & (U = (U = A >>> 16) + ((t.jd << 24 >> 24) * (N << 24 >> 24) >>> 5));
-        C = 255 & (C = (C = C + ((t.hd << 24 >> 24) * (N << 24 >> 24) >>> 5)) + ((t.ud << 24 >> 24) * (U << 24 >> 24) >>> 5)), v[y + x] = (4278255360 & A) + (U << 16) + C;
+        var A = a[u + x], N = A >>> 8, I = A, U = 255 & (U = (U = A >>> 16) + ((t.jd << 24 >> 24) * (N << 24 >> 24) >>> 5));
+        I = 255 & (I = (I = I + ((t.hd << 24 >> 24) * (N << 24 >> 24) >>> 5)) + ((t.ud << 24 >> 24) * (U << 24 >> 24) >>> 5)), v[y + x] = (4278255360 & A) + (U << 16) + I;
       }
     }
     function ee(t, a, u, p, v) {
-      R[a] = function(y, x, A, N, C, U, $, K, V) {
-        for (N = $; N < K; ++N) for ($ = 0; $ < V; ++$) C[U++] = v(A[p(y[x++])]);
-      }, R[t] = function(y, x, A, N, C, U, $) {
+      R[a] = function(y, x, A, N, I, U, $, K, V) {
+        for (N = $; N < K; ++N) for ($ = 0; $ < V; ++$) I[U++] = v(A[p(y[x++])]);
+      }, R[t] = function(y, x, A, N, I, U, $) {
         var K = 8 >> y.b, V = y.Ea, vt = y.K[0], it = y.w;
         if (8 > K) for (y = (1 << y.b) - 1, it = (1 << K) - 1; x < A; ++x) {
           var H, G = 0;
-          for (H = 0; H < V; ++H) H & y || (G = p(N[C++])), U[$++] = v(vt[G & it]), G >>= K;
+          for (H = 0; H < V; ++H) H & y || (G = p(N[I++])), U[$++] = v(vt[G & it]), G >>= K;
         }
-        else R["VP8LMapColor" + u](N, C, vt, it, U, $, x, A, V);
+        else R["VP8LMapColor" + u](N, I, vt, it, U, $, x, A, V);
       };
     }
-    function It(t, a, u, p, v) {
+    function Ct(t, a, u, p, v) {
       for (u = a + u; a < u; ) {
         var y = t[a++];
         p[v++] = y >> 16 & 255, p[v++] = y >> 8 & 255, p[v++] = y >> 0 & 255;
@@ -5666,19 +5666,19 @@ function Ic(i) {
       return alert("todo:WebPSamplerProcessPlane"), t.T;
     }
     function he(t, a) {
-      var u = t.T, p = a.ba.f.RGBA, v = p.eb, y = p.fb + t.ka * p.A, x = yn[a.ba.S], A = t.y, N = t.O, C = t.f, U = t.N, $ = t.ea, K = t.W, V = a.cc, vt = a.dc, it = a.Mc, H = a.Nc, G = t.ka, dt = t.ka + t.T, bt = t.U, mt = bt + 1 >> 1;
-      for (G == 0 ? x(A, N, null, null, C, U, $, K, C, U, $, K, v, y, null, null, bt) : (x(a.ec, a.fc, A, N, V, vt, it, H, C, U, $, K, v, y - p.A, v, y, bt), ++u); G + 2 < dt; G += 2) V = C, vt = U, it = $, H = K, U += t.Rc, K += t.Rc, y += 2 * p.A, x(A, (N += 2 * t.fa) - t.fa, A, N, V, vt, it, H, C, U, $, K, v, y - p.A, v, y, bt);
-      return N += t.fa, t.j + dt < t.o ? (r(a.ec, a.fc, A, N, bt), r(a.cc, a.dc, C, U, mt), r(a.Mc, a.Nc, $, K, mt), u--) : 1 & dt || x(A, N, null, null, C, U, $, K, C, U, $, K, v, y + p.A, null, null, bt), u;
+      var u = t.T, p = a.ba.f.RGBA, v = p.eb, y = p.fb + t.ka * p.A, x = yn[a.ba.S], A = t.y, N = t.O, I = t.f, U = t.N, $ = t.ea, K = t.W, V = a.cc, vt = a.dc, it = a.Mc, H = a.Nc, G = t.ka, dt = t.ka + t.T, bt = t.U, mt = bt + 1 >> 1;
+      for (G == 0 ? x(A, N, null, null, I, U, $, K, I, U, $, K, v, y, null, null, bt) : (x(a.ec, a.fc, A, N, V, vt, it, H, I, U, $, K, v, y - p.A, v, y, bt), ++u); G + 2 < dt; G += 2) V = I, vt = U, it = $, H = K, U += t.Rc, K += t.Rc, y += 2 * p.A, x(A, (N += 2 * t.fa) - t.fa, A, N, V, vt, it, H, I, U, $, K, v, y - p.A, v, y, bt);
+      return N += t.fa, t.j + dt < t.o ? (r(a.ec, a.fc, A, N, bt), r(a.cc, a.dc, I, U, mt), r(a.Mc, a.Nc, $, K, mt), u--) : 1 & dt || x(A, N, null, null, I, U, $, K, I, U, $, K, v, y + p.A, null, null, bt), u;
     }
     function Br(t, a, u) {
       var p = t.F, v = [t.J];
       if (p != null) {
         var y = t.U, x = a.ba.S, A = x == Ra || x == Ta;
         a = a.ba.f.RGBA;
-        var N = [0], C = t.ka;
-        N[0] = t.T, t.Kb && (C == 0 ? --N[0] : (--C, v[0] -= t.width), t.j + t.ka + t.T == t.o && (N[0] = t.o - t.j - C));
+        var N = [0], I = t.ka;
+        N[0] = t.T, t.Kb && (I == 0 ? --N[0] : (--I, v[0] -= t.width), t.j + t.ka + t.T == t.o && (N[0] = t.o - t.j - I));
         var U = a.eb;
-        C = a.fb + C * a.A, t = Ea(p, v[0], t.width, y, N, U, C + (A ? 0 : 3), a.A), e(u == N), t && le(x) && wr(U, C, A, y, N, a.A);
+        I = a.fb + I * a.A, t = Ea(p, v[0], t.width, y, N, U, I + (A ? 0 : 3), a.A), e(u == N), t && le(x) && wr(U, I, A, y, N, a.A);
       }
       return 0;
     }
@@ -5737,13 +5737,13 @@ function Ic(i) {
       a = x + a;
       var A = u, N = p;
       for (p = t.Ta, u = t.Ua; 0 < v--; ) {
-        var C = t.gc[v], U = x, $ = a, K = A, V = N, vt = (N = p, A = u, C.Ea);
-        switch (e(U < $), e($ <= C.nc), C.hc) {
+        var I = t.gc[v], U = x, $ = a, K = A, V = N, vt = (N = p, A = u, I.Ea);
+        switch (e(U < $), e($ <= I.nc), I.hc) {
           case 2:
             Oa(K, V, ($ - U) * vt, N, A);
             break;
           case 0:
-            var it = U, H = $, G = N, dt = A, bt = (_t = C).Ea;
+            var it = U, H = $, G = N, dt = A, bt = (_t = I).Ea;
             it == 0 && (zo(K, V, null, null, 1, G, dt), te(K, V + 1, 0, 0, bt - 1, G, dt + 1), V += bt, dt += bt, ++it);
             for (var mt = 1 << _t.b, Ot = mt - 1, St = Mt(bt, _t.b), Rt = _t.K, _t = _t.w + (it >> _t.b) * St; it < H; ) {
               var ce = Rt, ue = _t, oe = 1;
@@ -5753,20 +5753,20 @@ function Ic(i) {
               }
               V += bt, dt += bt, ++it & Ot || (_t += St);
             }
-            $ != C.nc && r(N, A - vt, N, A + ($ - U - 1) * vt, vt);
+            $ != I.nc && r(N, A - vt, N, A + ($ - U - 1) * vt, vt);
             break;
           case 1:
-            for (vt = K, H = V, bt = (K = C.Ea) - (dt = K & ~(G = (V = 1 << C.b) - 1)), it = Mt(K, C.b), mt = C.K, C = C.w + (U >> C.b) * it; U < $; ) {
-              for (Ot = mt, St = C, Rt = new Ct(), _t = H + dt, ce = H + K; H < _t; ) de(Ot[St++], Rt), mn(Rt, vt, H, V, N, A), H += V, A += V;
-              H < ce && (de(Ot[St++], Rt), mn(Rt, vt, H, bt, N, A), H += bt, A += bt), ++U & G || (C += it);
+            for (vt = K, H = V, bt = (K = I.Ea) - (dt = K & ~(G = (V = 1 << I.b) - 1)), it = Mt(K, I.b), mt = I.K, I = I.w + (U >> I.b) * it; U < $; ) {
+              for (Ot = mt, St = I, Rt = new It(), _t = H + dt, ce = H + K; H < _t; ) de(Ot[St++], Rt), mn(Rt, vt, H, V, N, A), H += V, A += V;
+              H < ce && (de(Ot[St++], Rt), mn(Rt, vt, H, bt, N, A), H += bt, A += bt), ++U & G || (I += it);
             }
             break;
           case 3:
-            if (K == N && V == A && 0 < C.b) {
-              for (H = N, K = vt = A + ($ - U) * vt - (dt = ($ - U) * Mt(C.Ea, C.b)), V = N, G = A, it = [], dt = (bt = dt) - 1; 0 <= dt; --dt) it[dt] = V[G + dt];
+            if (K == N && V == A && 0 < I.b) {
+              for (H = N, K = vt = A + ($ - U) * vt - (dt = ($ - U) * Mt(I.Ea, I.b)), V = N, G = A, it = [], dt = (bt = dt) - 1; 0 <= dt; --dt) it[dt] = V[G + dt];
               for (dt = bt - 1; 0 <= dt; --dt) H[K + dt] = it[dt];
-              In(C, U, $, N, vt, N, A);
-            } else In(C, U, $, K, V, N, A);
+              Cn(I, U, $, N, vt, N, A);
+            } else Cn(I, U, $, K, V, N, A);
         }
         A = p, N = u;
       }
@@ -5777,14 +5777,14 @@ function Ic(i) {
       if (e(a <= t.l.o), e(16 >= v), 0 < v) {
         var y = t.l, x = t.Ta, A = t.Ua, N = y.width;
         if (hn(t, v, u, p), v = A = [A], e((u = t.C) < (p = a)), e(y.v < y.va), p > y.o && (p = y.o), u < y.j) {
-          var C = y.j - u;
-          u = y.j, v[0] += C * N;
+          var I = y.j - u;
+          u = y.j, v[0] += I * N;
         }
         if (u >= p ? u = 0 : (v[0] += 4 * y.v, y.ka = u - y.j, y.U = y.va - y.v, y.T = p - u, u = 1), u) {
           if (A = A[0], 11 > (u = t.ca).S) {
-            var U = u.f.RGBA, $ = (p = u.S, v = y.U, y = y.T, C = U.eb, U.A), K = y;
+            var U = u.f.RGBA, $ = (p = u.S, v = y.U, y = y.T, I = U.eb, U.A), K = y;
             for (U = U.fb + t.Ma * U.A; 0 < K--; ) {
-              var V = x, vt = A, it = v, H = C, G = U;
+              var V = x, vt = A, it = v, H = I, G = U;
               switch (p) {
                 case Ma:
                   Fn(V, vt, it, H, G);
@@ -5850,13 +5850,13 @@ function Ic(i) {
     function Sn(t, a) {
       var u = t.l.ma, p = u.Z == 0 || u.Z == 1 ? t.l.j : t.C;
       if (p = t.C < p ? p : t.C, e(a <= t.l.o), a > p) {
-        var v = t.l.width, y = u.ca, x = u.tb + v * p, A = t.V, N = t.Ba + t.c * p, C = t.gc;
-        e(t.ab == 1), e(C[0].hc == 3), Uo(C[0], p, a, A, N, y, x), Nn(u, p, a, y, x, v);
+        var v = t.l.width, y = u.ca, x = u.tb + v * p, A = t.V, N = t.Ba + t.c * p, I = t.gc;
+        e(t.ab == 1), e(I[0].hc == 3), Uo(I[0], p, a, A, N, y, x), Nn(u, p, a, y, x, v);
       }
       t.C = t.Ma = a;
     }
     function _n(t, a, u, p, v, y, x) {
-      var A = t.$ / p, N = t.$ % p, C = t.m, U = t.s, $ = u + t.$, K = $;
+      var A = t.$ / p, N = t.$ % p, I = t.m, U = t.s, $ = u + t.$, K = $;
       v = u + p * v;
       var V = u + p * y, vt = 280 + U.ua, it = t.Pb ? A : 16777216, H = 0 < U.ua ? U.Wa : null, G = U.wc, dt = $ < V ? Ee(U, N, A) : null;
       e(t.C < y), e(V <= v);
@@ -5868,21 +5868,21 @@ function Ic(i) {
             var Ot = $ - u;
             e((it = t).Pb), it.wd = it.m, it.xd = Ot, 0 < it.s.ua && ct(it.s.Wa, it.s.vb), it = A + nl;
           }
-          if (N & G || (dt = Ee(U, N, A)), e(dt != null), dt.Qb && (a[$] = dt.qb, bt = !0), !bt) if (J(C), dt.jc) {
-            mt = C, Ot = a;
+          if (N & G || (dt = Ee(U, N, A)), e(dt != null), dt.Qb && (a[$] = dt.qb, bt = !0), !bt) if (J(I), dt.jc) {
+            mt = I, Ot = a;
             var St = $, Rt = dt.pd[j(mt) & rn - 1];
             e(dt.jc), 256 > Rt.g ? (W(mt, mt.u + Rt.g), Ot[St] = Rt.value, mt = 0) : (W(mt, mt.u + Rt.g - 256), e(256 <= Rt.value), mt = Rt.value), mt == 0 && (bt = !0);
-          } else mt = en(dt.G[0], dt.H[0], C);
-          if (C.h) break;
+          } else mt = en(dt.G[0], dt.H[0], I);
+          if (I.h) break;
           if (bt || 256 > mt) {
             if (!bt) if (dt.nd) a[$] = (dt.qb | mt << 8) >>> 0;
             else {
-              if (J(C), bt = en(dt.G[1], dt.H[1], C), J(C), Ot = en(dt.G[2], dt.H[2], C), St = en(dt.G[3], dt.H[3], C), C.h) break;
+              if (J(I), bt = en(dt.G[1], dt.H[1], I), J(I), Ot = en(dt.G[2], dt.H[2], I), St = en(dt.G[3], dt.H[3], I), I.h) break;
               a[$] = (St << 24 | bt << 16 | mt << 8 | Ot) >>> 0;
             }
             if (bt = !1, ++$, ++N >= p && (N = 0, ++A, x != null && A <= y && !(A % 16) && x(t, A), H != null)) for (; K < $; ) mt = a[K++], H.X[(506832829 * mt & 4294967295) >>> H.Mb] = mt;
           } else if (280 > mt) {
-            if (mt = An(mt - 256, C), Ot = en(dt.G[4], dt.H[4], C), J(C), Ot = Hn(p, Ot = An(Ot, C)), C.h) break;
+            if (mt = An(mt - 256, I), Ot = en(dt.G[4], dt.H[4], I), J(I), Ot = Hn(p, Ot = An(Ot, I)), I.h) break;
             if ($ - u < Ot || v - $ < mt) break t;
             for (St = 0; St < mt; ++St) a[$ + St] = a[$ + St - Ot];
             for ($ += mt, N += mt; N >= p; ) N -= p, ++A, x != null && A <= y && !(A % 16) && x(t, A);
@@ -5892,11 +5892,11 @@ function Ic(i) {
             for (bt = mt - 280, e(H != null); K < $; ) mt = a[K++], H.X[(506832829 * mt & 4294967295) >>> H.Mb] = mt;
             mt = $, e(!(bt >>> (Ot = H).Xa)), a[mt] = Ot.X[bt], bt = !0;
           }
-          bt || e(C.h == M(C));
+          bt || e(I.h == M(I));
         }
-        if (t.Pb && C.h && $ < v) e(t.m.h), t.a = 5, t.m = t.wd, t.$ = t.xd, 0 < t.s.ua && ct(t.s.vb, t.s.Wa);
+        if (t.Pb && I.h && $ < v) e(t.m.h), t.a = 5, t.m = t.wd, t.$ = t.xd, 0 < t.s.ua && ct(t.s.vb, t.s.Wa);
         else {
-          if (C.h) break t;
+          if (I.h) break t;
           x != null && x(t, A > y ? y : A), t.a = 0, t.$ = $ - u;
         }
         return 1;
@@ -5910,10 +5910,10 @@ function Ic(i) {
     }
     function gn() {
       var t = new To();
-      return t == null ? null : (t.a = 0, t.xb = zs, Tn("Predictor", "VP8LPredictors"), Tn("Predictor", "VP8LPredictors_C"), Tn("PredictorAdd", "VP8LPredictorsAdd"), Tn("PredictorAdd", "VP8LPredictorsAdd_C"), Oa = ae, mn = Wt, Fn = It, vr = Ve, Yn = se, ir = xn, di = me, R.VP8LMapColor32b = Qi, R.VP8LMapColor8b = Ho, t);
+      return t == null ? null : (t.a = 0, t.xb = zs, Tn("Predictor", "VP8LPredictors"), Tn("Predictor", "VP8LPredictors_C"), Tn("PredictorAdd", "VP8LPredictorsAdd"), Tn("PredictorAdd", "VP8LPredictorsAdd_C"), Oa = ae, mn = Wt, Fn = Ct, vr = Ve, Yn = se, ir = xn, di = me, R.VP8LMapColor32b = Qi, R.VP8LMapColor8b = Ho, t);
     }
     function Gn(t, a, u, p, v) {
-      var y = 1, x = [t], A = [a], N = p.m, C = p.s, U = null, $ = 0;
+      var y = 1, x = [t], A = [a], N = p.m, I = p.s, U = null, $ = 0;
       t: for (; ; ) {
         if (u) for (; y && ut(N, 1); ) {
           var K = x, V = A, vt = p, it = 1, H = vt.m, G = vt.gc[vt.ab], dt = ut(H, 2);
@@ -5995,7 +5995,7 @@ function Ic(i) {
                     }
                     for (Ya = 0; Ya < nc; ++Ya) ec[Qc[Ya]] = ut(Nr, 3);
                     var es = void 0, oa = void 0, rc = Ja, Pl = ec, Ka = Qo, ic = aa, ns = 0, Sr = rc.m, ac = 8, oc = l(128, k);
-                    r: for (; I(oc, 0, 7, Pl, 19); ) {
+                    r: for (; C(oc, 0, 7, Pl, 19); ) {
                       if (ut(Sr, 1)) {
                         var kl = 2 + 2 * ut(Sr, 3);
                         if ((es = 2 + ut(Sr, kl)) > Ka) break r;
@@ -6007,9 +6007,9 @@ function Ic(i) {
                         var xi = sc.value;
                         if (16 > xi) ic[oa++] = xi, xi != 0 && (ac = xi);
                         else {
-                          var Cl = xi == 16, cc = xi - 16, Il = Kc[cc], lc = ut(Sr, $c[cc]) + Il;
+                          var Il = xi == 16, cc = xi - 16, Cl = Kc[cc], lc = ut(Sr, $c[cc]) + Cl;
                           if (oa + lc > Ka) break r;
-                          for (var Fl = Cl ? ac : 0; 0 < lc--; ) ic[oa++] = Fl;
+                          for (var Fl = Il ? ac : 0; 0 < lc--; ) ic[oa++] = Fl;
                         }
                       }
                       ns = 1;
@@ -6017,7 +6017,7 @@ function Ic(i) {
                     }
                     ns || (rc.a = 3), Xa = ns;
                   }
-                  (Xa = Xa && !Nr.h) && (ts = I(Ll, Al, 8, aa, Qo)), Xa && ts != 0 ? $a = ts : (Ja.a = 3, $a = 0);
+                  (Xa = Xa && !Nr.h) && (ts = C(Ll, Al, 8, aa, Qo)), Xa && ts != 0 ? $a = ts : (Ja.a = 3, $a = 0);
                 }
                 if ($a == 0) break n;
                 if (Va && Zc[Kt] == 1 && (Va = Ga[Me].g == 0), Zs += Ga[Me].g, Me += $a, 3 >= Kt) {
@@ -6044,11 +6044,11 @@ function Ic(i) {
           break t;
         }
         if (0 < $) {
-          if (C.ua = 1 << $, !zt(C.Wa, $)) {
+          if (I.ua = 1 << $, !zt(I.Wa, $)) {
             p.a = 1, y = 0;
             break t;
           }
-        } else C.ua = 0;
+        } else I.ua = 0;
         var is = p, hc = x, jl = A, as = is.s, os = as.xc;
         if (is.c = hc, is.i = jl, as.md = Mt(hc, os), as.wc = os == 0 ? -1 : (1 << os) - 1, u) {
           p.xb = ll;
@@ -6061,7 +6061,7 @@ function Ic(i) {
         y = (y = _n(p, U, 0, x, A, A, null)) && !N.h;
         break t;
       }
-      return y ? (v != null ? v[0] = U : (e(U == null), e(u)), p.$ = 0, u || Wn(C)) : Wn(C), y;
+      return y ? (v != null ? v[0] = U : (e(U == null), e(u)), p.$ = 0, u || Wn(I)) : Wn(I), y;
     }
     function Mr(t, a) {
       var u = t.c * t.i, p = u + a + 16 * a;
@@ -6070,8 +6070,8 @@ function Ic(i) {
     function Xr(t, a) {
       var u = t.C, p = a - u, v = t.V, y = t.Ba + t.c * u;
       for (e(a <= t.l.o); 0 < p; ) {
-        var x = 16 < p ? 16 : p, A = t.l.ma, N = t.l.width, C = N * x, U = A.ca, $ = A.tb + N * u, K = t.Ta, V = t.Ua;
-        hn(t, x, v, y), Fs(K, V, U, $, C), Nn(A, u, u + x, U, $, N), p -= x, v += x * t.c, u += x;
+        var x = 16 < p ? 16 : p, A = t.l.ma, N = t.l.width, I = N * x, U = A.ca, $ = A.tb + N * u, K = t.Ta, V = t.Ua;
+        hn(t, x, v, y), Fs(K, V, U, $, I), Nn(A, u, u + x, U, $, N), p -= x, v += x * t.c, u += x;
       }
       e(u == a), t.C = t.Ma = a;
     }
@@ -6126,7 +6126,7 @@ function Ic(i) {
       var t = new xo();
       return t != null && (t.a = 0, t.sc = "OK", t.cb = 0, t.Xb = 0, na || (na = ba)), t;
     }
-    function Ce(t, a, u) {
+    function Ie(t, a, u) {
       return t.a == 0 && (t.a = a, t.sc = u, t.cb = 0), 0;
     }
     function ma(t, a, u) {
@@ -6134,46 +6134,46 @@ function Ic(i) {
     }
     function va(t, a) {
       if (t == null) return 0;
-      if (t.a = 0, t.sc = "OK", a == null) return Ce(t, 2, "null VP8Io passed to VP8GetHeaders()");
+      if (t.a = 0, t.sc = "OK", a == null) return Ie(t, 2, "null VP8Io passed to VP8GetHeaders()");
       var u = a.data, p = a.w, v = a.ha;
-      if (4 > v) return Ce(t, 7, "Truncated header.");
+      if (4 > v) return Ie(t, 7, "Truncated header.");
       var y = u[p + 0] | u[p + 1] << 8 | u[p + 2] << 16, x = t.Od;
-      if (x.Rb = !(1 & y), x.td = y >> 1 & 7, x.yd = y >> 4 & 1, x.ub = y >> 5, 3 < x.td) return Ce(t, 3, "Incorrect keyframe parameters.");
-      if (!x.yd) return Ce(t, 4, "Frame not displayable.");
+      if (x.Rb = !(1 & y), x.td = y >> 1 & 7, x.yd = y >> 4 & 1, x.ub = y >> 5, 3 < x.td) return Ie(t, 3, "Incorrect keyframe parameters.");
+      if (!x.yd) return Ie(t, 4, "Frame not displayable.");
       p += 3, v -= 3;
       var A = t.Kc;
       if (x.Rb) {
-        if (7 > v) return Ce(t, 7, "cannot parse picture header");
-        if (!ma(u, p, v)) return Ce(t, 3, "Bad code word");
+        if (7 > v) return Ie(t, 7, "cannot parse picture header");
+        if (!ma(u, p, v)) return Ie(t, 3, "Bad code word");
         A.c = 16383 & (u[p + 4] << 8 | u[p + 3]), A.Td = u[p + 4] >> 6, A.i = 16383 & (u[p + 6] << 8 | u[p + 5]), A.Ud = u[p + 6] >> 6, p += 7, v -= 7, t.za = A.c + 15 >> 4, t.Ub = A.i + 15 >> 4, a.width = A.c, a.height = A.i, a.Da = 0, a.j = 0, a.v = 0, a.va = a.width, a.o = a.height, a.da = 0, a.ib = a.width, a.hb = a.height, a.U = a.width, a.T = a.height, s((y = t.Pa).jb, 0, 255, y.jb.length), e((y = t.Qa) != null), y.Cb = 0, y.Bb = 0, y.Fb = 1, s(y.Zb, 0, 0, y.Zb.length), s(y.Lb, 0, 0, y.Lb);
       }
-      if (x.ub > v) return Ce(t, 7, "bad partition length");
+      if (x.ub > v) return Ie(t, 7, "bad partition length");
       ot(y = t.m, u, p, x.ub), p += x.ub, v -= x.ub, x.Rb && (A.Ld = et(y), A.Kd = et(y)), A = t.Qa;
-      var N, C = t.Pa;
+      var N, I = t.Pa;
       if (e(y != null), e(A != null), A.Cb = et(y), A.Cb) {
         if (A.Bb = et(y), et(y)) {
           for (A.Fb = et(y), N = 0; 4 > N; ++N) A.Zb[N] = et(y) ? ht(y, 7) : 0;
           for (N = 0; 4 > N; ++N) A.Lb[N] = et(y) ? ht(y, 6) : 0;
         }
-        if (A.Bb) for (N = 0; 3 > N; ++N) C.jb[N] = et(y) ? nt(y, 8) : 255;
+        if (A.Bb) for (N = 0; 3 > N; ++N) I.jb[N] = et(y) ? nt(y, 8) : 255;
       } else A.Bb = 0;
-      if (y.Ka) return Ce(t, 3, "cannot parse segment header");
+      if (y.Ka) return Ie(t, 3, "cannot parse segment header");
       if ((A = t.ed).zd = et(y), A.Tb = nt(y, 6), A.wb = nt(y, 3), A.Pc = et(y), A.Pc && et(y)) {
-        for (C = 0; 4 > C; ++C) et(y) && (A.vd[C] = ht(y, 6));
-        for (C = 0; 4 > C; ++C) et(y) && (A.od[C] = ht(y, 6));
+        for (I = 0; 4 > I; ++I) et(y) && (A.vd[I] = ht(y, 6));
+        for (I = 0; 4 > I; ++I) et(y) && (A.od[I] = ht(y, 6));
       }
-      if (t.L = A.Tb == 0 ? 0 : A.zd ? 1 : 2, y.Ka) return Ce(t, 3, "cannot parse filter header");
+      if (t.L = A.Tb == 0 ? 0 : A.zd ? 1 : 2, y.Ka) return Ie(t, 3, "cannot parse filter header");
       var U = v;
-      if (v = N = p, p = N + U, A = U, t.Xb = (1 << nt(t.m, 2)) - 1, U < 3 * (C = t.Xb)) u = 7;
+      if (v = N = p, p = N + U, A = U, t.Xb = (1 << nt(t.m, 2)) - 1, U < 3 * (I = t.Xb)) u = 7;
       else {
-        for (N += 3 * C, A -= 3 * C, U = 0; U < C; ++U) {
+        for (N += 3 * I, A -= 3 * I, U = 0; U < I; ++U) {
           var $ = u[v + 0] | u[v + 1] << 8 | u[v + 2] << 16;
           $ > A && ($ = A), ot(t.Jc[+U], u, N, $), N += $, A -= $, v += 3;
         }
-        ot(t.Jc[+C], u, N, A), u = N < p ? 0 : 5;
+        ot(t.Jc[+I], u, N, A), u = N < p ? 0 : 5;
       }
-      if (u != 0) return Ce(t, u, "cannot parse partitions");
-      for (u = nt(N = t.m, 7), v = et(N) ? ht(N, 4) : 0, p = et(N) ? ht(N, 4) : 0, A = et(N) ? ht(N, 4) : 0, C = et(N) ? ht(N, 4) : 0, N = et(N) ? ht(N, 4) : 0, U = t.Qa, $ = 0; 4 > $; ++$) {
+      if (u != 0) return Ie(t, u, "cannot parse partitions");
+      for (u = nt(N = t.m, 7), v = et(N) ? ht(N, 4) : 0, p = et(N) ? ht(N, 4) : 0, A = et(N) ? ht(N, 4) : 0, I = et(N) ? ht(N, 4) : 0, N = et(N) ? ht(N, 4) : 0, U = t.Qa, $ = 0; 4 > $; ++$) {
         if (U.Cb) {
           var K = U.Zb[$];
           U.Fb || (K += u);
@@ -6185,11 +6185,11 @@ function Ic(i) {
           K = u;
         }
         var V = t.pb[$];
-        V.Sc[0] = Xo[un(K + v, 127)], V.Sc[1] = $o[un(K + 0, 127)], V.Eb[0] = 2 * Xo[un(K + p, 127)], V.Eb[1] = 101581 * $o[un(K + A, 127)] >> 16, 8 > V.Eb[1] && (V.Eb[1] = 8), V.Qc[0] = Xo[un(K + C, 117)], V.Qc[1] = $o[un(K + N, 127)], V.lc = K + N;
+        V.Sc[0] = Xo[un(K + v, 127)], V.Sc[1] = $o[un(K + 0, 127)], V.Eb[0] = 2 * Xo[un(K + p, 127)], V.Eb[1] = 101581 * $o[un(K + A, 127)] >> 16, 8 > V.Eb[1] && (V.Eb[1] = 8), V.Qc[0] = Xo[un(K + I, 117)], V.Qc[1] = $o[un(K + N, 127)], V.lc = K + N;
       }
-      if (!x.Rb) return Ce(t, 4, "Not a key frame.");
+      if (!x.Rb) return Ie(t, 4, "Not a key frame.");
       for (et(y), x = t.Pa, u = 0; 4 > u; ++u) {
-        for (v = 0; 8 > v; ++v) for (p = 0; 3 > p; ++p) for (A = 0; 11 > A; ++A) C = rt(y, sl[u][v][p][A]) ? nt(y, 8) : al[u][v][p][A], x.Wc[u][v].Yb[p][A] = C;
+        for (v = 0; 8 > v; ++v) for (p = 0; 3 > p; ++p) for (A = 0; 11 > A; ++A) I = rt(y, sl[u][v][p][A]) ? nt(y, 8) : al[u][v][p][A], x.Wc[u][v].Yb[p][A] = I;
         for (v = 0; 17 > v; ++v) x.Xc[u][v] = x.Wc[u][cl[v]];
       }
       return t.kc = et(y), t.kc && (t.Bd = nt(y, 8)), t.cb = 1;
@@ -6201,17 +6201,17 @@ function Ic(i) {
         for (; !rt(t, A[u + 1]); ) if (A = a[++v].Yb[0], u = 0, v == 16) return 16;
         var N = a[v + 1].Yb;
         if (rt(t, A[u + 2])) {
-          var C = t, U = 0;
-          if (rt(C, (K = A)[($ = u) + 3])) if (rt(C, K[$ + 6])) {
-            for (A = 0, $ = 2 * (U = rt(C, K[$ + 8])) + (K = rt(C, K[$ + 9 + U])), U = 0, K = rl[$]; K[A]; ++A) U += U + rt(C, K[A]);
+          var I = t, U = 0;
+          if (rt(I, (K = A)[($ = u) + 3])) if (rt(I, K[$ + 6])) {
+            for (A = 0, $ = 2 * (U = rt(I, K[$ + 8])) + (K = rt(I, K[$ + 9 + U])), U = 0, K = rl[$]; K[A]; ++A) U += U + rt(I, K[A]);
             U += 3 + (8 << $);
-          } else rt(C, K[$ + 7]) ? (U = 7 + 2 * rt(C, 165), U += rt(C, 145)) : U = 5 + rt(C, 159);
-          else U = rt(C, K[$ + 4]) ? 3 + rt(C, K[$ + 5]) : 2;
+          } else rt(I, K[$ + 7]) ? (U = 7 + 2 * rt(I, 165), U += rt(I, 145)) : U = 5 + rt(I, 159);
+          else U = rt(I, K[$ + 4]) ? 3 + rt(I, K[$ + 5]) : 2;
           A = N[2];
         } else U = 1, A = N[1];
-        N = x + il[v], 0 > (C = t).b && Q(C);
-        var $, K = C.b, V = ($ = C.Ca >> 1) - (C.I >> K) >> 31;
-        --C.b, C.Ca += V, C.Ca |= 1, C.I -= ($ + 1 & V) << K, y[N] = ((U ^ V) - V) * p[(0 < v) + 0];
+        N = x + il[v], 0 > (I = t).b && Q(I);
+        var $, K = I.b, V = ($ = I.Ca >> 1) - (I.I >> K) >> 31;
+        --I.b, I.Ca += V, I.Ca |= 1, I.I -= ($ + 1 & V) << K, y[N] = ((U ^ V) - V) * p[(0 < v) + 0];
       }
       return 16;
     }
@@ -6221,7 +6221,7 @@ function Ic(i) {
     }
     function Ao(t, a) {
       if (t == null) return 0;
-      if (a == null) return Ce(t, 2, "NULL VP8Io parameter in VP8Decode().");
+      if (a == null) return Ie(t, 2, "NULL VP8Io parameter in VP8Decode().");
       if (!t.cb && !va(t, a)) return 0;
       if (e(t.cb), a.ac == null || a.ac(a)) {
         a.ob && (t.L = 0);
@@ -6245,23 +6245,23 @@ function Ic(i) {
           }
         }
         u = 0;
-      } else Ce(t, 6, "Frame setup failed"), u = t.a;
+      } else Ie(t, 6, "Frame setup failed"), u = t.a;
       if (u = u == 0) {
         if (u) {
           t.$c = 0, 0 < t.Aa || (t.Ic = xl);
           t: {
             u = t.Ic, p = 4 * (N = t.za);
-            var C = 32 * N, U = N + 1, $ = 0 < t.L ? N * (0 < t.Aa ? 2 : 1) : 0, K = (t.Aa == 2 ? 2 : 1) * N;
-            if ((x = p + 832 + (v = 3 * (16 * u + Ha[t.L]) / 2 * C) + (y = t.Fa != null && 0 < t.Fa.length ? t.Kc.c * t.Kc.i : 0)) != x) u = 0;
+            var I = 32 * N, U = N + 1, $ = 0 < t.L ? N * (0 < t.Aa ? 2 : 1) : 0, K = (t.Aa == 2 ? 2 : 1) * N;
+            if ((x = p + 832 + (v = 3 * (16 * u + Ha[t.L]) / 2 * I) + (y = t.Fa != null && 0 < t.Fa.length ? t.Kc.c * t.Kc.i : 0)) != x) u = 0;
             else {
               if (x > t.Vb) {
                 if (t.Vb = 0, t.Ec = o(x), t.Fc = 0, t.Ec == null) {
-                  u = Ce(t, 1, "no memory during frame initialization.");
+                  u = Ie(t, 1, "no memory during frame initialization.");
                   break t;
                 }
                 t.Vb = x;
               }
-              x = t.Ec, A = t.Fc, t.Ac = x, t.Bc = A, A += p, t.Gd = l(C, ga), t.Hd = 0, t.rb = l(U + 1, da), t.sb = 1, t.wa = $ ? l($, Qr) : null, t.Y = 0, t.D.Nb = 0, t.D.wa = t.wa, t.D.Y = t.Y, 0 < t.Aa && (t.D.Y += N), e(!0), t.oc = x, t.pc = A, A += 832, t.ya = l(K, Oi), t.aa = 0, t.D.ya = t.ya, t.D.aa = t.aa, t.Aa == 2 && (t.D.aa += N), t.R = 16 * N, t.B = 8 * N, N = (C = Ha[t.L]) * t.R, C = C / 2 * t.B, t.sa = x, t.ta = A + N, t.qa = t.sa, t.ra = t.ta + 16 * u * t.R + C, t.Ha = t.qa, t.Ia = t.ra + 8 * u * t.B + C, t.$c = 0, A += v, t.mb = y ? x : null, t.nb = y ? A : null, e(A + y <= t.Fc + t.Vb), Ei(t), s(t.Ac, t.Bc, 0, p), u = 1;
+              x = t.Ec, A = t.Fc, t.Ac = x, t.Bc = A, A += p, t.Gd = l(I, ga), t.Hd = 0, t.rb = l(U + 1, da), t.sb = 1, t.wa = $ ? l($, Qr) : null, t.Y = 0, t.D.Nb = 0, t.D.wa = t.wa, t.D.Y = t.Y, 0 < t.Aa && (t.D.Y += N), e(!0), t.oc = x, t.pc = A, A += 832, t.ya = l(K, Oi), t.aa = 0, t.D.ya = t.ya, t.D.aa = t.aa, t.Aa == 2 && (t.D.aa += N), t.R = 16 * N, t.B = 8 * N, N = (I = Ha[t.L]) * t.R, I = I / 2 * t.B, t.sa = x, t.ta = A + N, t.qa = t.sa, t.ra = t.ta + 16 * u * t.R + I, t.Ha = t.qa, t.Ia = t.ra + 8 * u * t.B + I, t.$c = 0, A += v, t.mb = y ? x : null, t.nb = y ? A : null, e(A + y <= t.Fc + t.Vb), Ei(t), s(t.Ac, t.Bc, 0, p), u = 1;
             }
           }
           if (u) {
@@ -6272,7 +6272,7 @@ function Ic(i) {
               for (u = -255; 510 >= u; ++u) Bs[255 + u] = 0 > u ? 0 : 255 < u ? 255 : u;
               Ms = 1;
             }
-            jn = _o, gi = No, br = wa, On = So, ar = xa, ta = ya, zr = Ti, mi = Rr, Ur = Ro, yr = zi, ea = qo, vn = oi, or = Ui, ye = Ia, we = Ca, Ie = nr, Re = pr, sr = Do, En[0] = Vn, En[1] = Po, En[2] = Fo, En[3] = jo, En[4] = Na, En[5] = ii, En[6] = Sa, En[7] = Di, En[8] = Eo, En[9] = Oo, xr[0] = La, xr[1] = Co, xr[2] = er, xr[3] = ni, xr[4] = Ye, xr[5] = Io, xr[6] = Aa, cr[0] = fr, cr[1] = ko, cr[2] = Bo, cr[3] = qi, cr[4] = qr, cr[5] = Mo, cr[6] = Ri, u = 1;
+            jn = _o, gi = No, br = wa, On = So, ar = xa, ta = ya, zr = Ti, mi = Rr, Ur = Ro, yr = zi, ea = qo, vn = oi, or = Ui, ye = Ca, we = Ia, Ce = nr, Re = pr, sr = Do, En[0] = Vn, En[1] = Po, En[2] = Fo, En[3] = jo, En[4] = Na, En[5] = ii, En[6] = Sa, En[7] = Di, En[8] = Eo, En[9] = Oo, xr[0] = La, xr[1] = Io, xr[2] = er, xr[3] = ni, xr[4] = Ye, xr[5] = Co, xr[6] = Aa, cr[0] = fr, cr[1] = ko, cr[2] = Bo, cr[3] = qi, cr[4] = qr, cr[5] = Mo, cr[6] = Ri, u = 1;
           } else u = 0;
         }
         u && (u = function(V, vt) {
@@ -6294,7 +6294,7 @@ function Ic(i) {
               } else ne = rt(bt, 156) ? rt(bt, 128) ? 1 : 3 : rt(bt, 163) ? 2 : 0, _t.Ob[0] = ne, s(Ot, St, ne, 4), s(Rt, 0, ne, 4);
               _t.Dd = rt(bt, 142) ? rt(bt, 114) ? rt(bt, 183) ? 1 : 3 : 2 : 0;
             }
-            if (dt.m.Ka) return Ce(V, 7, "Premature end-of-partition0 encountered.");
+            if (dt.m.Ka) return Ie(V, 7, "Premature end-of-partition0 encountered.");
             for (; V.ja < V.za; ++V.ja) {
               if (dt = H, bt = (G = V).rb[G.sb - 1], Ot = G.rb[G.sb + G.ja], it = G.ya[G.aa + G.ja], St = G.kc ? it.Ad : 0) bt.la = Ot.la = 0, it.Za || (bt.Na = Ot.Na = 0), it.Hc = 0, it.Gc = 0, it.ia = 0;
               else {
@@ -6325,7 +6325,7 @@ function Ic(i) {
                 }
                 bt.la = on, ue.la = Me, Rt.Hc = oe, Rt.Gc = ne, Rt.ia = 43690 & ne ? 0 : _t.ia, St = !(oe | ne);
               }
-              if (0 < G.L && (G.wa[G.Y + G.ja] = G.gd[it.$b][it.Za], G.wa[G.Y + G.ja].La |= !St), dt.Ka) return Ce(V, 7, "Premature end-of-file encountered.");
+              if (0 < G.L && (G.wa[G.Y + G.ja] = G.gd[it.$b][it.Za], G.wa[G.Y + G.ja].La |= !St), dt.Ka) return Ie(V, 7, "Premature end-of-file encountered.");
             }
             if (Ei(V), G = vt, dt = 1, it = (H = V).D, bt = 0 < H.L && H.M >= H.zb && H.M <= H.Va, H.Aa == 0) t: {
               if (it.M = H.M, it.uc = bt, Ji(H, it), dt = 1, it = (Kt = H.D).Nb, bt = (ne = Ha[H.L]) * H.R, Ot = ne / 2 * H.B, ve = 16 * it * H.R, sn = 8 * it * H.B, St = H.sa, Rt = H.ta - bt + ve, _t = H.qa, mt = H.ra - Ot + sn, ce = H.Ha, ue = H.Ia - Ot + sn, pn = (fe = Kt.M) == 0, oe = fe >= H.Va - 1, H.Aa == 2 && Ji(H, Kt), Kt.uc) for (dn = (De = H).D.M, e(De.D.uc), Kt = De.yb; Kt < De.Hb; ++Kt) {
@@ -6333,7 +6333,7 @@ function Ic(i) {
                 var ze = (Ge = (Pe = De).D).Nb;
                 ge = Pe.R;
                 var Ge = Ge.wa[Ge.Y + Me], Qe = Pe.sa, wn = Pe.ta + 16 * ze * ge + 16 * Me, Jn = Ge.dd, Ue = Ge.tc;
-                if (Ue != 0) if (e(3 <= Ue), Pe.L == 1) 0 < Me && Ie(Qe, wn, ge, Ue + 4), Ge.La && sr(Qe, wn, ge, Ue), 0 < on && we(Qe, wn, ge, Ue + 4), Ge.La && Re(Qe, wn, ge, Ue);
+                if (Ue != 0) if (e(3 <= Ue), Pe.L == 1) 0 < Me && Ce(Qe, wn, ge, Ue + 4), Ge.La && sr(Qe, wn, ge, Ue), 0 < on && we(Qe, wn, ge, Ue + 4), Ge.La && Re(Qe, wn, ge, Ue);
                 else {
                   var lr = Pe.B, Hr = Pe.qa, bi = Pe.ra + 8 * ze * lr + 8 * Me, Ar = Pe.Ha, Pe = Pe.Ia + 8 * ze * lr + 8 * Me;
                   ze = Ge.ld, 0 < Me && (mi(Qe, wn, ge, Ue + 4, Jn, ze), yr(Hr, bi, Ar, Pe, lr, Ue + 4, Jn, ze)), Ge.La && (vn(Qe, wn, ge, Ue, Jn, ze), ye(Hr, bi, Ar, Pe, lr, Ue, Jn, ze)), 0 < on && (zr(Qe, wn, ge, Ue + 4, Jn, ze), Ur(Hr, bi, Ar, Pe, lr, Ue + 4, Jn, ze)), Ge.La && (ea(Qe, wn, ge, Ue, Jn, ze), or(Hr, bi, Ar, Pe, lr, Ue, Jn, ze));
@@ -6341,14 +6341,14 @@ function Ic(i) {
               }
               if (H.ia && alert("todo:DitherRow"), G.put != null) {
                 if (Kt = 16 * fe, fe = 16 * (fe + 1), pn ? (G.y = H.sa, G.O = H.ta + ve, G.f = H.qa, G.N = H.ra + sn, G.ea = H.Ha, G.W = H.Ia + sn) : (Kt -= ne, G.y = St, G.O = Rt, G.f = _t, G.N = mt, G.ea = ce, G.W = ue), oe || (fe -= ne), fe > G.o && (fe = G.o), G.F = null, G.J = null, H.Fa != null && 0 < H.Fa.length && Kt < fe && (G.J = Vi(H, G, Kt, fe - Kt), G.F = H.mb, G.F == null && G.F.length == 0)) {
-                  dt = Ce(H, 3, "Could not decode alpha data.");
+                  dt = Ie(H, 3, "Could not decode alpha data.");
                   break t;
                 }
                 Kt < G.j && (ne = G.j - Kt, Kt = G.j, e(!(1 & ne)), G.O += H.R * ne, G.N += H.B * (ne >> 1), G.W += H.B * (ne >> 1), G.F != null && (G.J += G.width * ne)), Kt < fe && (G.O += G.v, G.N += G.v >> 1, G.W += G.v >> 1, G.F != null && (G.J += G.v), G.ka = Kt - G.j, G.U = G.va - G.v, G.T = fe - Kt, dt = G.put(G));
               }
               it + 1 != H.Ic || oe || (r(H.sa, H.ta - bt, St, Rt + 16 * H.R, bt), r(H.qa, H.ra - Ot, _t, mt + 8 * H.B, Ot), r(H.Ha, H.Ia - Ot, ce, ue + 8 * H.B, Ot));
             }
-            if (!dt) return Ce(V, 6, "Output aborted.");
+            if (!dt) return Ie(V, 6, "Output aborted.");
           }
           return 1;
         }(t, a)), a.bc != null && a.bc(a), u &= 1;
@@ -6367,10 +6367,10 @@ function Ic(i) {
     function Bi(t, a, u, p) {
       var v, y = 0, x = o(16);
       for (v = 0; 4 > v; ++v) {
-        var A = t[a + 0] + t[a + 8], N = t[a + 0] - t[a + 8], C = (35468 * t[a + 4] >> 16) - nn(t[a + 12]), U = nn(t[a + 4]) + (35468 * t[a + 12] >> 16);
-        x[y + 0] = A + U, x[y + 1] = N + C, x[y + 2] = N - C, x[y + 3] = A - U, y += 4, a++;
+        var A = t[a + 0] + t[a + 8], N = t[a + 0] - t[a + 8], I = (35468 * t[a + 4] >> 16) - nn(t[a + 12]), U = nn(t[a + 4]) + (35468 * t[a + 12] >> 16);
+        x[y + 0] = A + U, x[y + 1] = N + I, x[y + 2] = N - I, x[y + 3] = A - U, y += 4, a++;
       }
-      for (v = y = 0; 4 > v; ++v) A = (t = x[y + 0] + 4) + x[y + 8], N = t - x[y + 8], C = (35468 * x[y + 4] >> 16) - nn(x[y + 12]), Pn(u, p, 0, 0, A + (U = nn(x[y + 4]) + (35468 * x[y + 12] >> 16))), Pn(u, p, 1, 0, N + C), Pn(u, p, 2, 0, N - C), Pn(u, p, 3, 0, A - U), y++, p += 32;
+      for (v = y = 0; 4 > v; ++v) A = (t = x[y + 0] + 4) + x[y + 8], N = t - x[y + 8], I = (35468 * x[y + 4] >> 16) - nn(x[y + 12]), Pn(u, p, 0, 0, A + (U = nn(x[y + 4]) + (35468 * x[y + 12] >> 16))), Pn(u, p, 1, 0, N + I), Pn(u, p, 2, 0, N - I), Pn(u, p, 3, 0, A - U), y++, p += 32;
     }
     function ya(t, a, u, p) {
       var v = t[a + 0] + 4, y = 35468 * t[a + 4] >> 16, x = nn(t[a + 4]), A = 35468 * t[a + 1] >> 16;
@@ -6392,16 +6392,16 @@ function Ic(i) {
     function _o(t, a, u, p) {
       var v, y = o(16);
       for (v = 0; 4 > v; ++v) {
-        var x = t[a + 0 + v] + t[a + 12 + v], A = t[a + 4 + v] + t[a + 8 + v], N = t[a + 4 + v] - t[a + 8 + v], C = t[a + 0 + v] - t[a + 12 + v];
-        y[0 + v] = x + A, y[8 + v] = x - A, y[4 + v] = C + N, y[12 + v] = C - N;
+        var x = t[a + 0 + v] + t[a + 12 + v], A = t[a + 4 + v] + t[a + 8 + v], N = t[a + 4 + v] - t[a + 8 + v], I = t[a + 0 + v] - t[a + 12 + v];
+        y[0 + v] = x + A, y[8 + v] = x - A, y[4 + v] = I + N, y[12 + v] = I - N;
       }
-      for (v = 0; 4 > v; ++v) x = (t = y[0 + 4 * v] + 3) + y[3 + 4 * v], A = y[1 + 4 * v] + y[2 + 4 * v], N = y[1 + 4 * v] - y[2 + 4 * v], C = t - y[3 + 4 * v], u[p + 0] = x + A >> 3, u[p + 16] = C + N >> 3, u[p + 32] = x - A >> 3, u[p + 48] = C - N >> 3, p += 64;
+      for (v = 0; 4 > v; ++v) x = (t = y[0 + 4 * v] + 3) + y[3 + 4 * v], A = y[1 + 4 * v] + y[2 + 4 * v], N = y[1 + 4 * v] - y[2 + 4 * v], I = t - y[3 + 4 * v], u[p + 0] = x + A >> 3, u[p + 16] = I + N >> 3, u[p + 32] = x - A >> 3, u[p + 48] = I - N >> 3, p += 64;
     }
     function Mi(t, a, u) {
       var p, v = a - 32, y = fn, x = 255 - t[v - 1];
       for (p = 0; p < u; ++p) {
-        var A, N = y, C = x + t[a - 1];
-        for (A = 0; A < u; ++A) t[a + A] = N[C + t[v + A]];
+        var A, N = y, I = x + t[a - 1];
+        for (A = 0; A < u; ++A) t[a + A] = N[I + t[v + A]];
         a += 32;
       }
     }
@@ -6411,7 +6411,7 @@ function Ic(i) {
     function ko(t, a) {
       Mi(t, a, 8);
     }
-    function Co(t, a) {
+    function Io(t, a) {
       Mi(t, a, 16);
     }
     function er(t, a) {
@@ -6436,7 +6436,7 @@ function Ic(i) {
       for (u = 0; 16 > u; ++u) p += t[a - 1 + 32 * u];
       ri(p >> 4, t, a);
     }
-    function Io(t, a) {
+    function Co(t, a) {
       var u, p = 8;
       for (u = 0; 16 > u; ++u) p += t[a + u - 32];
       ri(p >> 4, t, a);
@@ -6461,28 +6461,28 @@ function Ic(i) {
       for (p >>= 3, u = 0; 4 > u; ++u) s(t, a + 32 * u, p, 4);
     }
     function Na(t, a) {
-      var u = t[a - 1 + 0], p = t[a - 1 + 32], v = t[a - 1 + 64], y = t[a - 1 - 32], x = t[a + 0 - 32], A = t[a + 1 - 32], N = t[a + 2 - 32], C = t[a + 3 - 32];
-      t[a + 0 + 96] = Gt(p, v, t[a - 1 + 96]), t[a + 1 + 96] = t[a + 0 + 64] = Gt(u, p, v), t[a + 2 + 96] = t[a + 1 + 64] = t[a + 0 + 32] = Gt(y, u, p), t[a + 3 + 96] = t[a + 2 + 64] = t[a + 1 + 32] = t[a + 0 + 0] = Gt(x, y, u), t[a + 3 + 64] = t[a + 2 + 32] = t[a + 1 + 0] = Gt(A, x, y), t[a + 3 + 32] = t[a + 2 + 0] = Gt(N, A, x), t[a + 3 + 0] = Gt(C, N, A);
+      var u = t[a - 1 + 0], p = t[a - 1 + 32], v = t[a - 1 + 64], y = t[a - 1 - 32], x = t[a + 0 - 32], A = t[a + 1 - 32], N = t[a + 2 - 32], I = t[a + 3 - 32];
+      t[a + 0 + 96] = Gt(p, v, t[a - 1 + 96]), t[a + 1 + 96] = t[a + 0 + 64] = Gt(u, p, v), t[a + 2 + 96] = t[a + 1 + 64] = t[a + 0 + 32] = Gt(y, u, p), t[a + 3 + 96] = t[a + 2 + 64] = t[a + 1 + 32] = t[a + 0 + 0] = Gt(x, y, u), t[a + 3 + 64] = t[a + 2 + 32] = t[a + 1 + 0] = Gt(A, x, y), t[a + 3 + 32] = t[a + 2 + 0] = Gt(N, A, x), t[a + 3 + 0] = Gt(I, N, A);
     }
     function Sa(t, a) {
       var u = t[a + 1 - 32], p = t[a + 2 - 32], v = t[a + 3 - 32], y = t[a + 4 - 32], x = t[a + 5 - 32], A = t[a + 6 - 32], N = t[a + 7 - 32];
       t[a + 0 + 0] = Gt(t[a + 0 - 32], u, p), t[a + 1 + 0] = t[a + 0 + 32] = Gt(u, p, v), t[a + 2 + 0] = t[a + 1 + 32] = t[a + 0 + 64] = Gt(p, v, y), t[a + 3 + 0] = t[a + 2 + 32] = t[a + 1 + 64] = t[a + 0 + 96] = Gt(v, y, x), t[a + 3 + 32] = t[a + 2 + 64] = t[a + 1 + 96] = Gt(y, x, A), t[a + 3 + 64] = t[a + 2 + 96] = Gt(x, A, N), t[a + 3 + 96] = Gt(A, N, N);
     }
     function ii(t, a) {
-      var u = t[a - 1 + 0], p = t[a - 1 + 32], v = t[a - 1 + 64], y = t[a - 1 - 32], x = t[a + 0 - 32], A = t[a + 1 - 32], N = t[a + 2 - 32], C = t[a + 3 - 32];
-      t[a + 0 + 0] = t[a + 1 + 64] = y + x + 1 >> 1, t[a + 1 + 0] = t[a + 2 + 64] = x + A + 1 >> 1, t[a + 2 + 0] = t[a + 3 + 64] = A + N + 1 >> 1, t[a + 3 + 0] = N + C + 1 >> 1, t[a + 0 + 96] = Gt(v, p, u), t[a + 0 + 64] = Gt(p, u, y), t[a + 0 + 32] = t[a + 1 + 96] = Gt(u, y, x), t[a + 1 + 32] = t[a + 2 + 96] = Gt(y, x, A), t[a + 2 + 32] = t[a + 3 + 96] = Gt(x, A, N), t[a + 3 + 32] = Gt(A, N, C);
+      var u = t[a - 1 + 0], p = t[a - 1 + 32], v = t[a - 1 + 64], y = t[a - 1 - 32], x = t[a + 0 - 32], A = t[a + 1 - 32], N = t[a + 2 - 32], I = t[a + 3 - 32];
+      t[a + 0 + 0] = t[a + 1 + 64] = y + x + 1 >> 1, t[a + 1 + 0] = t[a + 2 + 64] = x + A + 1 >> 1, t[a + 2 + 0] = t[a + 3 + 64] = A + N + 1 >> 1, t[a + 3 + 0] = N + I + 1 >> 1, t[a + 0 + 96] = Gt(v, p, u), t[a + 0 + 64] = Gt(p, u, y), t[a + 0 + 32] = t[a + 1 + 96] = Gt(u, y, x), t[a + 1 + 32] = t[a + 2 + 96] = Gt(y, x, A), t[a + 2 + 32] = t[a + 3 + 96] = Gt(x, A, N), t[a + 3 + 32] = Gt(A, N, I);
     }
     function Di(t, a) {
-      var u = t[a + 0 - 32], p = t[a + 1 - 32], v = t[a + 2 - 32], y = t[a + 3 - 32], x = t[a + 4 - 32], A = t[a + 5 - 32], N = t[a + 6 - 32], C = t[a + 7 - 32];
-      t[a + 0 + 0] = u + p + 1 >> 1, t[a + 1 + 0] = t[a + 0 + 64] = p + v + 1 >> 1, t[a + 2 + 0] = t[a + 1 + 64] = v + y + 1 >> 1, t[a + 3 + 0] = t[a + 2 + 64] = y + x + 1 >> 1, t[a + 0 + 32] = Gt(u, p, v), t[a + 1 + 32] = t[a + 0 + 96] = Gt(p, v, y), t[a + 2 + 32] = t[a + 1 + 96] = Gt(v, y, x), t[a + 3 + 32] = t[a + 2 + 96] = Gt(y, x, A), t[a + 3 + 64] = Gt(x, A, N), t[a + 3 + 96] = Gt(A, N, C);
+      var u = t[a + 0 - 32], p = t[a + 1 - 32], v = t[a + 2 - 32], y = t[a + 3 - 32], x = t[a + 4 - 32], A = t[a + 5 - 32], N = t[a + 6 - 32], I = t[a + 7 - 32];
+      t[a + 0 + 0] = u + p + 1 >> 1, t[a + 1 + 0] = t[a + 0 + 64] = p + v + 1 >> 1, t[a + 2 + 0] = t[a + 1 + 64] = v + y + 1 >> 1, t[a + 3 + 0] = t[a + 2 + 64] = y + x + 1 >> 1, t[a + 0 + 32] = Gt(u, p, v), t[a + 1 + 32] = t[a + 0 + 96] = Gt(p, v, y), t[a + 2 + 32] = t[a + 1 + 96] = Gt(v, y, x), t[a + 3 + 32] = t[a + 2 + 96] = Gt(y, x, A), t[a + 3 + 64] = Gt(x, A, N), t[a + 3 + 96] = Gt(A, N, I);
     }
     function Oo(t, a) {
       var u = t[a - 1 + 0], p = t[a - 1 + 32], v = t[a - 1 + 64], y = t[a - 1 + 96];
       t[a + 0 + 0] = u + p + 1 >> 1, t[a + 2 + 0] = t[a + 0 + 32] = p + v + 1 >> 1, t[a + 2 + 32] = t[a + 0 + 64] = v + y + 1 >> 1, t[a + 1 + 0] = Gt(u, p, v), t[a + 3 + 0] = t[a + 1 + 32] = Gt(p, v, y), t[a + 3 + 32] = t[a + 1 + 64] = Gt(v, y, y), t[a + 3 + 64] = t[a + 2 + 64] = t[a + 0 + 96] = t[a + 1 + 96] = t[a + 2 + 96] = t[a + 3 + 96] = y;
     }
     function Eo(t, a) {
-      var u = t[a - 1 + 0], p = t[a - 1 + 32], v = t[a - 1 + 64], y = t[a - 1 + 96], x = t[a - 1 - 32], A = t[a + 0 - 32], N = t[a + 1 - 32], C = t[a + 2 - 32];
-      t[a + 0 + 0] = t[a + 2 + 32] = u + x + 1 >> 1, t[a + 0 + 32] = t[a + 2 + 64] = p + u + 1 >> 1, t[a + 0 + 64] = t[a + 2 + 96] = v + p + 1 >> 1, t[a + 0 + 96] = y + v + 1 >> 1, t[a + 3 + 0] = Gt(A, N, C), t[a + 2 + 0] = Gt(x, A, N), t[a + 1 + 0] = t[a + 3 + 32] = Gt(u, x, A), t[a + 1 + 32] = t[a + 3 + 64] = Gt(p, u, x), t[a + 1 + 64] = t[a + 3 + 96] = Gt(v, p, u), t[a + 1 + 96] = Gt(y, v, p);
+      var u = t[a - 1 + 0], p = t[a - 1 + 32], v = t[a - 1 + 64], y = t[a - 1 + 96], x = t[a - 1 - 32], A = t[a + 0 - 32], N = t[a + 1 - 32], I = t[a + 2 - 32];
+      t[a + 0 + 0] = t[a + 2 + 32] = u + x + 1 >> 1, t[a + 0 + 32] = t[a + 2 + 64] = p + u + 1 >> 1, t[a + 0 + 64] = t[a + 2 + 96] = v + p + 1 >> 1, t[a + 0 + 96] = y + v + 1 >> 1, t[a + 3 + 0] = Gt(A, N, I), t[a + 2 + 0] = Gt(x, A, N), t[a + 1 + 0] = t[a + 3 + 32] = Gt(u, x, A), t[a + 1 + 32] = t[a + 3 + 64] = Gt(p, u, x), t[a + 1 + 64] = t[a + 3 + 96] = Gt(v, p, u), t[a + 1 + 96] = Gt(y, v, p);
     }
     function Bo(t, a) {
       var u;
@@ -6526,10 +6526,10 @@ function Ic(i) {
       return 4 * bn[255 + t[a - u] - t[a + 0]] + bn[255 + t[a - 2 * u] - t[a + u]] <= p;
     }
     function ka(t, a, u, p, v) {
-      var y = t[a - 3 * u], x = t[a - 2 * u], A = t[a - u], N = t[a + 0], C = t[a + u], U = t[a + 2 * u], $ = t[a + 3 * u];
-      return 4 * bn[255 + A - N] + bn[255 + x - C] > p ? 0 : bn[255 + t[a - 4 * u] - y] <= v && bn[255 + y - x] <= v && bn[255 + x - A] <= v && bn[255 + $ - U] <= v && bn[255 + U - C] <= v && bn[255 + C - N] <= v;
+      var y = t[a - 3 * u], x = t[a - 2 * u], A = t[a - u], N = t[a + 0], I = t[a + u], U = t[a + 2 * u], $ = t[a + 3 * u];
+      return 4 * bn[255 + A - N] + bn[255 + x - I] > p ? 0 : bn[255 + t[a - 4 * u] - y] <= v && bn[255 + y - x] <= v && bn[255 + x - A] <= v && bn[255 + $ - U] <= v && bn[255 + U - I] <= v && bn[255 + I - N] <= v;
     }
-    function Ca(t, a, u, p) {
+    function Ia(t, a, u, p) {
       var v = 2 * p + 1;
       for (p = 0; 16 > p; ++p) Pa(t, a + p, u, v) && ai(t, a + p, u);
     }
@@ -6539,7 +6539,7 @@ function Ic(i) {
     }
     function pr(t, a, u, p) {
       var v;
-      for (v = 3; 0 < v; --v) Ca(t, a += 4 * u, u, p);
+      for (v = 3; 0 < v; --v) Ia(t, a += 4 * u, u, p);
     }
     function Do(t, a, u, p) {
       var v;
@@ -6549,8 +6549,8 @@ function Ic(i) {
       for (y = 2 * y + 1; 0 < v--; ) {
         if (ka(t, a, u, y, x)) if (_a(t, a, u, A)) ai(t, a, u);
         else {
-          var N = t, C = a, U = u, $ = N[C - 2 * U], K = N[C - U], V = N[C + 0], vt = N[C + U], it = N[C + 2 * U], H = 27 * (dt = Wo[1020 + 3 * (V - K) + Wo[1020 + $ - vt]]) + 63 >> 7, G = 18 * dt + 63 >> 7, dt = 9 * dt + 63 >> 7;
-          N[C - 3 * U] = fn[255 + N[C - 3 * U] + dt], N[C - 2 * U] = fn[255 + $ + G], N[C - U] = fn[255 + K + H], N[C + 0] = fn[255 + V - H], N[C + U] = fn[255 + vt - G], N[C + 2 * U] = fn[255 + it - dt];
+          var N = t, I = a, U = u, $ = N[I - 2 * U], K = N[I - U], V = N[I + 0], vt = N[I + U], it = N[I + 2 * U], H = 27 * (dt = Wo[1020 + 3 * (V - K) + Wo[1020 + $ - vt]]) + 63 >> 7, G = 18 * dt + 63 >> 7, dt = 9 * dt + 63 >> 7;
+          N[I - 3 * U] = fn[255 + N[I - 3 * U] + dt], N[I - 2 * U] = fn[255 + $ + G], N[I - U] = fn[255 + K + H], N[I + 0] = fn[255 + V - H], N[I + U] = fn[255 + vt - G], N[I + 2 * U] = fn[255 + it - dt];
         }
         a += p;
       }
@@ -6559,8 +6559,8 @@ function Ic(i) {
       for (y = 2 * y + 1; 0 < v--; ) {
         if (ka(t, a, u, y, x)) if (_a(t, a, u, A)) ai(t, a, u);
         else {
-          var N = t, C = a, U = u, $ = N[C - U], K = N[C + 0], V = N[C + U], vt = Ba[112 + ((it = 3 * (K - $)) + 4 >> 3)], it = Ba[112 + (it + 3 >> 3)], H = vt + 1 >> 1;
-          N[C - 2 * U] = fn[255 + N[C - 2 * U] + H], N[C - U] = fn[255 + $ + it], N[C + 0] = fn[255 + K - vt], N[C + U] = fn[255 + V - H];
+          var N = t, I = a, U = u, $ = N[I - U], K = N[I + 0], V = N[I + U], vt = Ba[112 + ((it = 3 * (K - $)) + 4 >> 3)], it = Ba[112 + (it + 3 >> 3)], H = vt + 1 >> 1;
+          N[I - 2 * U] = fn[255 + N[I - 2 * U] + H], N[I - U] = fn[255 + $ + it], N[I + 0] = fn[255 + K - vt], N[I + U] = fn[255 + V - H];
         }
         a += p;
       }
@@ -6588,7 +6588,7 @@ function Ic(i) {
     function Ui(t, a, u, p, v, y, x, A) {
       kn(t, a + 4 * v, v, 1, 8, y, x, A), kn(u, p + 4 * v, v, 1, 8, y, x, A);
     }
-    function Ia(t, a, u, p, v, y, x, A) {
+    function Ca(t, a, u, p, v, y, x, A) {
       kn(t, a + 4, 1, v, 8, y, x, A), kn(u, p + 4, 1, v, 8, y, x, A);
     }
     function si() {
@@ -6620,8 +6620,8 @@ function Ic(i) {
     function gr(t, a, u, p, v, y, x) {
       if (t == null) Tr(null, null, u, p, v, y, x);
       else {
-        var A, N = t[a + 0], C = N, U = N;
-        for (A = 0; A < x; ++A) C = U + (N = t[a + A]) - C, U = u[p + A] + (-256 & C ? 0 > C ? 0 : 255 : C) & 255, C = N, v[y + A] = U;
+        var A, N = t[a + 0], I = N, U = N;
+        for (A = 0; A < x; ++A) I = U + (N = t[a + A]) - I, U = u[p + A] + (-256 & I ? 0 > I ? 0 : 255 : I) & 255, I = N, v[y + A] = U;
       }
     }
     function Vi(t, a, u, p) {
@@ -6632,8 +6632,8 @@ function Ic(i) {
           var x;
           if (t.ga = new ci(), (x = t.ga == null) || (x = a.width * a.o, e(t.Gb.length == 0), t.Gb = o(x), t.Uc = 0, t.Gb == null ? x = 0 : (t.mb = t.Gb, t.nb = t.Uc, t.rc = null, x = 1), x = !x), !x) {
             x = t.ga;
-            var A = t.Fa, N = t.P, C = t.qc, U = t.mb, $ = t.nb, K = N + 1, V = C - 1, vt = x.l;
-            if (e(A != null && U != null && a != null), Lr[0] = null, Lr[1] = Tr, Lr[2] = Gi, Lr[3] = gr, x.ca = U, x.tb = $, x.c = a.width, x.i = a.height, e(0 < x.c && 0 < x.i), 1 >= C) a = 0;
+            var A = t.Fa, N = t.P, I = t.qc, U = t.mb, $ = t.nb, K = N + 1, V = I - 1, vt = x.l;
+            if (e(A != null && U != null && a != null), Lr[0] = null, Lr[1] = Tr, Lr[2] = Gi, Lr[3] = gr, x.ca = U, x.tb = $, x.c = a.width, x.i = a.height, e(0 < x.c && 0 < x.i), 1 >= I) a = 0;
             else if (x.$a = A[N + 0] >> 0 & 3, x.Z = A[N + 0] >> 2 & 3, x.Lc = A[N + 0] >> 4 & 3, N = A[N + 0] >> 6 & 3, 0 > x.$a || 1 < x.$a || 4 <= x.Z || 1 < x.Lc || N) a = 0;
             else if (vt.put = zn, vt.ac = We, vt.bc = Un, vt.ma = x, vt.width = a.width, vt.height = a.height, vt.Da = a.Da, vt.v = a.v, vt.va = a.va, vt.j = a.j, vt.o = a.o, x.$a) t: {
               e(x.$a == 1), a = gn();
@@ -6657,18 +6657,18 @@ function Ic(i) {
         e(t.ga != null), e(u + p <= y);
         t: {
           if (a = (A = t.ga).c, y = A.l.o, A.$a == 0) {
-            if (K = t.rc, V = t.Vc, vt = t.Fa, N = t.P + 1 + u * a, C = t.mb, U = t.nb + u * a, e(N <= t.P + t.qc), A.Z != 0) for (e(Lr[A.Z] != null), x = 0; x < p; ++x) Lr[A.Z](K, V, vt, N, C, U, a), K = C, V = U, U += a, N += a;
-            else for (x = 0; x < p; ++x) r(C, U, vt, N, a), K = C, V = U, U += a, N += a;
+            if (K = t.rc, V = t.Vc, vt = t.Fa, N = t.P + 1 + u * a, I = t.mb, U = t.nb + u * a, e(N <= t.P + t.qc), A.Z != 0) for (e(Lr[A.Z] != null), x = 0; x < p; ++x) Lr[A.Z](K, V, vt, N, I, U, a), K = I, V = U, U += a, N += a;
+            else for (x = 0; x < p; ++x) r(I, U, vt, N, a), K = I, V = U, U += a, N += a;
             t.rc = K, t.Vc = V;
           } else {
             if (e(A.mc != null), a = u + p, e((x = A.mc) != null), e(a <= x.i), x.C >= a) a = 1;
             else if (A.ic || X(), A.ic) {
               A = x.V, K = x.Ba, V = x.c;
-              var it = x.i, H = (vt = 1, N = x.$ / V, C = x.$ % V, U = x.m, $ = x.s, x.$), G = V * it, dt = V * a, bt = $.wc, mt = H < dt ? Ee($, C, N) : null;
+              var it = x.i, H = (vt = 1, N = x.$ / V, I = x.$ % V, U = x.m, $ = x.s, x.$), G = V * it, dt = V * a, bt = $.wc, mt = H < dt ? Ee($, I, N) : null;
               e(H <= G), e(a <= it), e(tr($));
               e: for (; ; ) {
                 for (; !U.h && H < dt; ) {
-                  if (C & bt || (mt = Ee($, C, N)), e(mt != null), J(U), 256 > (it = en(mt.G[0], mt.H[0], U))) A[K + H] = it, ++H, ++C >= V && (C = 0, ++N <= a && !(N % 16) && Sn(x, N));
+                  if (I & bt || (mt = Ee($, I, N)), e(mt != null), J(U), 256 > (it = en(mt.G[0], mt.H[0], U))) A[K + H] = it, ++H, ++I >= V && (I = 0, ++N <= a && !(N % 16) && Sn(x, N));
                   else {
                     if (!(280 > it)) {
                       vt = 0;
@@ -6681,8 +6681,8 @@ function Ic(i) {
                       break e;
                     }
                     for (Ot = 0; Ot < it; ++Ot) A[K + H + Ot] = A[K + H + Ot - St];
-                    for (H += it, C += it; C >= V; ) C -= V, ++N <= a && !(N % 16) && Sn(x, N);
-                    H < dt && C & bt && (mt = Ee($, C, N));
+                    for (H += it, I += it; I >= V; ) I -= V, ++N <= a && !(N % 16) && Sn(x, N);
+                    H < dt && I & bt && (mt = Ee($, I, N));
                   }
                   e(U.h == M(U));
                 }
@@ -6705,9 +6705,9 @@ function Ic(i) {
     }
     function c(t, a, u, p, v, y) {
       for (; 0 < v--; ) {
-        var x, A = t, N = a + (u ? 1 : 0), C = t, U = a + (u ? 0 : 3);
+        var x, A = t, N = a + (u ? 1 : 0), I = t, U = a + (u ? 0 : 3);
         for (x = 0; x < p; ++x) {
-          var $ = C[U + 4 * x];
+          var $ = I[U + 4 * x];
           $ != 255 && ($ *= 32897, A[N + 4 * x + 0] = A[N + 4 * x + 0] * $ >> 23, A[N + 4 * x + 1] = A[N + 4 * x + 1] * $ >> 23, A[N + 4 * x + 2] = A[N + 4 * x + 2] * $ >> 23);
         }
         a += y;
@@ -6717,15 +6717,15 @@ function Ic(i) {
       for (; 0 < p--; ) {
         var y;
         for (y = 0; y < u; ++y) {
-          var x = t[a + 2 * y + 0], A = 15 & (C = t[a + 2 * y + 1]), N = 4369 * A, C = (240 & C | C >> 4) * N >> 16;
-          t[a + 2 * y + 0] = (240 & x | x >> 4) * N >> 16 & 240 | (15 & x | x << 4) * N >> 16 >> 4 & 15, t[a + 2 * y + 1] = 240 & C | A;
+          var x = t[a + 2 * y + 0], A = 15 & (I = t[a + 2 * y + 1]), N = 4369 * A, I = (240 & I | I >> 4) * N >> 16;
+          t[a + 2 * y + 0] = (240 & x | x >> 4) * N >> 16 & 240 | (15 & x | x << 4) * N >> 16 >> 4 & 15, t[a + 2 * y + 1] = 240 & I | A;
         }
         a += v;
       }
     }
     function F(t, a, u, p, v, y, x, A) {
-      var N, C, U = 255;
-      for (C = 0; C < v; ++C) {
+      var N, I, U = 255;
+      for (I = 0; I < v; ++I) {
         for (N = 0; N < p; ++N) {
           var $ = t[a + N];
           y[x + 4 * N] = $, U &= $;
@@ -6742,12 +6742,12 @@ function Ic(i) {
       wr = c, vi = b, Ea = F, Fs = T;
     }
     function st(t, a, u) {
-      R[t] = function(p, v, y, x, A, N, C, U, $, K, V, vt, it, H, G, dt, bt) {
-        var mt, Ot = bt - 1 >> 1, St = A[N + 0] | C[U + 0] << 16, Rt = $[K + 0] | V[vt + 0] << 16;
+      R[t] = function(p, v, y, x, A, N, I, U, $, K, V, vt, it, H, G, dt, bt) {
+        var mt, Ot = bt - 1 >> 1, St = A[N + 0] | I[U + 0] << 16, Rt = $[K + 0] | V[vt + 0] << 16;
         e(p != null);
         var _t = 3 * St + Rt + 131074 >> 2;
         for (a(p[v + 0], 255 & _t, _t >> 16, it, H), y != null && (_t = 3 * Rt + St + 131074 >> 2, a(y[x + 0], 255 & _t, _t >> 16, G, dt)), mt = 1; mt <= Ot; ++mt) {
-          var ce = A[N + mt] | C[U + mt] << 16, ue = $[K + mt] | V[vt + mt] << 16, oe = St + ce + Rt + ue + 524296, ne = oe + 2 * (ce + Rt) >> 3;
+          var ce = A[N + mt] | I[U + mt] << 16, ue = $[K + mt] | V[vt + mt] << 16, oe = St + ce + Rt + ue + 524296, ne = oe + 2 * (ce + Rt) >> 3;
           _t = ne + St >> 1, St = (oe = oe + 2 * (St + ue) >> 3) + ce >> 1, a(p[v + 2 * mt - 1], 255 & _t, _t >> 16, it, H + (2 * mt - 1) * u), a(p[v + 2 * mt - 0], 255 & St, St >> 16, it, H + (2 * mt - 0) * u), y != null && (_t = oe + Rt >> 1, St = ne + ue >> 1, a(y[x + 2 * mt - 1], 255 & _t, _t >> 16, G, dt + (2 * mt - 1) * u), a(y[x + 2 * mt + 0], 255 & St, St >> 16, G, dt + (2 * mt + 0) * u)), St = ce, Rt = ue;
         }
         1 & bt || (_t = 3 * St + Rt + 131074 >> 2, a(p[v + bt - 1], 255 & _t, _t >> 16, it, H + (bt - 1) * u), y != null && (_t = 3 * Rt + St + 131074 >> 2, a(y[x + bt - 1], 255 & _t, _t >> 16, G, dt + (bt - 1) * u)));
@@ -6788,16 +6788,16 @@ function Ic(i) {
     function Te(t, a, u, p, v) {
       Ae(t, a, u, p, v), p[v + 3] = 255;
     }
-    function Cn(t, a, u, p, v) {
+    function In(t, a, u, p, v) {
       re(t, a, u, p, v), p[v + 3] = 255;
     }
     function un(t, a) {
       return 0 > t ? 0 : t > a ? a : t;
     }
     function rr(t, a, u) {
-      R[t] = function(p, v, y, x, A, N, C, U, $) {
-        for (var K = U + (-2 & $) * u; U != K; ) a(p[v + 0], y[x + 0], A[N + 0], C, U), a(p[v + 1], y[x + 0], A[N + 0], C, U + u), v += 2, ++x, ++N, U += 2 * u;
-        1 & $ && a(p[v + 0], y[x + 0], A[N + 0], C, U);
+      R[t] = function(p, v, y, x, A, N, I, U, $) {
+        for (var K = U + (-2 & $) * u; U != K; ) a(p[v + 0], y[x + 0], A[N + 0], I, U), a(p[v + 1], y[x + 0], A[N + 0], I, U + u), v += 2, ++x, ++N, U += 2 * u;
+        1 & $ && a(p[v + 0], y[x + 0], A[N + 0], I, U);
       };
     }
     function ja(t, a, u) {
@@ -6816,27 +6816,27 @@ function Ic(i) {
       }
     }
     function Ji(t, a) {
-      var u, p, v = a.M, y = a.Nb, x = t.oc, A = t.pc + 40, N = t.oc, C = t.pc + 584, U = t.oc, $ = t.pc + 600;
+      var u, p, v = a.M, y = a.Nb, x = t.oc, A = t.pc + 40, N = t.oc, I = t.pc + 584, U = t.oc, $ = t.pc + 600;
       for (u = 0; 16 > u; ++u) x[A + 32 * u - 1] = 129;
-      for (u = 0; 8 > u; ++u) N[C + 32 * u - 1] = 129, U[$ + 32 * u - 1] = 129;
-      for (0 < v ? x[A - 1 - 32] = N[C - 1 - 32] = U[$ - 1 - 32] = 129 : (s(x, A - 32 - 1, 127, 21), s(N, C - 32 - 1, 127, 9), s(U, $ - 32 - 1, 127, 9)), p = 0; p < t.za; ++p) {
+      for (u = 0; 8 > u; ++u) N[I + 32 * u - 1] = 129, U[$ + 32 * u - 1] = 129;
+      for (0 < v ? x[A - 1 - 32] = N[I - 1 - 32] = U[$ - 1 - 32] = 129 : (s(x, A - 32 - 1, 127, 21), s(N, I - 32 - 1, 127, 9), s(U, $ - 32 - 1, 127, 9)), p = 0; p < t.za; ++p) {
         var K = a.ya[a.aa + p];
         if (0 < p) {
           for (u = -1; 16 > u; ++u) r(x, A + 32 * u - 4, x, A + 32 * u + 12, 4);
-          for (u = -1; 8 > u; ++u) r(N, C + 32 * u - 4, N, C + 32 * u + 4, 4), r(U, $ + 32 * u - 4, U, $ + 32 * u + 4, 4);
+          for (u = -1; 8 > u; ++u) r(N, I + 32 * u - 4, N, I + 32 * u + 4, 4), r(U, $ + 32 * u - 4, U, $ + 32 * u + 4, 4);
         }
         var V = t.Gd, vt = t.Hd + p, it = K.ad, H = K.Hc;
-        if (0 < v && (r(x, A - 32, V[vt].y, 0, 16), r(N, C - 32, V[vt].f, 0, 8), r(U, $ - 32, V[vt].ea, 0, 8)), K.Za) {
+        if (0 < v && (r(x, A - 32, V[vt].y, 0, 16), r(N, I - 32, V[vt].f, 0, 8), r(U, $ - 32, V[vt].ea, 0, 8)), K.Za) {
           var G = x, dt = A - 32 + 16;
           for (0 < v && (p >= t.za - 1 ? s(G, dt, V[vt].y[15], 4) : r(G, dt, V[vt + 1].y, 0, 4)), u = 0; 4 > u; u++) G[dt + 128 + u] = G[dt + 256 + u] = G[dt + 384 + u] = G[dt + 0 + u];
           for (u = 0; 16 > u; ++u, H <<= 2) G = x, dt = A + Js[u], En[K.Ob[u]](G, dt), Yi(H, it, 16 * +u, G, dt);
         } else if (G = ja(p, v, K.Ob[0]), xr[G](x, A), H != 0) for (u = 0; 16 > u; ++u, H <<= 2) Yi(H, it, 16 * +u, x, A + Js[u]);
-        for (u = K.Gc, G = ja(p, v, K.Dd), cr[G](N, C), cr[G](U, $), H = it, G = N, dt = C, 255 & (K = u >> 0) && (170 & K ? br(H, 256, G, dt) : ar(H, 256, G, dt)), K = U, H = $, 255 & (u >>= 8) && (170 & u ? br(it, 320, K, H) : ar(it, 320, K, H)), v < t.Ub - 1 && (r(V[vt].y, 0, x, A + 480, 16), r(V[vt].f, 0, N, C + 224, 8), r(V[vt].ea, 0, U, $ + 224, 8)), u = 8 * y * t.B, V = t.sa, vt = t.ta + 16 * p + 16 * y * t.R, it = t.qa, K = t.ra + 8 * p + u, H = t.Ha, G = t.Ia + 8 * p + u, u = 0; 16 > u; ++u) r(V, vt + u * t.R, x, A + 32 * u, 16);
-        for (u = 0; 8 > u; ++u) r(it, K + u * t.B, N, C + 32 * u, 8), r(H, G + u * t.B, U, $ + 32 * u, 8);
+        for (u = K.Gc, G = ja(p, v, K.Dd), cr[G](N, I), cr[G](U, $), H = it, G = N, dt = I, 255 & (K = u >> 0) && (170 & K ? br(H, 256, G, dt) : ar(H, 256, G, dt)), K = U, H = $, 255 & (u >>= 8) && (170 & u ? br(it, 320, K, H) : ar(it, 320, K, H)), v < t.Ub - 1 && (r(V[vt].y, 0, x, A + 480, 16), r(V[vt].f, 0, N, I + 224, 8), r(V[vt].ea, 0, U, $ + 224, 8)), u = 8 * y * t.B, V = t.sa, vt = t.ta + 16 * p + 16 * y * t.R, it = t.qa, K = t.ra + 8 * p + u, H = t.Ha, G = t.Ia + 8 * p + u, u = 0; 16 > u; ++u) r(V, vt + u * t.R, x, A + 32 * u, 16);
+        for (u = 0; 8 > u; ++u) r(it, K + u * t.B, N, I + 32 * u, 8), r(H, G + u * t.B, U, $ + 32 * u, 8);
       }
     }
     function li(t, a, u, p, v, y, x, A, N) {
-      var C = [0], U = [0], $ = 0, K = N != null ? N.kd : 0, V = N ?? new Hi();
+      var I = [0], U = [0], $ = 0, K = N != null ? N.kd : 0, V = N ?? new Hi();
       if (t == null || 12 > u) return 7;
       V.data = t, V.w = a, V.ha = u, a = [a], u = [u], V.gb = [V.gb];
       t: {
@@ -6864,7 +6864,7 @@ function Ic(i) {
         t: {
           var dt = t;
           it = a, H = u;
-          var bt = C, mt = U, Ot = vt = [0];
+          var bt = I, mt = U, Ot = vt = [0];
           if ((_t = $ = [$])[0] = 0, 8 > H[0]) H = 7;
           else {
             if (!n(dt, it[0], "VP8X")) {
@@ -6888,7 +6888,7 @@ function Ic(i) {
         }
         if ($ = $[0], vt = vt[0], H != 0) return H;
         if (it = !!(2 & vt), !G && $) return 3;
-        if (y != null && (y[0] = !!(16 & vt)), x != null && (x[0] = it), A != null && (A[0] = 0), x = C[0], vt = U[0], $ && it && N == null) {
+        if (y != null && (y[0] = !!(16 & vt)), x != null && (x[0] = it), A != null && (A[0] = 0), x = I[0], vt = U[0], $ && it && N == null) {
           H = 0;
           break;
         }
@@ -6962,7 +6962,7 @@ function Ic(i) {
           }
           A = vt, t == null || 10 > u || !ma(t, a + 3, u - 3) ? t = 0 : (K = t[a + 0] | t[a + 1] << 8 | t[a + 2] << 16, it = 16383 & (t[a + 7] << 8 | t[a + 6]), t = 16383 & (t[a + 9] << 8 | t[a + 8]), 1 & K || 3 < (K >> 1 & 7) || !(K >> 4 & 1) || K >> 5 >= V.Ja || !it || !t ? t = 0 : (x && (x[0] = it), A && (A[0] = t), t = 1));
         }
-        if (!t || (x = x[0], vt = vt[0], $ && (C[0] != x || U[0] != vt))) return 3;
+        if (!t || (x = x[0], vt = vt[0], $ && (I[0] != x || U[0] != vt))) return 3;
         N != null && (N[0] = V, N.offset = a - N.w, e(4294967286 > a - N.w), e(N.offset == N.ha - u));
         break;
       }
@@ -7000,23 +7000,23 @@ function Ic(i) {
       }
       p.width = t, p.height = a;
       t: {
-        var N = p.width, C = p.height;
-        if (t = p.S, 0 >= N || 0 >= C || !(t >= Ma && 13 > t)) t = 2;
+        var N = p.width, I = p.height;
+        if (t = p.S, 0 >= N || 0 >= I || !(t >= Ma && 13 > t)) t = 2;
         else {
           if (0 >= p.Rd && p.sd == null) {
             x = y = v = a = 0;
-            var U = (A = N * Xs[t]) * C;
-            if (11 > t || (y = (C + 1) / 2 * (a = (N + 1) / 2), t == 12 && (x = (v = N) * C)), (C = o(U + 2 * y + x)) == null) {
+            var U = (A = N * Xs[t]) * I;
+            if (11 > t || (y = (I + 1) / 2 * (a = (N + 1) / 2), t == 12 && (x = (v = N) * I)), (I = o(U + 2 * y + x)) == null) {
               t = 1;
               break t;
             }
-            p.sd = C, 11 > t ? ((N = p.f.RGBA).eb = C, N.fb = 0, N.A = A, N.size = U) : ((N = p.f.kb).y = C, N.O = 0, N.fa = A, N.Fd = U, N.f = C, N.N = 0 + U, N.Ab = a, N.Cd = y, N.ea = C, N.W = 0 + U + y, N.Db = a, N.Ed = y, t == 12 && (N.F = C, N.J = 0 + U + 2 * y), N.Tc = x, N.lb = v);
+            p.sd = I, 11 > t ? ((N = p.f.RGBA).eb = I, N.fb = 0, N.A = A, N.size = U) : ((N = p.f.kb).y = I, N.O = 0, N.fa = A, N.Fd = U, N.f = I, N.N = 0 + U, N.Ab = a, N.Cd = y, N.ea = I, N.W = 0 + U + y, N.Db = a, N.Ed = y, t == 12 && (N.F = I, N.J = 0 + U + 2 * y), N.Tc = x, N.lb = v);
           }
           if (a = 1, v = p.S, y = p.width, x = p.height, v >= Ma && 13 > v) if (11 > v) t = p.f.RGBA, a &= (A = Math.abs(t.A)) * (x - 1) + y <= t.size, a &= A >= y * Xs[v], a &= t.eb != null;
           else {
-            t = p.f.kb, A = (y + 1) / 2, U = (x + 1) / 2, N = Math.abs(t.fa), C = Math.abs(t.Ab);
+            t = p.f.kb, A = (y + 1) / 2, U = (x + 1) / 2, N = Math.abs(t.fa), I = Math.abs(t.Ab);
             var $ = Math.abs(t.Db), K = Math.abs(t.lb), V = K * (x - 1) + y;
-            a &= N * (x - 1) + y <= t.Fd, a &= C * (U - 1) + A <= t.Cd, a = (a &= $ * (U - 1) + A <= t.Ed) & N >= y & C >= A & $ >= A, a &= t.y != null, a &= t.f != null, a &= t.ea != null, v == 12 && (a &= K >= y, a &= V <= t.Tc, a &= t.F != null);
+            a &= N * (x - 1) + y <= t.Fd, a &= I * (U - 1) + A <= t.Cd, a = (a &= $ * (U - 1) + A <= t.Ed) & N >= y & I >= A & $ >= A, a &= t.y != null, a &= t.f != null, a &= t.ea != null, v == 12 && (a &= K >= y, a &= V <= t.Tc, a &= t.F != null);
           }
           else a = 0;
           t = a ? 0 : 2;
@@ -7069,20 +7069,20 @@ function Ic(i) {
     }, function(t) {
       return t >> 8 & 255;
     });
-    var Oa, In = R.ColorIndexInverseTransform, Qi = R.MapARGB, Uo = R.VP8LColorIndexInverseTransformAlpha, Ho = R.MapAlpha, mr = R.VP8LPredictorsAdd = [];
+    var Oa, Cn = R.ColorIndexInverseTransform, Qi = R.MapARGB, Uo = R.VP8LColorIndexInverseTransformAlpha, Ho = R.MapAlpha, mr = R.VP8LPredictorsAdd = [];
     mr.length = 16, (R.VP8LPredictors = []).length = 16, (R.VP8LPredictorsAdd_C = []).length = 16, (R.VP8LPredictors_C = []).length = 16;
-    var mn, Fn, vr, Yn, ir, di, jn, gi, ta, br, On, ar, zr, mi, Ur, yr, ea, vn, or, ye, we, Ie, Re, sr, wr, vi, Ea, Fs, js = o(511), Os = o(2041), Es = o(225), Bs = o(767), Ms = 0, Wo = Os, Ba = Es, fn = Bs, bn = js, Ma = 0, Da = 1, Ds = 2, qa = 3, Ra = 4, Go = 5, qs = 6, Vo = 7, Yo = 8, Ta = 9, Jo = 10, $c = [2, 3, 7], Kc = [3, 3, 11], Rs = [280, 256, 256, 256, 40], Zc = [0, 1, 1, 1, 0], Qc = [17, 18, 0, 1, 2, 3, 4, 5, 16, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], tl = [24, 7, 23, 25, 40, 6, 39, 41, 22, 26, 38, 42, 56, 5, 55, 57, 21, 27, 54, 58, 37, 43, 72, 4, 71, 73, 20, 28, 53, 59, 70, 74, 36, 44, 88, 69, 75, 52, 60, 3, 87, 89, 19, 29, 86, 90, 35, 45, 68, 76, 85, 91, 51, 61, 104, 2, 103, 105, 18, 30, 102, 106, 34, 46, 84, 92, 67, 77, 101, 107, 50, 62, 120, 1, 119, 121, 83, 93, 17, 31, 100, 108, 66, 78, 118, 122, 33, 47, 117, 123, 49, 63, 99, 109, 82, 94, 0, 116, 124, 65, 79, 16, 32, 98, 110, 48, 115, 125, 81, 95, 64, 114, 126, 97, 111, 80, 113, 127, 96, 112], el = [2954, 2956, 2958, 2962, 2970, 2986, 3018, 3082, 3212, 3468, 3980, 5004], nl = 8, Xo = [4, 5, 6, 7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 16, 17, 17, 18, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 25, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 93, 95, 96, 98, 100, 101, 102, 104, 106, 108, 110, 112, 114, 116, 118, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 143, 145, 148, 151, 154, 157], $o = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143, 146, 149, 152, 155, 158, 161, 164, 167, 170, 173, 177, 181, 185, 189, 193, 197, 201, 205, 209, 213, 217, 221, 225, 229, 234, 239, 245, 249, 254, 259, 264, 269, 274, 279, 284], na = null, rl = [[173, 148, 140, 0], [176, 155, 140, 135, 0], [180, 157, 141, 134, 130, 0], [254, 254, 243, 230, 196, 177, 153, 140, 133, 130, 129, 0]], il = [0, 1, 4, 8, 5, 2, 3, 6, 9, 12, 13, 10, 7, 11, 14, 15], Ts = [-0, 1, -1, 2, -2, 3, 4, 6, -3, 5, -4, -5, -6, 7, -7, 8, -8, -9], al = [[[[128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128], [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128], [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]], [[253, 136, 254, 255, 228, 219, 128, 128, 128, 128, 128], [189, 129, 242, 255, 227, 213, 255, 219, 128, 128, 128], [106, 126, 227, 252, 214, 209, 255, 255, 128, 128, 128]], [[1, 98, 248, 255, 236, 226, 255, 255, 128, 128, 128], [181, 133, 238, 254, 221, 234, 255, 154, 128, 128, 128], [78, 134, 202, 247, 198, 180, 255, 219, 128, 128, 128]], [[1, 185, 249, 255, 243, 255, 128, 128, 128, 128, 128], [184, 150, 247, 255, 236, 224, 128, 128, 128, 128, 128], [77, 110, 216, 255, 236, 230, 128, 128, 128, 128, 128]], [[1, 101, 251, 255, 241, 255, 128, 128, 128, 128, 128], [170, 139, 241, 252, 236, 209, 255, 255, 128, 128, 128], [37, 116, 196, 243, 228, 255, 255, 255, 128, 128, 128]], [[1, 204, 254, 255, 245, 255, 128, 128, 128, 128, 128], [207, 160, 250, 255, 238, 128, 128, 128, 128, 128, 128], [102, 103, 231, 255, 211, 171, 128, 128, 128, 128, 128]], [[1, 152, 252, 255, 240, 255, 128, 128, 128, 128, 128], [177, 135, 243, 255, 234, 225, 128, 128, 128, 128, 128], [80, 129, 211, 255, 194, 224, 128, 128, 128, 128, 128]], [[1, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128], [246, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128], [255, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]]], [[[198, 35, 237, 223, 193, 187, 162, 160, 145, 155, 62], [131, 45, 198, 221, 172, 176, 220, 157, 252, 221, 1], [68, 47, 146, 208, 149, 167, 221, 162, 255, 223, 128]], [[1, 149, 241, 255, 221, 224, 255, 255, 128, 128, 128], [184, 141, 234, 253, 222, 220, 255, 199, 128, 128, 128], [81, 99, 181, 242, 176, 190, 249, 202, 255, 255, 128]], [[1, 129, 232, 253, 214, 197, 242, 196, 255, 255, 128], [99, 121, 210, 250, 201, 198, 255, 202, 128, 128, 128], [23, 91, 163, 242, 170, 187, 247, 210, 255, 255, 128]], [[1, 200, 246, 255, 234, 255, 128, 128, 128, 128, 128], [109, 178, 241, 255, 231, 245, 255, 255, 128, 128, 128], [44, 130, 201, 253, 205, 192, 255, 255, 128, 128, 128]], [[1, 132, 239, 251, 219, 209, 255, 165, 128, 128, 128], [94, 136, 225, 251, 218, 190, 255, 255, 128, 128, 128], [22, 100, 174, 245, 186, 161, 255, 199, 128, 128, 128]], [[1, 182, 249, 255, 232, 235, 128, 128, 128, 128, 128], [124, 143, 241, 255, 227, 234, 128, 128, 128, 128, 128], [35, 77, 181, 251, 193, 211, 255, 205, 128, 128, 128]], [[1, 157, 247, 255, 236, 231, 255, 255, 128, 128, 128], [121, 141, 235, 255, 225, 227, 255, 255, 128, 128, 128], [45, 99, 188, 251, 195, 217, 255, 224, 128, 128, 128]], [[1, 1, 251, 255, 213, 255, 128, 128, 128, 128, 128], [203, 1, 248, 255, 255, 128, 128, 128, 128, 128, 128], [137, 1, 177, 255, 224, 255, 128, 128, 128, 128, 128]]], [[[253, 9, 248, 251, 207, 208, 255, 192, 128, 128, 128], [175, 13, 224, 243, 193, 185, 249, 198, 255, 255, 128], [73, 17, 171, 221, 161, 179, 236, 167, 255, 234, 128]], [[1, 95, 247, 253, 212, 183, 255, 255, 128, 128, 128], [239, 90, 244, 250, 211, 209, 255, 255, 128, 128, 128], [155, 77, 195, 248, 188, 195, 255, 255, 128, 128, 128]], [[1, 24, 239, 251, 218, 219, 255, 205, 128, 128, 128], [201, 51, 219, 255, 196, 186, 128, 128, 128, 128, 128], [69, 46, 190, 239, 201, 218, 255, 228, 128, 128, 128]], [[1, 191, 251, 255, 255, 128, 128, 128, 128, 128, 128], [223, 165, 249, 255, 213, 255, 128, 128, 128, 128, 128], [141, 124, 248, 255, 255, 128, 128, 128, 128, 128, 128]], [[1, 16, 248, 255, 255, 128, 128, 128, 128, 128, 128], [190, 36, 230, 255, 236, 255, 128, 128, 128, 128, 128], [149, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128]], [[1, 226, 255, 128, 128, 128, 128, 128, 128, 128, 128], [247, 192, 255, 128, 128, 128, 128, 128, 128, 128, 128], [240, 128, 255, 128, 128, 128, 128, 128, 128, 128, 128]], [[1, 134, 252, 255, 255, 128, 128, 128, 128, 128, 128], [213, 62, 250, 255, 255, 128, 128, 128, 128, 128, 128], [55, 93, 255, 128, 128, 128, 128, 128, 128, 128, 128]], [[128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128], [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128], [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]]], [[[202, 24, 213, 235, 186, 191, 220, 160, 240, 175, 255], [126, 38, 182, 232, 169, 184, 228, 174, 255, 187, 128], [61, 46, 138, 219, 151, 178, 240, 170, 255, 216, 128]], [[1, 112, 230, 250, 199, 191, 247, 159, 255, 255, 128], [166, 109, 228, 252, 211, 215, 255, 174, 128, 128, 128], [39, 77, 162, 232, 172, 180, 245, 178, 255, 255, 128]], [[1, 52, 220, 246, 198, 199, 249, 220, 255, 255, 128], [124, 74, 191, 243, 183, 193, 250, 221, 255, 255, 128], [24, 71, 130, 219, 154, 170, 243, 182, 255, 255, 128]], [[1, 182, 225, 249, 219, 240, 255, 224, 128, 128, 128], [149, 150, 226, 252, 216, 205, 255, 171, 128, 128, 128], [28, 108, 170, 242, 183, 194, 254, 223, 255, 255, 128]], [[1, 81, 230, 252, 204, 203, 255, 192, 128, 128, 128], [123, 102, 209, 247, 188, 196, 255, 233, 128, 128, 128], [20, 95, 153, 243, 164, 173, 255, 203, 128, 128, 128]], [[1, 222, 248, 255, 216, 213, 128, 128, 128, 128, 128], [168, 175, 246, 252, 235, 205, 255, 255, 128, 128, 128], [47, 116, 215, 255, 211, 212, 255, 255, 128, 128, 128]], [[1, 121, 236, 253, 212, 214, 255, 255, 128, 128, 128], [141, 84, 213, 252, 201, 202, 255, 219, 128, 128, 128], [42, 80, 160, 240, 162, 185, 255, 205, 128, 128, 128]], [[1, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128], [244, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128], [238, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128]]]], ol = [[[231, 120, 48, 89, 115, 113, 120, 152, 112], [152, 179, 64, 126, 170, 118, 46, 70, 95], [175, 69, 143, 80, 85, 82, 72, 155, 103], [56, 58, 10, 171, 218, 189, 17, 13, 152], [114, 26, 17, 163, 44, 195, 21, 10, 173], [121, 24, 80, 195, 26, 62, 44, 64, 85], [144, 71, 10, 38, 171, 213, 144, 34, 26], [170, 46, 55, 19, 136, 160, 33, 206, 71], [63, 20, 8, 114, 114, 208, 12, 9, 226], [81, 40, 11, 96, 182, 84, 29, 16, 36]], [[134, 183, 89, 137, 98, 101, 106, 165, 148], [72, 187, 100, 130, 157, 111, 32, 75, 80], [66, 102, 167, 99, 74, 62, 40, 234, 128], [41, 53, 9, 178, 241, 141, 26, 8, 107], [74, 43, 26, 146, 73, 166, 49, 23, 157], [65, 38, 105, 160, 51, 52, 31, 115, 128], [104, 79, 12, 27, 217, 255, 87, 17, 7], [87, 68, 71, 44, 114, 51, 15, 186, 23], [47, 41, 14, 110, 182, 183, 21, 17, 194], [66, 45, 25, 102, 197, 189, 23, 18, 22]], [[88, 88, 147, 150, 42, 46, 45, 196, 205], [43, 97, 183, 117, 85, 38, 35, 179, 61], [39, 53, 200, 87, 26, 21, 43, 232, 171], [56, 34, 51, 104, 114, 102, 29, 93, 77], [39, 28, 85, 171, 58, 165, 90, 98, 64], [34, 22, 116, 206, 23, 34, 43, 166, 73], [107, 54, 32, 26, 51, 1, 81, 43, 31], [68, 25, 106, 22, 64, 171, 36, 225, 114], [34, 19, 21, 102, 132, 188, 16, 76, 124], [62, 18, 78, 95, 85, 57, 50, 48, 51]], [[193, 101, 35, 159, 215, 111, 89, 46, 111], [60, 148, 31, 172, 219, 228, 21, 18, 111], [112, 113, 77, 85, 179, 255, 38, 120, 114], [40, 42, 1, 196, 245, 209, 10, 25, 109], [88, 43, 29, 140, 166, 213, 37, 43, 154], [61, 63, 30, 155, 67, 45, 68, 1, 209], [100, 80, 8, 43, 154, 1, 51, 26, 71], [142, 78, 78, 16, 255, 128, 34, 197, 171], [41, 40, 5, 102, 211, 183, 4, 1, 221], [51, 50, 17, 168, 209, 192, 23, 25, 82]], [[138, 31, 36, 171, 27, 166, 38, 44, 229], [67, 87, 58, 169, 82, 115, 26, 59, 179], [63, 59, 90, 180, 59, 166, 93, 73, 154], [40, 40, 21, 116, 143, 209, 34, 39, 175], [47, 15, 16, 183, 34, 223, 49, 45, 183], [46, 17, 33, 183, 6, 98, 15, 32, 183], [57, 46, 22, 24, 128, 1, 54, 17, 37], [65, 32, 73, 115, 28, 128, 23, 128, 205], [40, 3, 9, 115, 51, 192, 18, 6, 223], [87, 37, 9, 115, 59, 77, 64, 21, 47]], [[104, 55, 44, 218, 9, 54, 53, 130, 226], [64, 90, 70, 205, 40, 41, 23, 26, 57], [54, 57, 112, 184, 5, 41, 38, 166, 213], [30, 34, 26, 133, 152, 116, 10, 32, 134], [39, 19, 53, 221, 26, 114, 32, 73, 255], [31, 9, 65, 234, 2, 15, 1, 118, 73], [75, 32, 12, 51, 192, 255, 160, 43, 51], [88, 31, 35, 67, 102, 85, 55, 186, 85], [56, 21, 23, 111, 59, 205, 45, 37, 192], [55, 38, 70, 124, 73, 102, 1, 34, 98]], [[125, 98, 42, 88, 104, 85, 117, 175, 82], [95, 84, 53, 89, 128, 100, 113, 101, 45], [75, 79, 123, 47, 51, 128, 81, 171, 1], [57, 17, 5, 71, 102, 57, 53, 41, 49], [38, 33, 13, 121, 57, 73, 26, 1, 85], [41, 10, 67, 138, 77, 110, 90, 47, 114], [115, 21, 2, 10, 102, 255, 166, 23, 6], [101, 29, 16, 10, 85, 128, 101, 196, 26], [57, 18, 10, 102, 102, 213, 34, 20, 43], [117, 20, 15, 36, 163, 128, 68, 1, 26]], [[102, 61, 71, 37, 34, 53, 31, 243, 192], [69, 60, 71, 38, 73, 119, 28, 222, 37], [68, 45, 128, 34, 1, 47, 11, 245, 171], [62, 17, 19, 70, 146, 85, 55, 62, 70], [37, 43, 37, 154, 100, 163, 85, 160, 1], [63, 9, 92, 136, 28, 64, 32, 201, 85], [75, 15, 9, 9, 64, 255, 184, 119, 16], [86, 6, 28, 5, 64, 255, 25, 248, 1], [56, 8, 17, 132, 137, 255, 55, 116, 128], [58, 15, 20, 82, 135, 57, 26, 121, 40]], [[164, 50, 31, 137, 154, 133, 25, 35, 218], [51, 103, 44, 131, 131, 123, 31, 6, 158], [86, 40, 64, 135, 148, 224, 45, 183, 128], [22, 26, 17, 131, 240, 154, 14, 1, 209], [45, 16, 21, 91, 64, 222, 7, 1, 197], [56, 21, 39, 155, 60, 138, 23, 102, 213], [83, 12, 13, 54, 192, 255, 68, 47, 28], [85, 26, 85, 85, 128, 128, 32, 146, 171], [18, 11, 7, 63, 144, 171, 4, 4, 246], [35, 27, 10, 146, 174, 171, 12, 26, 128]], [[190, 80, 35, 99, 180, 80, 126, 54, 45], [85, 126, 47, 87, 176, 51, 41, 20, 32], [101, 75, 128, 139, 118, 146, 116, 128, 85], [56, 41, 15, 176, 236, 85, 37, 9, 62], [71, 30, 17, 119, 118, 255, 17, 18, 138], [101, 38, 60, 138, 55, 70, 43, 26, 142], [146, 36, 19, 30, 171, 255, 97, 27, 20], [138, 45, 61, 62, 219, 1, 81, 188, 64], [32, 41, 20, 117, 151, 142, 20, 21, 163], [112, 19, 12, 61, 195, 128, 48, 4, 24]]], sl = [[[[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[176, 246, 255, 255, 255, 255, 255, 255, 255, 255, 255], [223, 241, 252, 255, 255, 255, 255, 255, 255, 255, 255], [249, 253, 253, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 244, 252, 255, 255, 255, 255, 255, 255, 255, 255], [234, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [253, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 246, 254, 255, 255, 255, 255, 255, 255, 255, 255], [239, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 248, 254, 255, 255, 255, 255, 255, 255, 255, 255], [251, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [251, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 254, 253, 255, 254, 255, 255, 255, 255, 255, 255], [250, 255, 254, 255, 254, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]]], [[[217, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [225, 252, 241, 253, 255, 255, 254, 255, 255, 255, 255], [234, 250, 241, 250, 253, 255, 253, 254, 255, 255, 255]], [[255, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [223, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [238, 253, 254, 254, 255, 255, 255, 255, 255, 255, 255]], [[255, 248, 254, 255, 255, 255, 255, 255, 255, 255, 255], [249, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 253, 255, 255, 255, 255, 255, 255, 255, 255, 255], [247, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [252, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [253, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 254, 253, 255, 255, 255, 255, 255, 255, 255, 255], [250, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]]], [[[186, 251, 250, 255, 255, 255, 255, 255, 255, 255, 255], [234, 251, 244, 254, 255, 255, 255, 255, 255, 255, 255], [251, 251, 243, 253, 254, 255, 254, 255, 255, 255, 255]], [[255, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [236, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [251, 253, 253, 254, 254, 255, 255, 255, 255, 255, 255]], [[255, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [254, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]]], [[[248, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [250, 254, 252, 254, 255, 255, 255, 255, 255, 255, 255], [248, 254, 249, 253, 255, 255, 255, 255, 255, 255, 255]], [[255, 253, 253, 255, 255, 255, 255, 255, 255, 255, 255], [246, 253, 253, 255, 255, 255, 255, 255, 255, 255, 255], [252, 254, 251, 254, 254, 255, 255, 255, 255, 255, 255]], [[255, 254, 252, 255, 255, 255, 255, 255, 255, 255, 255], [248, 254, 253, 255, 255, 255, 255, 255, 255, 255, 255], [253, 255, 254, 254, 255, 255, 255, 255, 255, 255, 255]], [[255, 251, 254, 255, 255, 255, 255, 255, 255, 255, 255], [245, 251, 254, 255, 255, 255, 255, 255, 255, 255, 255], [253, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 251, 253, 255, 255, 255, 255, 255, 255, 255, 255], [252, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [255, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 252, 255, 255, 255, 255, 255, 255, 255, 255, 255], [249, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 253, 255, 255, 255, 255, 255, 255, 255, 255], [250, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]]]], cl = [0, 1, 2, 3, 6, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 0], xr = [], En = [], cr = [], ll = 1, zs = 2, Lr = [], yn = [];
-    st("UpsampleRgbLinePair", re, 3), st("UpsampleBgrLinePair", Ae, 3), st("UpsampleRgbaLinePair", Cn, 4), st("UpsampleBgraLinePair", Te, 4), st("UpsampleArgbLinePair", Je, 4), st("UpsampleRgba4444LinePair", Be, 2), st("UpsampleRgb565LinePair", _e, 2);
+    var mn, Fn, vr, Yn, ir, di, jn, gi, ta, br, On, ar, zr, mi, Ur, yr, ea, vn, or, ye, we, Ce, Re, sr, wr, vi, Ea, Fs, js = o(511), Os = o(2041), Es = o(225), Bs = o(767), Ms = 0, Wo = Os, Ba = Es, fn = Bs, bn = js, Ma = 0, Da = 1, Ds = 2, qa = 3, Ra = 4, Go = 5, qs = 6, Vo = 7, Yo = 8, Ta = 9, Jo = 10, $c = [2, 3, 7], Kc = [3, 3, 11], Rs = [280, 256, 256, 256, 40], Zc = [0, 1, 1, 1, 0], Qc = [17, 18, 0, 1, 2, 3, 4, 5, 16, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], tl = [24, 7, 23, 25, 40, 6, 39, 41, 22, 26, 38, 42, 56, 5, 55, 57, 21, 27, 54, 58, 37, 43, 72, 4, 71, 73, 20, 28, 53, 59, 70, 74, 36, 44, 88, 69, 75, 52, 60, 3, 87, 89, 19, 29, 86, 90, 35, 45, 68, 76, 85, 91, 51, 61, 104, 2, 103, 105, 18, 30, 102, 106, 34, 46, 84, 92, 67, 77, 101, 107, 50, 62, 120, 1, 119, 121, 83, 93, 17, 31, 100, 108, 66, 78, 118, 122, 33, 47, 117, 123, 49, 63, 99, 109, 82, 94, 0, 116, 124, 65, 79, 16, 32, 98, 110, 48, 115, 125, 81, 95, 64, 114, 126, 97, 111, 80, 113, 127, 96, 112], el = [2954, 2956, 2958, 2962, 2970, 2986, 3018, 3082, 3212, 3468, 3980, 5004], nl = 8, Xo = [4, 5, 6, 7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 16, 17, 17, 18, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 25, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 93, 95, 96, 98, 100, 101, 102, 104, 106, 108, 110, 112, 114, 116, 118, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 143, 145, 148, 151, 154, 157], $o = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143, 146, 149, 152, 155, 158, 161, 164, 167, 170, 173, 177, 181, 185, 189, 193, 197, 201, 205, 209, 213, 217, 221, 225, 229, 234, 239, 245, 249, 254, 259, 264, 269, 274, 279, 284], na = null, rl = [[173, 148, 140, 0], [176, 155, 140, 135, 0], [180, 157, 141, 134, 130, 0], [254, 254, 243, 230, 196, 177, 153, 140, 133, 130, 129, 0]], il = [0, 1, 4, 8, 5, 2, 3, 6, 9, 12, 13, 10, 7, 11, 14, 15], Ts = [-0, 1, -1, 2, -2, 3, 4, 6, -3, 5, -4, -5, -6, 7, -7, 8, -8, -9], al = [[[[128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128], [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128], [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]], [[253, 136, 254, 255, 228, 219, 128, 128, 128, 128, 128], [189, 129, 242, 255, 227, 213, 255, 219, 128, 128, 128], [106, 126, 227, 252, 214, 209, 255, 255, 128, 128, 128]], [[1, 98, 248, 255, 236, 226, 255, 255, 128, 128, 128], [181, 133, 238, 254, 221, 234, 255, 154, 128, 128, 128], [78, 134, 202, 247, 198, 180, 255, 219, 128, 128, 128]], [[1, 185, 249, 255, 243, 255, 128, 128, 128, 128, 128], [184, 150, 247, 255, 236, 224, 128, 128, 128, 128, 128], [77, 110, 216, 255, 236, 230, 128, 128, 128, 128, 128]], [[1, 101, 251, 255, 241, 255, 128, 128, 128, 128, 128], [170, 139, 241, 252, 236, 209, 255, 255, 128, 128, 128], [37, 116, 196, 243, 228, 255, 255, 255, 128, 128, 128]], [[1, 204, 254, 255, 245, 255, 128, 128, 128, 128, 128], [207, 160, 250, 255, 238, 128, 128, 128, 128, 128, 128], [102, 103, 231, 255, 211, 171, 128, 128, 128, 128, 128]], [[1, 152, 252, 255, 240, 255, 128, 128, 128, 128, 128], [177, 135, 243, 255, 234, 225, 128, 128, 128, 128, 128], [80, 129, 211, 255, 194, 224, 128, 128, 128, 128, 128]], [[1, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128], [246, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128], [255, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]]], [[[198, 35, 237, 223, 193, 187, 162, 160, 145, 155, 62], [131, 45, 198, 221, 172, 176, 220, 157, 252, 221, 1], [68, 47, 146, 208, 149, 167, 221, 162, 255, 223, 128]], [[1, 149, 241, 255, 221, 224, 255, 255, 128, 128, 128], [184, 141, 234, 253, 222, 220, 255, 199, 128, 128, 128], [81, 99, 181, 242, 176, 190, 249, 202, 255, 255, 128]], [[1, 129, 232, 253, 214, 197, 242, 196, 255, 255, 128], [99, 121, 210, 250, 201, 198, 255, 202, 128, 128, 128], [23, 91, 163, 242, 170, 187, 247, 210, 255, 255, 128]], [[1, 200, 246, 255, 234, 255, 128, 128, 128, 128, 128], [109, 178, 241, 255, 231, 245, 255, 255, 128, 128, 128], [44, 130, 201, 253, 205, 192, 255, 255, 128, 128, 128]], [[1, 132, 239, 251, 219, 209, 255, 165, 128, 128, 128], [94, 136, 225, 251, 218, 190, 255, 255, 128, 128, 128], [22, 100, 174, 245, 186, 161, 255, 199, 128, 128, 128]], [[1, 182, 249, 255, 232, 235, 128, 128, 128, 128, 128], [124, 143, 241, 255, 227, 234, 128, 128, 128, 128, 128], [35, 77, 181, 251, 193, 211, 255, 205, 128, 128, 128]], [[1, 157, 247, 255, 236, 231, 255, 255, 128, 128, 128], [121, 141, 235, 255, 225, 227, 255, 255, 128, 128, 128], [45, 99, 188, 251, 195, 217, 255, 224, 128, 128, 128]], [[1, 1, 251, 255, 213, 255, 128, 128, 128, 128, 128], [203, 1, 248, 255, 255, 128, 128, 128, 128, 128, 128], [137, 1, 177, 255, 224, 255, 128, 128, 128, 128, 128]]], [[[253, 9, 248, 251, 207, 208, 255, 192, 128, 128, 128], [175, 13, 224, 243, 193, 185, 249, 198, 255, 255, 128], [73, 17, 171, 221, 161, 179, 236, 167, 255, 234, 128]], [[1, 95, 247, 253, 212, 183, 255, 255, 128, 128, 128], [239, 90, 244, 250, 211, 209, 255, 255, 128, 128, 128], [155, 77, 195, 248, 188, 195, 255, 255, 128, 128, 128]], [[1, 24, 239, 251, 218, 219, 255, 205, 128, 128, 128], [201, 51, 219, 255, 196, 186, 128, 128, 128, 128, 128], [69, 46, 190, 239, 201, 218, 255, 228, 128, 128, 128]], [[1, 191, 251, 255, 255, 128, 128, 128, 128, 128, 128], [223, 165, 249, 255, 213, 255, 128, 128, 128, 128, 128], [141, 124, 248, 255, 255, 128, 128, 128, 128, 128, 128]], [[1, 16, 248, 255, 255, 128, 128, 128, 128, 128, 128], [190, 36, 230, 255, 236, 255, 128, 128, 128, 128, 128], [149, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128]], [[1, 226, 255, 128, 128, 128, 128, 128, 128, 128, 128], [247, 192, 255, 128, 128, 128, 128, 128, 128, 128, 128], [240, 128, 255, 128, 128, 128, 128, 128, 128, 128, 128]], [[1, 134, 252, 255, 255, 128, 128, 128, 128, 128, 128], [213, 62, 250, 255, 255, 128, 128, 128, 128, 128, 128], [55, 93, 255, 128, 128, 128, 128, 128, 128, 128, 128]], [[128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128], [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128], [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]]], [[[202, 24, 213, 235, 186, 191, 220, 160, 240, 175, 255], [126, 38, 182, 232, 169, 184, 228, 174, 255, 187, 128], [61, 46, 138, 219, 151, 178, 240, 170, 255, 216, 128]], [[1, 112, 230, 250, 199, 191, 247, 159, 255, 255, 128], [166, 109, 228, 252, 211, 215, 255, 174, 128, 128, 128], [39, 77, 162, 232, 172, 180, 245, 178, 255, 255, 128]], [[1, 52, 220, 246, 198, 199, 249, 220, 255, 255, 128], [124, 74, 191, 243, 183, 193, 250, 221, 255, 255, 128], [24, 71, 130, 219, 154, 170, 243, 182, 255, 255, 128]], [[1, 182, 225, 249, 219, 240, 255, 224, 128, 128, 128], [149, 150, 226, 252, 216, 205, 255, 171, 128, 128, 128], [28, 108, 170, 242, 183, 194, 254, 223, 255, 255, 128]], [[1, 81, 230, 252, 204, 203, 255, 192, 128, 128, 128], [123, 102, 209, 247, 188, 196, 255, 233, 128, 128, 128], [20, 95, 153, 243, 164, 173, 255, 203, 128, 128, 128]], [[1, 222, 248, 255, 216, 213, 128, 128, 128, 128, 128], [168, 175, 246, 252, 235, 205, 255, 255, 128, 128, 128], [47, 116, 215, 255, 211, 212, 255, 255, 128, 128, 128]], [[1, 121, 236, 253, 212, 214, 255, 255, 128, 128, 128], [141, 84, 213, 252, 201, 202, 255, 219, 128, 128, 128], [42, 80, 160, 240, 162, 185, 255, 205, 128, 128, 128]], [[1, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128], [244, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128], [238, 1, 255, 128, 128, 128, 128, 128, 128, 128, 128]]]], ol = [[[231, 120, 48, 89, 115, 113, 120, 152, 112], [152, 179, 64, 126, 170, 118, 46, 70, 95], [175, 69, 143, 80, 85, 82, 72, 155, 103], [56, 58, 10, 171, 218, 189, 17, 13, 152], [114, 26, 17, 163, 44, 195, 21, 10, 173], [121, 24, 80, 195, 26, 62, 44, 64, 85], [144, 71, 10, 38, 171, 213, 144, 34, 26], [170, 46, 55, 19, 136, 160, 33, 206, 71], [63, 20, 8, 114, 114, 208, 12, 9, 226], [81, 40, 11, 96, 182, 84, 29, 16, 36]], [[134, 183, 89, 137, 98, 101, 106, 165, 148], [72, 187, 100, 130, 157, 111, 32, 75, 80], [66, 102, 167, 99, 74, 62, 40, 234, 128], [41, 53, 9, 178, 241, 141, 26, 8, 107], [74, 43, 26, 146, 73, 166, 49, 23, 157], [65, 38, 105, 160, 51, 52, 31, 115, 128], [104, 79, 12, 27, 217, 255, 87, 17, 7], [87, 68, 71, 44, 114, 51, 15, 186, 23], [47, 41, 14, 110, 182, 183, 21, 17, 194], [66, 45, 25, 102, 197, 189, 23, 18, 22]], [[88, 88, 147, 150, 42, 46, 45, 196, 205], [43, 97, 183, 117, 85, 38, 35, 179, 61], [39, 53, 200, 87, 26, 21, 43, 232, 171], [56, 34, 51, 104, 114, 102, 29, 93, 77], [39, 28, 85, 171, 58, 165, 90, 98, 64], [34, 22, 116, 206, 23, 34, 43, 166, 73], [107, 54, 32, 26, 51, 1, 81, 43, 31], [68, 25, 106, 22, 64, 171, 36, 225, 114], [34, 19, 21, 102, 132, 188, 16, 76, 124], [62, 18, 78, 95, 85, 57, 50, 48, 51]], [[193, 101, 35, 159, 215, 111, 89, 46, 111], [60, 148, 31, 172, 219, 228, 21, 18, 111], [112, 113, 77, 85, 179, 255, 38, 120, 114], [40, 42, 1, 196, 245, 209, 10, 25, 109], [88, 43, 29, 140, 166, 213, 37, 43, 154], [61, 63, 30, 155, 67, 45, 68, 1, 209], [100, 80, 8, 43, 154, 1, 51, 26, 71], [142, 78, 78, 16, 255, 128, 34, 197, 171], [41, 40, 5, 102, 211, 183, 4, 1, 221], [51, 50, 17, 168, 209, 192, 23, 25, 82]], [[138, 31, 36, 171, 27, 166, 38, 44, 229], [67, 87, 58, 169, 82, 115, 26, 59, 179], [63, 59, 90, 180, 59, 166, 93, 73, 154], [40, 40, 21, 116, 143, 209, 34, 39, 175], [47, 15, 16, 183, 34, 223, 49, 45, 183], [46, 17, 33, 183, 6, 98, 15, 32, 183], [57, 46, 22, 24, 128, 1, 54, 17, 37], [65, 32, 73, 115, 28, 128, 23, 128, 205], [40, 3, 9, 115, 51, 192, 18, 6, 223], [87, 37, 9, 115, 59, 77, 64, 21, 47]], [[104, 55, 44, 218, 9, 54, 53, 130, 226], [64, 90, 70, 205, 40, 41, 23, 26, 57], [54, 57, 112, 184, 5, 41, 38, 166, 213], [30, 34, 26, 133, 152, 116, 10, 32, 134], [39, 19, 53, 221, 26, 114, 32, 73, 255], [31, 9, 65, 234, 2, 15, 1, 118, 73], [75, 32, 12, 51, 192, 255, 160, 43, 51], [88, 31, 35, 67, 102, 85, 55, 186, 85], [56, 21, 23, 111, 59, 205, 45, 37, 192], [55, 38, 70, 124, 73, 102, 1, 34, 98]], [[125, 98, 42, 88, 104, 85, 117, 175, 82], [95, 84, 53, 89, 128, 100, 113, 101, 45], [75, 79, 123, 47, 51, 128, 81, 171, 1], [57, 17, 5, 71, 102, 57, 53, 41, 49], [38, 33, 13, 121, 57, 73, 26, 1, 85], [41, 10, 67, 138, 77, 110, 90, 47, 114], [115, 21, 2, 10, 102, 255, 166, 23, 6], [101, 29, 16, 10, 85, 128, 101, 196, 26], [57, 18, 10, 102, 102, 213, 34, 20, 43], [117, 20, 15, 36, 163, 128, 68, 1, 26]], [[102, 61, 71, 37, 34, 53, 31, 243, 192], [69, 60, 71, 38, 73, 119, 28, 222, 37], [68, 45, 128, 34, 1, 47, 11, 245, 171], [62, 17, 19, 70, 146, 85, 55, 62, 70], [37, 43, 37, 154, 100, 163, 85, 160, 1], [63, 9, 92, 136, 28, 64, 32, 201, 85], [75, 15, 9, 9, 64, 255, 184, 119, 16], [86, 6, 28, 5, 64, 255, 25, 248, 1], [56, 8, 17, 132, 137, 255, 55, 116, 128], [58, 15, 20, 82, 135, 57, 26, 121, 40]], [[164, 50, 31, 137, 154, 133, 25, 35, 218], [51, 103, 44, 131, 131, 123, 31, 6, 158], [86, 40, 64, 135, 148, 224, 45, 183, 128], [22, 26, 17, 131, 240, 154, 14, 1, 209], [45, 16, 21, 91, 64, 222, 7, 1, 197], [56, 21, 39, 155, 60, 138, 23, 102, 213], [83, 12, 13, 54, 192, 255, 68, 47, 28], [85, 26, 85, 85, 128, 128, 32, 146, 171], [18, 11, 7, 63, 144, 171, 4, 4, 246], [35, 27, 10, 146, 174, 171, 12, 26, 128]], [[190, 80, 35, 99, 180, 80, 126, 54, 45], [85, 126, 47, 87, 176, 51, 41, 20, 32], [101, 75, 128, 139, 118, 146, 116, 128, 85], [56, 41, 15, 176, 236, 85, 37, 9, 62], [71, 30, 17, 119, 118, 255, 17, 18, 138], [101, 38, 60, 138, 55, 70, 43, 26, 142], [146, 36, 19, 30, 171, 255, 97, 27, 20], [138, 45, 61, 62, 219, 1, 81, 188, 64], [32, 41, 20, 117, 151, 142, 20, 21, 163], [112, 19, 12, 61, 195, 128, 48, 4, 24]]], sl = [[[[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[176, 246, 255, 255, 255, 255, 255, 255, 255, 255, 255], [223, 241, 252, 255, 255, 255, 255, 255, 255, 255, 255], [249, 253, 253, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 244, 252, 255, 255, 255, 255, 255, 255, 255, 255], [234, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [253, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 246, 254, 255, 255, 255, 255, 255, 255, 255, 255], [239, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 248, 254, 255, 255, 255, 255, 255, 255, 255, 255], [251, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [251, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 254, 253, 255, 254, 255, 255, 255, 255, 255, 255], [250, 255, 254, 255, 254, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]]], [[[217, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [225, 252, 241, 253, 255, 255, 254, 255, 255, 255, 255], [234, 250, 241, 250, 253, 255, 253, 254, 255, 255, 255]], [[255, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [223, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [238, 253, 254, 254, 255, 255, 255, 255, 255, 255, 255]], [[255, 248, 254, 255, 255, 255, 255, 255, 255, 255, 255], [249, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 253, 255, 255, 255, 255, 255, 255, 255, 255, 255], [247, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [252, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [253, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 254, 253, 255, 255, 255, 255, 255, 255, 255, 255], [250, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]]], [[[186, 251, 250, 255, 255, 255, 255, 255, 255, 255, 255], [234, 251, 244, 254, 255, 255, 255, 255, 255, 255, 255], [251, 251, 243, 253, 254, 255, 254, 255, 255, 255, 255]], [[255, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [236, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [251, 253, 253, 254, 254, 255, 255, 255, 255, 255, 255]], [[255, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [254, 254, 254, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]]], [[[248, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [250, 254, 252, 254, 255, 255, 255, 255, 255, 255, 255], [248, 254, 249, 253, 255, 255, 255, 255, 255, 255, 255]], [[255, 253, 253, 255, 255, 255, 255, 255, 255, 255, 255], [246, 253, 253, 255, 255, 255, 255, 255, 255, 255, 255], [252, 254, 251, 254, 254, 255, 255, 255, 255, 255, 255]], [[255, 254, 252, 255, 255, 255, 255, 255, 255, 255, 255], [248, 254, 253, 255, 255, 255, 255, 255, 255, 255, 255], [253, 255, 254, 254, 255, 255, 255, 255, 255, 255, 255]], [[255, 251, 254, 255, 255, 255, 255, 255, 255, 255, 255], [245, 251, 254, 255, 255, 255, 255, 255, 255, 255, 255], [253, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 251, 253, 255, 255, 255, 255, 255, 255, 255, 255], [252, 253, 254, 255, 255, 255, 255, 255, 255, 255, 255], [255, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 252, 255, 255, 255, 255, 255, 255, 255, 255, 255], [249, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 253, 255, 255, 255, 255, 255, 255, 255, 255], [250, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]], [[255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255], [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]]]], cl = [0, 1, 2, 3, 6, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 0], xr = [], En = [], cr = [], ll = 1, zs = 2, Lr = [], yn = [];
+    st("UpsampleRgbLinePair", re, 3), st("UpsampleBgrLinePair", Ae, 3), st("UpsampleRgbaLinePair", In, 4), st("UpsampleBgraLinePair", Te, 4), st("UpsampleArgbLinePair", Je, 4), st("UpsampleRgba4444LinePair", Be, 2), st("UpsampleRgb565LinePair", _e, 2);
     var hl = R.UpsampleRgbLinePair, ul = R.UpsampleBgrLinePair, Us = R.UpsampleRgbaLinePair, Hs = R.UpsampleBgraLinePair, Ws = R.UpsampleArgbLinePair, Gs = R.UpsampleRgba4444LinePair, fl = R.UpsampleRgb565LinePair, za = 16, Ua = 1 << za - 1, ra = -227, Ko = 482, Vs = 6, pl = (256 << Vs) - 1, Ys = 0, dl = o(256), gl = o(256), ml = o(256), vl = o(256), bl = o(Ko - ra), yl = o(Ko - ra);
-    rr("YuvToRgbRow", re, 3), rr("YuvToBgrRow", Ae, 3), rr("YuvToRgbaRow", Cn, 4), rr("YuvToBgraRow", Te, 4), rr("YuvToArgbRow", Je, 4), rr("YuvToRgba4444Row", Be, 2), rr("YuvToRgb565Row", _e, 2);
+    rr("YuvToRgbRow", re, 3), rr("YuvToBgrRow", Ae, 3), rr("YuvToRgbaRow", In, 4), rr("YuvToBgraRow", Te, 4), rr("YuvToArgbRow", Je, 4), rr("YuvToRgba4444Row", Be, 2), rr("YuvToRgb565Row", _e, 2);
     var Js = [0, 4, 8, 12, 128, 132, 136, 140, 256, 260, 264, 268, 384, 388, 392, 396], Ha = [0, 2, 8], wl = [8, 7, 6, 4, 4, 2, 2, 2, 1, 1, 1, 1], xl = 1;
     this.WebPDecodeRGBA = function(t, a, u, p, v) {
       var y = Da, x = new si(), A = new Ln();
       x.ba = A, A.S = y, A.width = [A.width], A.height = [A.height];
-      var N = A.width, C = A.height, U = new Qn();
+      var N = A.width, I = A.height, U = new Qn();
       if (U == null || t == null) var $ = 2;
       else e(U != null), $ = li(t, a, u, U.width, U.height, U.Pd, U.Qd, U.format, null);
-      if ($ != 0 ? N = 0 : (N != null && (N[0] = U.width[0]), C != null && (C[0] = U.height[0]), N = 1), N) {
+      if ($ != 0 ? N = 0 : (N != null && (N[0] = U.width[0]), I != null && (I[0] = U.height[0]), N = 1), N) {
         A.width = A.width[0], A.height = A.height[0], p != null && (p[0] = A.width), v != null && (v[0] = A.height);
         t: {
           if (p = new ti(), (v = new Hi()).data = t, v.w = a, v.ha = u, v.kd = 1, a = [0], e(v != null), ((t = li(v.data, v.w, v.ha, null, null, null, a, null, v)) == 0 || t == 7) && a[0] && (t = 4), (a = t) == 0) {
@@ -7144,7 +7144,7 @@ function Ic(i) {
                 if ((a = hi(p.width, p.height, x.Oa, x.ba)) == 0) {
                   if (t.Aa = 0, u = x.Oa, e((v = t) != null), u != null) {
                     if (0 < (N = 0 > (N = u.Md) ? 0 : 100 < N ? 255 : 255 * N / 100)) {
-                      for (C = U = 0; 4 > C; ++C) 12 > ($ = v.pb[C]).lc && ($.ia = N * wl[0 > $.lc ? 0 : $.lc] >> 3), U |= $.ia;
+                      for (I = U = 0; 4 > I; ++I) 12 > ($ = v.pb[I]).lc && ($.ia = N * wl[0 > $.lc ? 0 : $.lc] >> 3), U |= $.ia;
                       U && (alert("todo:VP8InitRandom"), v.ia = 1);
                     }
                     v.Ga = u.Id, 100 < v.Ga ? v.Ga = 100 : 0 > v.Ga && (v.Ga = 0);
@@ -7164,7 +7164,7 @@ function Ic(i) {
     var Xs = [3, 4, 3, 4, 4, 2, 2, 4, 4, 4, 2, 1, 1];
   };
   function g(R, gt) {
-    for (var pt = "", I = 0; I < 4; I++) pt += String.fromCharCode(R[gt++]);
+    for (var pt = "", C = 0; C < 4; C++) pt += String.fromCharCode(R[gt++]);
     return pt;
   }
   function m(R, gt) {
@@ -7175,7 +7175,7 @@ function Ic(i) {
   }
   new f();
   var S = [0], d = [0], O = [], P = new f(), B = i, _ = function(R, gt) {
-    var pt = {}, I = 0, k = !1, z = 0, q = 0;
+    var pt = {}, C = 0, k = !1, z = 0, q = 0;
     if (pt.frames = [], !/** @license
        * Copyright (c) 2017 Dominik Homberger
       Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -7196,7 +7196,7 @@ function Ic(i) {
         switch (ht) {
           case "VP8 ":
           case "VP8L":
-            pt.frames[I] === void 0 && (pt.frames[I] = {}), (L = pt.frames[I]).src_off = k ? q : gt - 8, L.src_size = z + Z + 8, I++, k && (k = !1, z = 0, q = 0);
+            pt.frames[C] === void 0 && (pt.frames[C] = {}), (L = pt.frames[C]).src_off = k ? q : gt - 8, L.src_size = z + Z + 8, C++, k && (k = !1, z = 0, q = 0);
             break;
           case "VP8X":
             (L = pt.header = {}).feature_flags = R[gt];
@@ -7211,7 +7211,7 @@ function Ic(i) {
             break;
           case "ANMF":
             var kt, L;
-            (L = pt.frames[I] = {}).offset_x = 2 * m(R, gt), gt += 3, L.offset_y = 2 * m(R, gt), gt += 3, L.width = 1 + m(R, gt), gt += 3, L.height = 1 + m(R, gt), gt += 3, L.duration = m(R, gt), gt += 3, kt = R[gt++], L.dispose = 1 & kt, L.blend = kt >> 1 & 1;
+            (L = pt.frames[C] = {}).offset_x = 2 * m(R, gt), gt += 3, L.offset_y = 2 * m(R, gt), gt += 3, L.width = 1 + m(R, gt), gt += 3, L.height = 1 + m(R, gt), gt += 3, L.duration = m(R, gt), gt += 3, kt = R[gt++], L.dispose = 1 & kt, L.blend = kt >> 1 & 1;
         }
         ht != "ANMF" && (gt += ft);
       }
@@ -7296,7 +7296,7 @@ function Ic(i) {
     return d.indexOf(Math.min.apply(null, d));
   };
   i.processPNG = function(S, d, O, P) {
-    var B, _, E, Y, at, lt, yt, tt, R, gt, pt, I, k, z, q, ot = this.decode.FLATE_DECODE, nt = "";
+    var B, _, E, Y, at, lt, yt, tt, R, gt, pt, C, k, z, q, ot = this.decode.FLATE_DECODE, nt = "";
     if (this.__addimage__.isArrayBuffer(S) && (S = new Uint8Array(S)), this.__addimage__.isArrayBufferView(S)) {
       if (S = (E = new Fh(S)).imgData, _ = E.bits, B = E.colorSpace, at = E.colors, [4, 6].indexOf(E.colorType) !== -1) {
         if (E.bits === 8) {
@@ -7308,8 +7308,8 @@ function Ic(i) {
           }
         }
         if (E.bits === 16) {
-          R = (tt = new Uint32Array(E.decodePixels().buffer)).length, pt = new Uint8Array(R * (32 / E.pixelBitlength) * E.colors), gt = new Uint8Array(R * (32 / E.pixelBitlength)), I = E.colors > 1, z = 0, q = 0;
-          for (var ft = 0; z < R; ) k = tt[z++], pt[q++] = k >>> 0 & 255, I && (pt[q++] = k >>> 16 & 255, k = tt[z++], pt[q++] = k >>> 0 & 255), gt[ft++] = k >>> 16 & 255;
+          R = (tt = new Uint32Array(E.decodePixels().buffer)).length, pt = new Uint8Array(R * (32 / E.pixelBitlength) * E.colors), gt = new Uint8Array(R * (32 / E.pixelBitlength)), C = E.colors > 1, z = 0, q = 0;
+          for (var ft = 0; z < R; ) k = tt[z++], pt[q++] = k >>> 0 & 255, C && (pt[q++] = k >>> 16 & 255, k = tt[z++], pt[q++] = k >>> 0 & 255), gt[ft++] = k >>> 16 & 255;
           _ = 8;
         }
         P !== i.image_compression.NONE && e() ? (S = n(pt, E.width * E.colors, E.colors, P), yt = n(gt, E.width, 1, P)) : (S = pt, yt = gt, ot = void 0);
@@ -7444,7 +7444,7 @@ function(i) {
     var o = new Dn(e, !1), l = o.width, h = o.height, f = { data: o.getData(), width: l, height: h }, g = new gs(100).encode(f, 100);
     return i.processJPEG.call(this, g, n, r, s);
   };
-}(Ut.API), Ic.prototype.getData = function() {
+}(Ut.API), Cc.prototype.getData = function() {
   return this.data;
 }, /**
  * @license
@@ -7455,7 +7455,7 @@ function(i) {
  */
 function(i) {
   i.processWEBP = function(e, n, r, s) {
-    var o = new Ic(e), l = o.width, h = o.height, f = { data: o.getData(), width: l, height: h }, g = new gs(100).encode(f, 100);
+    var o = new Cc(e), l = o.width, h = o.height, f = { data: o.getData(), width: l, height: h }, g = new gs(100).encode(f, 100);
     return i.processJPEG.call(this, g, n, r, s);
   };
 }(Ut.API), Ut.API.processRGBA = function(i, e, n) {
@@ -7600,7 +7600,7 @@ function(i) {
  */
 function(i) {
   function e() {
-    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-D5RCTJAV.mjs")).catch(function(n) {
+    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-5xBIuAF7.mjs")).catch(function(n) {
       return Promise.reject(new Error("Could not load canvg: " + n));
     }).then(function(n) {
       return n.default ? n.default : n;
@@ -7815,16 +7815,16 @@ function(i) {
   i.__bidiEngine__ = i.prototype.__bidiEngine__ = function(r) {
     var s, o, l, h, f, g, m, w = e, S = [[0, 3, 0, 1, 0, 0, 0], [0, 3, 0, 1, 2, 2, 0], [0, 3, 0, 17, 2, 0, 1], [0, 3, 5, 5, 4, 1, 0], [0, 3, 21, 21, 4, 0, 1], [0, 3, 5, 5, 4, 2, 0]], d = [[2, 0, 1, 1, 0, 1, 0], [2, 0, 1, 1, 0, 2, 0], [2, 0, 2, 1, 3, 2, 0], [2, 0, 2, 33, 3, 1, 1]], O = { L: 0, R: 1, EN: 2, AN: 3, N: 4, B: 5, S: 6 }, P = { 0: 0, 5: 1, 6: 2, 7: 3, 32: 4, 251: 5, 254: 6, 255: 7 }, B = ["(", ")", "(", "<", ">", "<", "[", "]", "[", "{", "}", "{", "«", "»", "«", "‹", "›", "‹", "⁅", "⁆", "⁅", "⁽", "⁾", "⁽", "₍", "₎", "₍", "≤", "≥", "≤", "〈", "〉", "〈", "﹙", "﹚", "﹙", "﹛", "﹜", "﹛", "﹝", "﹞", "﹝", "﹤", "﹥", "﹤"], _ = new RegExp(/^([1-4|9]|1[0-9]|2[0-9]|3[0168]|4[04589]|5[012]|7[78]|159|16[0-9]|17[0-2]|21[569]|22[03489]|250)$/), E = !1, Y = 0;
     this.__bidiEngine__ = {};
-    var at = function(I) {
-      var k = I.charCodeAt(), z = k >> 8, q = P[z];
+    var at = function(C) {
+      var k = C.charCodeAt(), z = k >> 8, q = P[z];
       return q !== void 0 ? w[256 * q + (255 & k)] : z === 252 || z === 253 ? "AL" : _.test(z) ? "L" : z === 8 ? "R" : "N";
-    }, lt = function(I) {
-      for (var k, z = 0; z < I.length; z++) {
-        if ((k = at(I.charAt(z))) === "L") return !1;
+    }, lt = function(C) {
+      for (var k, z = 0; z < C.length; z++) {
+        if ((k = at(C.charAt(z))) === "L") return !1;
         if (k === "R") return !0;
       }
       return !1;
-    }, yt = function(I, k, z, q) {
+    }, yt = function(C, k, z, q) {
       var ot, nt, ht, Z, ft = k[q];
       switch (ft) {
         case "L":
@@ -7865,7 +7865,7 @@ function(i) {
           if (l && !h) {
             for (Z = k.length, ht = q + 1; ht < Z && k[ht] === "NSM"; ) ht++;
             if (ht < Z) {
-              var ut = I[q], kt = ut >= 1425 && ut <= 2303 || ut === 64286;
+              var ut = C[q], kt = ut >= 1425 && ut <= 2303 || ut === 64286;
               if (ot = k[ht], kt && (ot === "R" || ot === "AL")) {
                 ft = "R";
                 break;
@@ -7891,14 +7891,14 @@ function(i) {
           ft = "N";
       }
       return ft;
-    }, tt = function(I, k, z) {
-      var q = I.split("");
+    }, tt = function(C, k, z) {
+      var q = C.split("");
       return z && R(q, z, { hiLevel: Y }), q.reverse(), k && k.reverse(), q.join("");
-    }, R = function(I, k, z) {
-      var q, ot, nt, ht, Z, ft = -1, ut = I.length, kt = 0, L = [], j = Y ? d : S, M = [];
-      for (E = !1, s = !1, o = !1, ot = 0; ot < ut; ot++) M[ot] = at(I[ot]);
+    }, R = function(C, k, z) {
+      var q, ot, nt, ht, Z, ft = -1, ut = C.length, kt = 0, L = [], j = Y ? d : S, M = [];
+      for (E = !1, s = !1, o = !1, ot = 0; ot < ut; ot++) M[ot] = at(C[ot]);
       for (nt = 0; nt < ut; nt++) {
-        if (Z = kt, L[nt] = yt(I, M, L, nt), q = 240 & (kt = j[Z][O[L[nt]]]), kt &= 15, k[nt] = ht = j[kt][5], q > 0) if (q === 16) {
+        if (Z = kt, L[nt] = yt(C, M, L, nt), q = 240 & (kt = j[Z][O[L[nt]]]), kt &= 15, k[nt] = ht = j[kt][5], q > 0) if (q === 16) {
           for (ot = ft; ot < nt; ot++) k[ot] = 1;
           ft = -1;
         } else ft = -1;
@@ -7915,42 +7915,42 @@ function(i) {
           for (var rt = et - 1; rt >= 0 && W[rt] === "WS"; rt--) J[rt] = Y;
         }
       }(M, k, ut);
-    }, gt = function(I, k, z, q, ot) {
-      if (!(ot.hiLevel < I)) {
-        if (I === 1 && Y === 1 && !s) return k.reverse(), void (z && z.reverse());
+    }, gt = function(C, k, z, q, ot) {
+      if (!(ot.hiLevel < C)) {
+        if (C === 1 && Y === 1 && !s) return k.reverse(), void (z && z.reverse());
         for (var nt, ht, Z, ft, ut = k.length, kt = 0; kt < ut; ) {
-          if (q[kt] >= I) {
-            for (Z = kt + 1; Z < ut && q[Z] >= I; ) Z++;
+          if (q[kt] >= C) {
+            for (Z = kt + 1; Z < ut && q[Z] >= C; ) Z++;
             for (ft = kt, ht = Z - 1; ft < ht; ft++, ht--) nt = k[ft], k[ft] = k[ht], k[ht] = nt, z && (nt = z[ft], z[ft] = z[ht], z[ht] = nt);
             kt = Z;
           }
           kt++;
         }
       }
-    }, pt = function(I, k, z) {
-      var q = I.split(""), ot = { hiLevel: Y };
+    }, pt = function(C, k, z) {
+      var q = C.split(""), ot = { hiLevel: Y };
       return z || (z = []), R(q, z, ot), function(nt, ht, Z) {
         if (Z.hiLevel !== 0 && m) for (var ft, ut = 0; ut < nt.length; ut++) ht[ut] === 1 && (ft = B.indexOf(nt[ut])) >= 0 && (nt[ut] = B[ft + 1]);
       }(q, z, ot), gt(2, q, k, z, ot), gt(1, q, k, z, ot), q.join("");
     };
-    return this.__bidiEngine__.doBidiReorder = function(I, k, z) {
+    return this.__bidiEngine__.doBidiReorder = function(C, k, z) {
       if (function(ot, nt) {
         if (nt) for (var ht = 0; ht < ot.length; ht++) nt[ht] = ht;
         h === void 0 && (h = lt(ot)), g === void 0 && (g = lt(ot));
-      }(I, k), l || !f || g) if (l && f && h ^ g) Y = h ? 1 : 0, I = tt(I, k, z);
-      else if (!l && f && g) Y = h ? 1 : 0, I = pt(I, k, z), I = tt(I, k);
+      }(C, k), l || !f || g) if (l && f && h ^ g) Y = h ? 1 : 0, C = tt(C, k, z);
+      else if (!l && f && g) Y = h ? 1 : 0, C = pt(C, k, z), C = tt(C, k);
       else if (!l || h || f || g) {
-        if (l && !f && h ^ g) I = tt(I, k), h ? (Y = 0, I = pt(I, k, z)) : (Y = 1, I = pt(I, k, z), I = tt(I, k));
-        else if (l && h && !f && g) Y = 1, I = pt(I, k, z), I = tt(I, k);
+        if (l && !f && h ^ g) C = tt(C, k), h ? (Y = 0, C = pt(C, k, z)) : (Y = 1, C = pt(C, k, z), C = tt(C, k));
+        else if (l && h && !f && g) Y = 1, C = pt(C, k, z), C = tt(C, k);
         else if (!l && !f && h ^ g) {
           var q = m;
-          h ? (Y = 1, I = pt(I, k, z), Y = 0, m = !1, I = pt(I, k, z), m = q) : (Y = 0, I = pt(I, k, z), I = tt(I, k), Y = 1, m = !1, I = pt(I, k, z), m = q, I = tt(I, k));
+          h ? (Y = 1, C = pt(C, k, z), Y = 0, m = !1, C = pt(C, k, z), m = q) : (Y = 0, C = pt(C, k, z), C = tt(C, k), Y = 1, m = !1, C = pt(C, k, z), m = q, C = tt(C, k));
         }
-      } else Y = 0, I = pt(I, k, z);
-      else Y = h ? 1 : 0, I = pt(I, k, z);
-      return I;
-    }, this.__bidiEngine__.setOptions = function(I) {
-      I && (l = I.isInputVisual, f = I.isOutputVisual, h = I.isInputRtl, g = I.isOutputRtl, m = I.isSymmetricSwapping);
+      } else Y = 0, C = pt(C, k, z);
+      else Y = h ? 1 : 0, C = pt(C, k, z);
+      return C;
+    }, this.__bidiEngine__.setOptions = function(C) {
+      C && (l = C.isInputVisual, f = C.isOutputVisual, h = C.isInputRtl, g = C.isOutputRtl, m = C.isSymmetricSwapping);
     }, this.__bidiEngine__.setOptions(r), this.__bidiEngine__;
   };
   var e = ["BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "S", "B", "S", "WS", "B", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "B", "B", "B", "S", "WS", "N", "N", "ET", "ET", "ET", "N", "N", "N", "N", "N", "ES", "CS", "ES", "CS", "CS", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "CS", "N", "N", "N", "N", "N", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "N", "N", "N", "N", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "N", "N", "N", "BN", "BN", "BN", "BN", "BN", "BN", "B", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "BN", "CS", "N", "ET", "ET", "ET", "ET", "N", "N", "N", "N", "L", "N", "N", "BN", "N", "N", "ET", "ET", "EN", "EN", "N", "L", "N", "N", "N", "EN", "L", "N", "N", "N", "N", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "N", "L", "L", "L", "L", "L", "L", "L", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "L", "N", "N", "N", "N", "N", "ET", "N", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "R", "NSM", "R", "NSM", "NSM", "R", "NSM", "NSM", "R", "NSM", "N", "N", "N", "N", "N", "N", "N", "N", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "N", "N", "N", "N", "N", "R", "R", "R", "R", "R", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "AN", "AN", "AN", "AN", "AN", "AN", "N", "N", "AL", "ET", "ET", "AL", "CS", "AL", "N", "N", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "AL", "AL", "N", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "AN", "AN", "AN", "AN", "AN", "AN", "AN", "AN", "AN", "AN", "ET", "AN", "AN", "AL", "AL", "AL", "NSM", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "AN", "N", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "AL", "AL", "NSM", "NSM", "N", "NSM", "NSM", "NSM", "NSM", "AL", "AL", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "N", "AL", "AL", "NSM", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "N", "N", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "AL", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "R", "R", "N", "N", "N", "N", "R", "N", "N", "N", "N", "N", "WS", "WS", "WS", "WS", "WS", "WS", "WS", "WS", "WS", "WS", "WS", "BN", "BN", "BN", "L", "R", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "WS", "B", "LRE", "RLE", "PDF", "LRO", "RLO", "CS", "ET", "ET", "ET", "ET", "ET", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "CS", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "WS", "BN", "BN", "BN", "BN", "BN", "N", "LRI", "RLI", "FSI", "PDI", "BN", "BN", "BN", "BN", "BN", "BN", "EN", "L", "N", "N", "EN", "EN", "EN", "EN", "EN", "EN", "ES", "ES", "N", "N", "N", "L", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "ES", "ES", "N", "N", "N", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "N", "N", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "ET", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "L", "L", "L", "L", "L", "L", "L", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "L", "L", "L", "L", "L", "N", "N", "N", "N", "N", "R", "NSM", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "ES", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "N", "R", "R", "R", "R", "R", "N", "R", "N", "R", "R", "N", "R", "R", "N", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "NSM", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "CS", "N", "CS", "N", "N", "CS", "N", "N", "N", "N", "N", "N", "N", "N", "N", "ET", "N", "N", "ES", "ES", "N", "N", "N", "N", "N", "ET", "ET", "N", "N", "N", "N", "N", "AL", "AL", "AL", "AL", "AL", "N", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "N", "N", "BN", "N", "N", "N", "ET", "ET", "ET", "N", "N", "N", "N", "N", "ES", "CS", "ES", "CS", "CS", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "EN", "CS", "N", "N", "N", "N", "N", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "N", "N", "N", "N", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "N", "N", "N", "L", "L", "L", "L", "L", "L", "N", "N", "L", "L", "L", "L", "L", "L", "N", "N", "L", "L", "L", "L", "L", "L", "N", "N", "L", "L", "L", "N", "N", "N", "ET", "ET", "N", "N", "N", "ET", "ET", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N"], n = new i.__bidiEngine__({ isInputVisual: !0 });
@@ -8129,7 +8129,7 @@ var Bh = function(i) {
     e.pos = w;
   }
   return i.encode = function(e, n) {
-    var r, s, o, l, h, f, g, m, w, S, d, O, P, B, _, E, Y, at, lt, yt, tt, R, gt, pt, I, k, z, q, ot, nt, ht, Z, ft, ut, kt, L, j, M, W, J, Q, et, rt, At, Lt, Ft;
+    var r, s, o, l, h, f, g, m, w, S, d, O, P, B, _, E, Y, at, lt, yt, tt, R, gt, pt, C, k, z, q, ot, nt, ht, Z, ft, ut, kt, L, j, M, W, J, Q, et, rt, At, Lt, Ft;
     switch (q = new Or(), l = Object.keys(e).sort(function(Et, zt) {
       return Et - zt;
     }), n) {
@@ -8143,12 +8143,12 @@ var Bh = function(i) {
       case "unicode":
         for (k = [], w = [], Y = 0, E = {}, r = {}, _ = g = null, nt = 0, ut = l.length; nt < ut; nt++) E[lt = e[s = l[nt]]] == null && (E[lt] = ++Y), r[s] = { old: lt, new: E[lt] }, h = E[lt] - s, _ != null && h === g || (_ && w.push(_), k.push(s), g = h), _ = s;
         for (_ && w.push(_), w.push(65535), k.push(65535), pt = 2 * (gt = k.length), R = 2 * Math.pow(Math.log(gt) / Math.LN2, 2), S = Math.log(R / 2) / Math.LN2, tt = 2 * gt - R, f = [], yt = [], d = [], O = ht = 0, kt = k.length; ht < kt; O = ++ht) {
-          if (I = k[O], m = w[O], I === 65535) {
+          if (C = k[O], m = w[O], C === 65535) {
             f.push(0), yt.push(0);
             break;
           }
-          if (I - (z = r[I].new) >= 32768) for (f.push(0), yt.push(2 * (d.length + gt - O)), s = Z = I; I <= m ? Z <= m : Z >= m; s = I <= m ? ++Z : --Z) d.push(r[s].new);
-          else f.push(z - I), yt.push(0);
+          if (C - (z = r[C].new) >= 32768) for (f.push(0), yt.push(2 * (d.length + gt - O)), s = Z = C; C <= m ? Z <= m : Z >= m; s = C <= m ? ++Z : --Z) d.push(r[s].new);
+          else f.push(z - C), yt.push(0);
         }
         for (q.writeUInt16(3), q.writeUInt16(1), q.writeUInt32(12), q.writeUInt16(4), q.writeUInt16(16 + 8 * gt + 2 * d.length), q.writeUInt16(0), q.writeUInt16(pt), q.writeUInt16(R), q.writeUInt16(S), q.writeUInt16(tt), Q = 0, L = w.length; Q < L; Q++) s = w[Q], q.writeUInt16(s);
         for (q.writeUInt16(0), et = 0, j = k.length; et < j; et++) s = k[et], q.writeUInt16(s);
@@ -8381,7 +8381,7 @@ Ut.API.PDFObject = function() {
     return "" + n;
   }, e;
 }();
-const Is = {
+const Cs = {
   "circle-radius": 8,
   "circle-color": "red",
   "circle-stroke-width": 1,
@@ -8413,7 +8413,7 @@ class Jh {
    * @param unit length unit. default is mm
    * @param fileName file name. default is 'map'
    */
-  constructor(e, n = _i.A4, r = 300, s = Ir.PNG, o = ji.mm, l = "map", h = "maplibregl-marker", f = Is, g = "maplibregl-ctrl-attrib-inner", m = uo, w = fo) {
+  constructor(e, n = _i.A4, r = 300, s = Cr.PNG, o = ji.mm, l = "map", h = "maplibregl-marker", f = Cs, g = "maplibregl-ctrl-attrib-inner", m = uo, w = fo) {
     ie(this, "map");
     ie(this, "width");
     ie(this, "height");
@@ -8683,16 +8683,16 @@ class Jh {
     var l;
     const s = e.getCanvas(), o = `${this.fileName}.${this.format}`;
     switch (this.format) {
-      case Ir.PNG:
+      case Cr.PNG:
         this.toPNG(s, o);
         break;
-      case Ir.JPEG:
+      case Cr.JPEG:
         this.toJPEG(s, o);
         break;
-      case Ir.PDF:
+      case Cr.PDF:
         this.toPDF(e, o);
         break;
-      case Ir.SVG:
+      case Cr.SVG:
         this.toSVG(s, o);
         break;
       default:
@@ -8791,7 +8791,7 @@ class Xh extends Jh {
    * @param unit length unit. default is mm
    * @param fileName file name. default is 'map'
    */
-  constructor(e, n = _i.A4, r = 300, s = Ir.PNG, o = ji.mm, l = "map", h = Is, f = uo, g = fo) {
+  constructor(e, n = _i.A4, r = 300, s = Cr.PNG, o = ji.mm, l = "map", h = Cs, f = uo, g = fo) {
     super(
       e,
       n,
@@ -8848,14 +8848,14 @@ class Qh {
     ie(this, "options", {
       PageSize: _i.A4,
       PageOrientation: to.Landscape,
-      Format: Ir.PDF,
+      Format: Cr.PDF,
       DPI: uc[300],
       Crosshair: !1,
       PrintableArea: !1,
       Local: "en",
       AllowedSizes: Object.keys(_i),
       Filename: "map",
-      markerCirclePaint: Is,
+      markerCirclePaint: Cs,
       attributionOptions: uo,
       northIconOptions: fo
     });
@@ -8900,7 +8900,7 @@ class Qh {
     );
     n.appendChild(o);
     const l = this.createSelection(
-      Ir,
+      Cr,
       this.getTranslation().Format,
       "format-type",
       this.options.Format,
@@ -8962,10 +8962,10 @@ class Qh {
     this.controlContainer && !this.controlContainer.contains(e.target) && this.exportContainer && this.exportButton && (this.exportContainer.style.display = "none", this.exportButton.style.display = "block", this.toggleCrosshair(!1), this.togglePrintableArea(!1));
   }
   toggleCrosshair(e) {
-    this.options.Crosshair === !0 && (e === !1 ? this.hideCrosshair() : this.showCrosshair());
+    this.options.Crosshair === !0 && (e === !1 ? this.crosshair !== void 0 && (this.crosshair.destroy(), this.crosshair = void 0) : (this.crosshair = new Ml(this.map), this.crosshair.create()));
   }
   togglePrintableArea(e) {
-    this.options.PrintableArea === !0 && (e === !1 ? this.hidePrintableArea() : this.showPrintableArea());
+    this.options.PrintableArea === !0 && (e === !1 ? this.printableArea !== void 0 && (this.printableArea.destroy(), this.printableArea = void 0) : (this.printableArea = new Dl(this.map), this.updatePrintableArea()));
   }
   updatePrintableArea() {
     if (this.printableArea === void 0)
@@ -8974,24 +8974,12 @@ class Qh {
     let s = JSON.parse(e.value);
     r === to.Portrait && (s = s.reverse()), this.printableArea.updateArea(s[0], s[1]);
   }
-  showPrintableArea() {
-    console.log("testShowPrintableArea"), this.printableArea = new Dl(this.map), this.updatePrintableArea();
-  }
-  hidePrintableArea() {
-    this.printableArea !== void 0 && (this.printableArea.destroy(), this.printableArea = void 0);
-  }
-  showCrosshair() {
-    console.log("testShowCrosshair"), this.crosshair = new Ml(this.map), this.crosshair.create();
-  }
-  hideCrosshair() {
-    this.crosshair !== void 0 && (this.crosshair.destroy(), this.crosshair = void 0);
-  }
 }
 export {
   Zh as A,
   Ml as C,
   uc as D,
-  Ir as F,
+  Cr as F,
   $l as L,
   Qh as M,
   Dl as P,
@@ -9001,8 +8989,8 @@ export {
   to as a,
   uo as b,
   fo as c,
-  Is as d,
+  Cs as d,
   Jh as e,
   Kl as g
 };
-//# sourceMappingURL=index-D5hqQ589.mjs.map
+//# sourceMappingURL=index-CFeB4viV.mjs.map
