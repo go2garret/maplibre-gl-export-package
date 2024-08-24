@@ -300,33 +300,36 @@ export default class MaplibreExportControl implements IControl {
 
 	public toggleCrosshair(state: boolean) {
 		if (this.options.Crosshair === true) {
-			console.log('toggleCrosshair', state);
+			console.log('toggleCrosshair', state, JSON.stringify(this.crosshair));
 			if (state === false) {
-				console.log("Hide crosshair?");
 				if (this.crosshair !== undefined) {
 					console.log("Hide crosshair");
 					this.crosshair.destroy();
 					this.crosshair = undefined;
 				}
 			} else {
-				console.log("Show crosshair", this.map, this.crosshair);
-				this.crosshair = new CrosshairManager(this.map);
-				this.crosshair.create();
+				if (this.crosshair === undefined) {
+					console.log("Show crosshair");
+					this.crosshair = new CrosshairManager(this.map);
+					this.crosshair.create();
+				}
 			}
 		}
 	}
 
 	public togglePrintableArea(state: boolean) {
 		if (this.options.PrintableArea === true) {
-			console.log('togglePrintableArea', state);
+			console.log('togglePrintableArea', state, JSON.stringify(this.printableArea));
 			if (state === false) {
 				if (this.printableArea !== undefined) {
 					this.printableArea.destroy();
 					this.printableArea = undefined;
 				}
 			} else {
-				this.printableArea = new PrintableAreaManager(this.map);
-				this.updatePrintableArea();
+				if (this.printableArea === undefined) {
+					this.printableArea = new PrintableAreaManager(this.map);
+					this.updatePrintableArea();
+				}
 			}
 		}
 	}
