@@ -65,7 +65,8 @@ export default class MaplibreExportControl implements IControl {
 		Filename: 'map',
 		markerCirclePaint: defaultMarkerCirclePaint,
 		attributionOptions: defaultAttributionOptions,
-		northIconOptions: defaultNorthIconOptions
+		northIconOptions: defaultNorthIconOptions,
+		autoClose: true
 	};
 
 	protected MAPLIB_CSS_PREFIX: string = 'maplibregl';
@@ -285,10 +286,11 @@ export default class MaplibreExportControl implements IControl {
 	private onDocumentClick(event: MouseEvent): void {
 		if (
 			this.controlContainer &&
-			!this.controlContainer.contains(event.target as Element) &&
+			(this.options.autoClose && !this.controlContainer.contains(event.target as Element)) &&
 			this.exportContainer &&
 			this.exportButton
 		) {
+			console.log("handle onDocumentClick", this.options.autoClose);
 			this.exportContainer.style.display = 'none';
 			this.exportButton.style.display = 'block';
 			this.toggleCrosshair(false);
@@ -298,16 +300,18 @@ export default class MaplibreExportControl implements IControl {
 
 	public toggleCrosshair(state: boolean) {
 		if (this.options.Crosshair === true) {
+			console.log('toggleCrosshair', state);
 			if (state === false) {
+				console.log("Hide crosshair?");
 				if (this.crosshair !== undefined) {
+					console.log("Hide crosshair");
 					this.crosshair.destroy();
 					this.crosshair = undefined;
-					console.log("Hide crosshair");
 				}
 			} else {
+				console.log("Show crosshair", this.map, this.crosshair);
 				this.crosshair = new CrosshairManager(this.map);
 				this.crosshair.create();
-				console.log("Show crosshair", this.map, this.crosshair);
 			}
 		}
 	}

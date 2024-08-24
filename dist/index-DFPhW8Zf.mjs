@@ -7600,7 +7600,7 @@ function(i) {
  */
 function(i) {
   function e() {
-    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-zNwmMmkx.mjs")).catch(function(n) {
+    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-BAaK3uMo.mjs")).catch(function(n) {
       return Promise.reject(new Error("Could not load canvg: " + n));
     }).then(function(n) {
       return n.default ? n.default : n;
@@ -8857,7 +8857,8 @@ class Qh {
       Filename: "map",
       markerCirclePaint: Cs,
       attributionOptions: uo,
-      northIconOptions: fo
+      northIconOptions: fo,
+      autoClose: !0
     });
     ie(this, "MAPLIB_CSS_PREFIX", "maplibregl");
     e && (e.attributionOptions = Object.assign(
@@ -8959,7 +8960,7 @@ class Qh {
     !this.controlContainer || !this.controlContainer.parentNode || !this.map || !this.exportButton || (this.exportButton.removeEventListener("click", this.onDocumentClick), this.controlContainer.parentNode.removeChild(this.controlContainer), document.removeEventListener("click", this.onDocumentClick), this.crosshair !== void 0 && (this.crosshair.destroy(), this.crosshair = void 0), this.printableArea !== void 0 && (this.printableArea.destroy(), this.printableArea = void 0), this.map = void 0);
   }
   onDocumentClick(e) {
-    this.controlContainer && !this.controlContainer.contains(e.target) && this.exportContainer && this.exportButton && (this.exportContainer.style.display = "none", this.exportButton.style.display = "block", this.toggleCrosshair(!1), this.togglePrintableArea(!1));
+    this.controlContainer && this.options.autoClose && !this.controlContainer.contains(e.target) && this.exportContainer && this.exportButton && (this.exportContainer.style.display = "none", this.exportButton.style.display = "block", this.toggleCrosshair(!1), this.togglePrintableArea(!1));
   }
   toggleCrosshair(e) {
     this.options.Crosshair === !0 && (e === !1 ? this.crosshair !== void 0 && (this.crosshair.destroy(), this.crosshair = void 0, console.log("Hide crosshair")) : (this.crosshair = new Ml(this.map), this.crosshair.create(), console.log("Show crosshair", this.map, this.crosshair)));
@@ -8993,4 +8994,4 @@ export {
   Jh as e,
   Kl as g
 };
-//# sourceMappingURL=index-ZpbnfCWM.mjs.map
+//# sourceMappingURL=index-DFPhW8Zf.mjs.map
