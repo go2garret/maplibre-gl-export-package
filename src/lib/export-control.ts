@@ -318,6 +318,7 @@ export default class MaplibreExportControl implements IControl {
 
 	public togglePrintableArea(state: boolean) {
 		if (this.options.PrintableArea === true) {
+			console.log('togglePrintableArea', state);
 			if (state === false) {
 				if (this.printableArea !== undefined) {
 					this.printableArea.destroy();
