@@ -7600,7 +7600,7 @@ function(i) {
  */
 function(i) {
   function e() {
-    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-DWmD_sk9.mjs")).catch(function(n) {
+    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-DxOMtIat.mjs")).catch(function(n) {
       return Promise.reject(new Error("Could not load canvg: " + n));
     }).then(function(n) {
       return n.default ? n.default : n;
@@ -8963,10 +8963,10 @@ class Qh {
     this.controlContainer && this.options.autoClose && !this.controlContainer.contains(e.target) && this.exportContainer && this.exportButton && (console.log("handle onDocumentClick", this.options.autoClose), this.exportContainer.style.display = "none", this.exportButton.style.display = "block", this.toggleCrosshair(!1), this.togglePrintableArea(!1));
   }
   toggleCrosshair(e) {
-    this.options.Crosshair === !0 && (console.log("toggleCrosshair", e, JSON.stringify(this.crosshair)), e === !1 ? this.crosshair !== void 0 && (console.log("Hide crosshair"), this.crosshair.destroy(), this.crosshair = void 0) : this.crosshair === void 0 && (console.log("Show crosshair"), this.crosshair = new Ml(this.map), this.crosshair.create()));
+    this.options.Crosshair === !0 && (console.log("toggleCrosshair", e, this.crosshair), e === !1 ? this.crosshair !== void 0 && (console.log("Hide crosshair"), this.crosshair.destroy(), this.crosshair = void 0) : this.crosshair === void 0 && (console.log("Show crosshair"), this.crosshair = new Ml(this.map), this.crosshair.create()));
   }
   togglePrintableArea(e) {
-    this.options.PrintableArea === !0 && (console.log("togglePrintableArea", e, JSON.stringify(this.printableArea)), e === !1 ? this.printableArea !== void 0 && (this.printableArea.destroy(), this.printableArea = void 0) : this.printableArea === void 0 && (this.printableArea = new Dl(this.map), this.updatePrintableArea()));
+    this.options.PrintableArea === !0 && (console.log("togglePrintableArea", e, this.printableArea), e === !1 ? this.printableArea !== void 0 && (this.printableArea.destroy(), this.printableArea = void 0) : this.printableArea === void 0 && (this.printableArea = new Dl(this.map), this.updatePrintableArea()));
   }
   updatePrintableArea() {
     if (this.printableArea === void 0)
@@ -8994,4 +8994,4 @@ export {
   Jh as e,
   Kl as g
 };
-//# sourceMappingURL=index-Dqr3e6fa.mjs.map
+//# sourceMappingURL=index-BTlDCV_7.mjs.map
