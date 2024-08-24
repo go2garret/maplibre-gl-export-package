@@ -1,7 +1,8 @@
 import { ControlPosition, IControl, Map as MaplibreMap } from 'maplibre-gl';
 import { Map as MapboxMap } from 'mapbox-gl';
 import CrosshairManager from './crosshair-manager';
-import PrintableAreaManager from './printable-area-manager';
+//import PrintableAreaManager from './printable-area-manager';
+import PrintableAreaRuler from './printable-area-ruler';
 import { getTranslation } from './local';
 import MapGenerator from './map-generator';
 import {
@@ -35,7 +36,7 @@ export default class MaplibreExportControl implements IControl {
 
 	protected crosshair: CrosshairManager | undefined;
 
-	protected printableArea: PrintableAreaManager | undefined;
+	protected printableArea: PrintableAreaRuler | undefined;
 
 	protected map?: MaplibreMap | MapboxMap;
 
@@ -322,7 +323,7 @@ export default class MaplibreExportControl implements IControl {
 				}
 			} else {
 				if (this.printableArea === undefined) {
-					this.printableArea = new PrintableAreaManager(this.map);
+					this.printableArea = new PrintableAreaRuler(this.map);
 					this.updatePrintableArea();
 				}
 			}
