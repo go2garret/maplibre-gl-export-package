@@ -265,7 +265,7 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		label.setAttribute('text-anchor', 'middle');
 		label.setAttribute('alignment-baseline', 'middle');
 		label.setAttribute('fill', this.exportLayoutOptions.rulerLabelColor ?? '#000000');
-		label.setAttribute('font-weight', '500');
+		label.setAttribute('font-weight', '700');
 		label.setAttribute('font-size', this.exportLayoutOptions.rulerLabelSize ?? '11px');
 		label.setAttribute('font-family', 'Inter, Helvetica, Arial, sans-serif');
 		label.textContent = textContent;
@@ -282,7 +282,8 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		aLine.setAttribute('y1', y1.toString());
 		aLine.setAttribute('x2', x2.toString());
 		aLine.setAttribute('y2', y2.toString());
-		aLine.setAttribute('stroke-dasharray', '5,5');
+		aLine.setAttribute('stroke-dasharray', 'none');
+		aLine.setAttribute('stroke-linecap', 'round');
 		aLine.setAttribute('stroke', color);
 		aLine.setAttribute('stroke-width', w.toString());
 		return aLine;
