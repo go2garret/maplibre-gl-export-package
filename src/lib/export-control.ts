@@ -203,7 +203,7 @@ export default class MaplibreExportControl implements IControl {
 		return this.controlContainer;
 	}
 
-	public generateMap(
+	protected generateMap(
 		map: MaplibreMap | MapboxMap,
 		size: SizeType,
 		dpi: DPIType,
@@ -303,7 +303,7 @@ export default class MaplibreExportControl implements IControl {
 		}
 	}
 
-	public toggleCrosshair(state: boolean) {
+	protected toggleCrosshair(state: boolean) {
 		if (this.options.Crosshair === true) {
 			if (state === false) {
 				if (this.crosshair !== undefined) {
@@ -319,7 +319,7 @@ export default class MaplibreExportControl implements IControl {
 		}
 	}
 
-	public togglePrintableArea(state: boolean) {
+	protected togglePrintableArea(state: boolean) {
 		if (this.options.PrintableArea === true) {
 			if (state === false) {
 				if (this.printableArea !== undefined) {
@@ -340,7 +340,7 @@ export default class MaplibreExportControl implements IControl {
 		}
 	}
 
-	private updatePrintableArea() {
+	protected updatePrintableArea() {
 		if (this.printableArea === undefined) {
 			return;
 		}
