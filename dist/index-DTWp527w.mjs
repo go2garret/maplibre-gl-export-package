@@ -7745,7 +7745,7 @@ function(i) {
  */
 function(i) {
   function e() {
-    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-B0w_vUj9.mjs")).catch(function(n) {
+    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-D0hlI5Ew.mjs")).catch(function(n) {
       return Promise.reject(new Error("Could not load canvg: " + n));
     }).then(function(n) {
       return n.default ? n.default : n;
@@ -8554,7 +8554,7 @@ const Fs = {
   spinnerColor: "#2400FD",
   spinnerIcon: "ball-spin",
   spinnerSize: "2x",
-  showRuler: !0,
+  showRuler: !1,
   rulerTickmarkColor: "#000000",
   rulerLabelColor: "#000000",
   rulerLabelSize: "11px"
@@ -8718,13 +8718,13 @@ class Xh {
    */
   addNorthIconImage(e) {
     const n = this.getIconWidth(e, this.northIconOptions.imageSizeFraction ?? 0.08);
-    return new Promise((r) => {
+    return console.log("Add North Icon", n), new Promise((r) => {
       const s = new Image(n, n);
       s.onload = () => {
-        this.northIconOptions.imageName && e.addImage(this.northIconOptions.imageName, s), r();
+        this.northIconOptions.imageName && (console.log("renderMap.addImage", this.northIconOptions.imageName, s), e.addImage(this.northIconOptions.imageName, s)), r();
       };
       function o(c) {
-        return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(c);
+        return console.log("svgStringToImageSrc", c), "data:image/svg+xml;charset=utf-8," + encodeURIComponent(c);
       }
       this.northIconOptions.image && (s.src = o(this.northIconOptions.image));
     });
@@ -8738,15 +8738,17 @@ class Xh {
     let n = this.northIconOptions.visibility ?? "visible";
     return e.getZoom() < 2 && this.width > this.height && (n = "none"), new Promise((r) => {
       this.addNorthIconImage(e).then(() => {
-        const o = this.getIconWidth(
+        const s = this.getIconWidth(
           e,
           this.northIconOptions.imageSizeFraction ?? 0.08
-        ) * 0.8, c = this.getElementPosition(
+        );
+        console.log("Created North Icon", s);
+        const o = s * 0.8, c = this.getElementPosition(
           e,
           this.northIconOptions.position ?? "top-right",
           o
         ), h = e.unproject(c), f = this.northIconOptions.imageName ?? "gl-export-north-icon";
-        e.addSource(f, {
+        console.log("Add North Icon Layer", f), e.addSource(f, {
           type: "geojson",
           data: {
             type: "Feature",
@@ -9156,4 +9158,4 @@ export {
   Xh as f,
   Ql as g
 };
-//# sourceMappingURL=index-DkqzUOtY.mjs.map
+//# sourceMappingURL=index-DTWp527w.mjs.map
