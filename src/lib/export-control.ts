@@ -1,7 +1,7 @@
 import { ControlPosition, IControl, Map as MaplibreMap } from 'maplibre-gl';
 import { Map as MapboxMap } from 'mapbox-gl';
 import CrosshairManager from './crosshair-manager';
-//import PrintableAreaManager from './printable-area-manager';
+import PrintableAreaManager from './printable-area-manager';
 import PrintableAreaRuler from './printable-area-ruler';
 import { getTranslation } from './local';
 import MapGenerator from './map-generator';
@@ -17,7 +17,8 @@ import {
 	DPI,
 	DPIType,
 	UnitType,
-	type Language
+	type Language,
+	ExportLayoutOptions
 } from './interfaces';
 import {
 	defaultAttributionOptions,
@@ -37,7 +38,7 @@ export default class MaplibreExportControl implements IControl {
 
 	protected crosshair: CrosshairManager | undefined;
 
-	protected printableArea: PrintableAreaRuler | undefined;
+	protected printableArea: PrintableAreaManager | undefined;
 
 	protected map?: MaplibreMap | MapboxMap;
 
@@ -81,6 +82,7 @@ export default class MaplibreExportControl implements IControl {
 				options.attributionOptions
 			);
 			options.northIconOptions = Object.assign(defaultNorthIconOptions, options.northIconOptions);
+			options.exportLayoutOptions = Object.assign(defaultExportLayoutOptions,	options.exportLayoutOptions);
 			this.options = Object.assign(this.options, options);
 		}
 		this.onDocumentClick = this.onDocumentClick.bind(this);
@@ -326,7 +328,12 @@ export default class MaplibreExportControl implements IControl {
 				}
 			} else {
 				if (this.printableArea === undefined) {
-					this.printableArea = new PrintableAreaRuler(this.map);
+					if (this.options.exportLayoutOptions?.showRuler) {
+						this.printableArea = new PrintableAreaRuler(this.map, this.options.exportLayoutOptions);
+					} else {
+						this.printableArea = new PrintableAreaManager(this.map, (this.options.exportLayoutOptions as ExportLayoutOptions));
+					}
+					
 					this.updatePrintableArea();
 				}
 			}
