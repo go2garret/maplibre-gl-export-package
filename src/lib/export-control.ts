@@ -312,7 +312,7 @@ export default class MaplibreExportControl implements IControl {
 				}
 			} else {
 				if (this.crosshair === undefined) {
-					this.crosshair = new CrosshairManager(this.map);
+					this.crosshair = new CrosshairManager(this.map, (this.options.exportLayoutOptions as ExportLayoutOptions));
 					this.crosshair.create();
 				}
 			}
