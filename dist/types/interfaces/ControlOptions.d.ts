@@ -26,6 +26,5 @@ export interface ControlOptions {
     attributionOptions?: AttributionOptions;
     northIconOptions?: NorthIconOptions;
     exportLayoutOptions?: ExportLayoutOptions;
-    autoClose: boolean;
 }
 //# sourceMappingURL=ControlOptions.d.ts.map
