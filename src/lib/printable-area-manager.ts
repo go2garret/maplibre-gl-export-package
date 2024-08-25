@@ -1,8 +1,6 @@
 import { type Map as MaplibreMap } from 'maplibre-gl';
 import { type Map as MapboxMap } from 'mapbox-gl';
-import { Unit } from './interfaces';
-import { defaultExportLayoutOptions } from '../lib/map-generator-base';
-
+import { ExportLayoutOptions, Unit } from './interfaces';
 
 export default class PrintableAreaManager {
 	protected map: MaplibreMap | MapboxMap | undefined;
@@ -17,13 +15,16 @@ export default class PrintableAreaManager {
 
 	protected svgPath: SVGElement | undefined;
 
-	constructor(map: MaplibreMap | MapboxMap | undefined) {
+    protected exportLayoutOptions: ExportLayoutOptions;
+
+	constructor(map: MaplibreMap | MapboxMap | undefined, exportLayoutOptions: ExportLayoutOptions) {
 		this.map = map;
 		if (this.map === undefined) {
 			return;
 		}
 		this.mapResize = this.mapResize.bind(this);
 		this.map.on('resize', this.mapResize);
+		this.exportLayoutOptions = exportLayoutOptions;
 		const clientWidth = this.map?.getCanvas().clientWidth;
 		const clientHeight = this.map?.getCanvas().clientHeight;
 		const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -33,7 +34,7 @@ export default class PrintableAreaManager {
 		svg.setAttribute('width', `${clientWidth}px`);
 		svg.setAttribute('height', `${clientHeight}px`);
 		const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-		path.setAttribute('style', 'fill:' + defaultExportLayoutOptions.cutoutColor + ';stroke-width:0');
+		path.setAttribute('style', 'fill:' + this.exportLayoutOptions.cutoutColor + ';stroke-width:0');
 		path.setAttribute('fill-opacity', '0.5');
 		svg.append(path);
 		this.map?.getCanvasContainer().appendChild(svg);

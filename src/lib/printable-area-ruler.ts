@@ -1,13 +1,13 @@
 import { type Map as MaplibreMap } from 'maplibre-gl';
 import { type Map as MapboxMap } from 'mapbox-gl';
 import PrintableAreaManager from './printable-area-manager';
-import { Unit } from './interfaces';
+import { ExportLayoutOptions, Unit } from './interfaces';
 
 export default class PrintableAreaRuler extends PrintableAreaManager {
 	private rulerSvg: SVGElement | undefined;
 
-	constructor(map: MaplibreMap | MapboxMap | undefined) {
-		super(map);
+	constructor(map: MaplibreMap | MapboxMap | undefined, exportLayoutOptions: ExportLayoutOptions) {
+		super(map, exportLayoutOptions);
 
 		if (this.map === undefined) {
 			return;
@@ -83,7 +83,7 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		}
 	}
 
-	private addRulerLabels(cutoutWidth, cutoutHeight, startX, endX, startY, endY) {
+	private addRulerLabels(cutoutWidth: number, cutoutHeight: number, startX: number, endX: number, startY: number, endY: number) {
 		if (this.rulerSvg === undefined) return;
 
 		const inchesToMm = 25.4; // 1 inch = 25.4 mm
@@ -96,7 +96,6 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 
 		// Draw the ruler tick marks and labels on the top side
 		for (let i = 0; i <= cutoutWidth; i += tickLength) {
-			// this.rulerSvg.appendChild(this.createLine(startX + i, startY, startX + i, startY - this.toPixels(majorTickLengthInMm), '#000000', width));
 			const label = this.createLabel(
 				startX + i,
 				startY - labelOffset,
@@ -108,7 +107,6 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 
 		// Draw the ruler tick marks and labels on the right side
 		for (let i = 0; i <= cutoutHeight; i += tickLength) {
-			// this.rulerSvg.appendChild(this.createLine(endX, startY + i, endX + this.toPixels(majorTickLengthInMm), startY + i, '#000000', width));
 			const label = this.createLabel(
 				endX + labelOffset,
 				startY + i,
@@ -121,7 +119,6 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 
 		// Draw the ruler tick marks and labels on the bottom side
 		for (let i = 0; i <= cutoutWidth; i += tickLength) {
-			// this.rulerSvg.appendChild(this.createLine(startX + i, endY, startX + i, endY + this.toPixels(majorTickLengthInMm), '#000000', width));
 			const label = this.createLabel(
 				startX + i,
 				endY + labelOffset,
@@ -133,7 +130,6 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 
 		// Draw the ruler tick marks and labels on the left side
 		for (let i = 0; i <= cutoutHeight; i += tickLength) {
-			// this.rulerSvg.appendChild(this.createLine(startX, startY + i, startX - this.toPixels(majorTickLengthInMm), startY + i, '#000000', width));
 			const label = this.createLabel(
 				startX - labelOffset,
 				startY + i,
@@ -145,7 +141,7 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		}
 	}
 
-	public addRulerTickMarks(cutoutWidth, cutoutHeight, startX, endX, startY, endY) {
+	public addRulerTickMarks(cutoutWidth: number, cutoutHeight: number, startX: number, endX: number, startY: number, endY: number) {
 		if (this.rulerSvg === undefined) return;
 
 		const inchesToMm = 25.4; // 1 inch = 25.4 mm
@@ -154,9 +150,8 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		const tickLength = this.toPixels(tickSpacingInMm);
 		const majorTickLengthInMm = 3.2;
 		const minorTickLengthInMm = 1.2;
-		const width = '1';
-		const color = '#babbbd';
-
+		const width = 1;
+		const color = this.exportLayoutOptions.rulerTickmarkColor ?? "#000000";
 
 		console.log("addRulerTickMarks", cutoutWidth, cutoutHeight, startX, endX, startY, endY);
 
@@ -269,9 +264,9 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		label.setAttribute('y', `${y}`);
 		label.setAttribute('text-anchor', 'middle');
 		label.setAttribute('alignment-baseline', 'middle');
-		label.setAttribute('fill', '#bbc0cb');
-		label.setAttribute('font-weight', '700');
-		label.setAttribute('font-size', '8px');
+		label.setAttribute('fill', this.exportLayoutOptions.rulerLabelColor ?? '#000000');
+		label.setAttribute('font-weight', '500');
+		label.setAttribute('font-size', this.exportLayoutOptions.rulerLabelSize ?? '11px');
 		label.setAttribute('font-family', 'Inter, Helvetica, Arial, sans-serif');
 		label.textContent = textContent;
 
@@ -281,15 +276,15 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		return label;
 	}
 
-	private createLine(x1, y1, x2, y2, color, w) {
+	private createLine(x1: number, y1: number, x2: number, y2: number, color: string, w: number) {
 		const aLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-		aLine.setAttribute('x1', x1);
-		aLine.setAttribute('y1', y1);
-		aLine.setAttribute('x2', x2);
-		aLine.setAttribute('y2', y2);
+		aLine.setAttribute('x1', x1.toString());
+		aLine.setAttribute('y1', y1.toString());
+		aLine.setAttribute('x2', x2.toString());
+		aLine.setAttribute('y2', y2.toString());
 		aLine.setAttribute('stroke-dasharray', '5,5');
 		aLine.setAttribute('stroke', color);
-		aLine.setAttribute('stroke-width', w);
+		aLine.setAttribute('stroke-width', w.toString());
 		return aLine;
 	}
 }
