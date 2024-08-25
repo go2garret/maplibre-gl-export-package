@@ -1,6 +1,8 @@
 import { type Map as MaplibreMap } from 'maplibre-gl';
 import { type Map as MapboxMap } from 'mapbox-gl';
 import { Unit } from './interfaces';
+import { defaultExportLayoutOptions } from '../lib/map-generator-base';
+
 
 export default class PrintableAreaManager {
 	protected map: MaplibreMap | MapboxMap | undefined;
@@ -31,7 +33,7 @@ export default class PrintableAreaManager {
 		svg.setAttribute('width', `${clientWidth}px`);
 		svg.setAttribute('height', `${clientHeight}px`);
 		const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-		path.setAttribute('style', 'fill:#888888;stroke-width:0');
+		path.setAttribute('style', 'fill:' + defaultExportLayoutOptions.cutoutColor + ';stroke-width:0');
 		path.setAttribute('fill-opacity', '0.5');
 		svg.append(path);
 		this.map?.getCanvasContainer().appendChild(svg);
