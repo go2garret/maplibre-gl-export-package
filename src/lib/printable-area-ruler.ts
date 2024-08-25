@@ -15,7 +15,7 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 
 		// Get the client dimensions from the map canvas
 		const clientWidth = this.map?.getCanvas().clientWidth;
-		//const clientHeight = this.map?.getCanvas().clientHeight;
+		const clientHeight = this.map?.getCanvas().clientHeight;
 
 		// Create the ruler SVG element
 		const rulerSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -23,7 +23,7 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		rulerSvg.style.top = '0px';
 		rulerSvg.style.left = '0px';
 		rulerSvg.setAttribute('width', `${clientWidth}px`);
-		rulerSvg.setAttribute('height', '20px'); // Adjust the height as needed
+		rulerSvg.setAttribute('height', `${clientHeight}px`);
 
 		// Append the ruler SVG to the map canvas container
 		this.map?.getCanvasContainer().appendChild(rulerSvg);
