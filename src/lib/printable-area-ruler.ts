@@ -30,12 +30,14 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 
 		// Store a reference to the ruler SVG in the class instance
 		this.rulerSvg = rulerSvg;
+		console.log("New SVG", this.rulerSvg);
 	}
 
 	public updateArea(width: number, height: number) {
 		this.width = width;
 		this.height = height;
 		this.unit = Unit.mm;
+		console.log("UPDATE AREA");
 		this.generateCutOut();
 	}
 
@@ -72,6 +74,8 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		const endX = startX + cutoutWidth;
 		const startY = clientHeight / 2 - cutoutHeight / 2;
 		const endY = startY + cutoutHeight;
+
+		console.log("drawRuler", this.rulerSvg);
 
 		if (clientWidth && clientHeight) {
 			this.addRulerTickMarks(cutoutWidth, cutoutHeight, startX, endX, startY, endY);
@@ -152,6 +156,9 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		const minorTickLengthInMm = 1.2;
 		const width = '1';
 		const color = '#babbbd';
+
+
+		console.log("addRulerTickMarks", cutoutWidth, cutoutHeight, startX, endX, startY, endY);
 
 		// Draw the ruler tick marks and labels on the top side
 		let n = 0;
@@ -252,6 +259,8 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 				)
 			);
 		}
+
+		console.log("Tickmarks", this.rulerSvg);
 	}
 
 	private createLabel(x: number, y: number, textContent: string, rotate?: number) {
