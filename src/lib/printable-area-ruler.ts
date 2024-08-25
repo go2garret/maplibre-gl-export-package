@@ -1,45 +1,52 @@
 import { type Map as MaplibreMap } from 'maplibre-gl';
 import { type Map as MapboxMap } from 'mapbox-gl';
 import PrintableAreaManager from './printable-area-manager';
+import { Unit } from './interfaces';
 
 export default class PrintableAreaRuler extends PrintableAreaManager {
-  private rulerSvg: SVGElement | undefined;
+	private rulerSvg: SVGElement | undefined;
 
-  constructor(map: MaplibreMap | MapboxMap | undefined) {
-    super(map);
+	constructor(map: MaplibreMap | MapboxMap | undefined) {
+		super(map);
 
-    if (this.map === undefined) {
-      return;
-    }
+		if (this.map === undefined) {
+			return;
+		}
 
-    // Get the client dimensions from the map canvas
-    const clientWidth = this.map?.getCanvas().clientWidth;
-    //const clientHeight = this.map?.getCanvas().clientHeight;
+		// Get the client dimensions from the map canvas
+		const clientWidth = this.map?.getCanvas().clientWidth;
+		//const clientHeight = this.map?.getCanvas().clientHeight;
 
-    // Create the ruler SVG element
-    const rulerSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    rulerSvg.style.position = 'absolute';
-    rulerSvg.style.top = '0px';
-    rulerSvg.style.left = '0px';
-    rulerSvg.setAttribute('width', `${clientWidth}px`);
-    rulerSvg.setAttribute('height', '20px'); // Adjust the height as needed
-    
-    // Append the ruler SVG to the map canvas container
-    this.map?.getCanvasContainer().appendChild(rulerSvg);
+		// Create the ruler SVG element
+		const rulerSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+		rulerSvg.style.position = 'absolute';
+		rulerSvg.style.top = '0px';
+		rulerSvg.style.left = '0px';
+		rulerSvg.setAttribute('width', `${clientWidth}px`);
+		rulerSvg.setAttribute('height', '20px'); // Adjust the height as needed
 
-    // Store a reference to the ruler SVG in the class instance
-    this.rulerSvg = rulerSvg;
-  }
+		// Append the ruler SVG to the map canvas container
+		this.map?.getCanvasContainer().appendChild(rulerSvg);
 
+		// Store a reference to the ruler SVG in the class instance
+		this.rulerSvg = rulerSvg;
+	}
 
-	protected generateCutOut() {		
-    	super.generateCutOut();
-		
+	public updateArea(width: number, height: number) {
+		this.width = width;
+		this.height = height;
+		this.unit = Unit.mm;
+		this.generateCutOut();
+	}
+
+	protected generateCutOut() {
+		super.generateCutOut();
+
 		this.drawRuler();
 	}
 
 	public destroy() {
-		super.destroy();		
+		super.destroy();
 
 		if (this.rulerSvg !== undefined) {
 			this.rulerSvg.remove();
@@ -49,12 +56,12 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 
 	private drawRuler() {
 		if (this.rulerSvg === undefined) return;
-	
+
 		// Clear any existing ruler elements
 		while (this.rulerSvg.firstChild) {
 			this.rulerSvg.removeChild(this.rulerSvg.firstChild);
 		}
-	
+
 		this.rulerSvg.id = 'print-preview-ruler';
 		const clientWidth = this.map?.getCanvas()?.clientWidth;
 		const clientHeight = this.map?.getCanvas()?.clientHeight;
@@ -65,7 +72,7 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		const endX = startX + cutoutWidth;
 		const startY = clientHeight / 2 - cutoutHeight / 2;
 		const endY = startY + cutoutHeight;
-	
+
 		if (clientWidth && clientHeight) {
 			this.addRulerTickMarks(cutoutWidth, cutoutHeight, startX, endX, startY, endY);
 			this.addRulerLabels(cutoutWidth, cutoutHeight, startX, endX, startY, endY);
@@ -86,7 +93,11 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		// Draw the ruler tick marks and labels on the top side
 		for (let i = 0; i <= cutoutWidth; i += tickLength) {
 			// this.rulerSvg.appendChild(this.createLine(startX + i, startY, startX + i, startY - this.toPixels(majorTickLengthInMm), '#000000', width));
-			const label = this.createLabel(startX + i, startY - labelOffset, `${i / tickLength * tickSpacingInInches}`);
+			const label = this.createLabel(
+				startX + i,
+				startY - labelOffset,
+				`${(i / tickLength) * tickSpacingInInches}`
+			);
 			label.classList.add('tick-top');
 			this.rulerSvg.appendChild(label);
 		}
@@ -94,7 +105,12 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		// Draw the ruler tick marks and labels on the right side
 		for (let i = 0; i <= cutoutHeight; i += tickLength) {
 			// this.rulerSvg.appendChild(this.createLine(endX, startY + i, endX + this.toPixels(majorTickLengthInMm), startY + i, '#000000', width));
-			const label = this.createLabel(endX + labelOffset, startY + i, `${i / tickLength * tickSpacingInInches}`, 90);
+			const label = this.createLabel(
+				endX + labelOffset,
+				startY + i,
+				`${(i / tickLength) * tickSpacingInInches}`,
+				90
+			);
 			label.classList.add('tick-right');
 			this.rulerSvg.appendChild(label);
 		}
@@ -102,7 +118,11 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		// Draw the ruler tick marks and labels on the bottom side
 		for (let i = 0; i <= cutoutWidth; i += tickLength) {
 			// this.rulerSvg.appendChild(this.createLine(startX + i, endY, startX + i, endY + this.toPixels(majorTickLengthInMm), '#000000', width));
-			const label = this.createLabel(startX + i, endY + labelOffset, `${i / tickLength * tickSpacingInInches}`);
+			const label = this.createLabel(
+				startX + i,
+				endY + labelOffset,
+				`${(i / tickLength) * tickSpacingInInches}`
+			);
 			label.classList.add('tick-bottom');
 			this.rulerSvg.appendChild(label);
 		}
@@ -110,7 +130,12 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		// Draw the ruler tick marks and labels on the left side
 		for (let i = 0; i <= cutoutHeight; i += tickLength) {
 			// this.rulerSvg.appendChild(this.createLine(startX, startY + i, startX - this.toPixels(majorTickLengthInMm), startY + i, '#000000', width));
-			const label = this.createLabel(startX - labelOffset, startY + i, `${i / tickLength * tickSpacingInInches}`, -90);
+			const label = this.createLabel(
+				startX - labelOffset,
+				startY + i,
+				`${(i / tickLength) * tickSpacingInInches}`,
+				-90
+			);
 			label.classList.add('tick-left');
 			this.rulerSvg.appendChild(label);
 		}
@@ -132,7 +157,7 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		let n = 0;
 		for (let i = 0; i <= cutoutWidth; i += tickLength) {
 			let currentTickLength = minorTickLengthInMm; // Default to minor tick length
-			const tickInInches = (n * tickSpacingInInches);
+			const tickInInches = n * tickSpacingInInches;
 			n++;
 			if (tickInInches % 1 === 0) {
 				continue; // Skip whole numbers
@@ -141,14 +166,23 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 			} else if (tickInInches % 1 === 0.5) {
 				currentTickLength = majorTickLengthInMm; // Use major tick length for 0.5
 			}
-			this.rulerSvg.appendChild(this.createLine(startX + i, startY, startX + i, startY - this.toPixels(currentTickLength), color, width));
+			this.rulerSvg.appendChild(
+				this.createLine(
+					startX + i,
+					startY,
+					startX + i,
+					startY - this.toPixels(currentTickLength),
+					color,
+					width
+				)
+			);
 		}
 
 		// Draw the ruler tick marks and labels on the right side
 		n = 0;
 		for (let i = 0; i <= cutoutHeight; i += tickLength) {
 			let currentTickLength = minorTickLengthInMm; // Default to minor tick length
-			const tickInInches = (n * tickSpacingInInches);
+			const tickInInches = n * tickSpacingInInches;
 			n++;
 			if (tickInInches % 1 === 0) {
 				continue; // Skip whole numbers
@@ -157,14 +191,23 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 			} else if (tickInInches % 1 === 0.5) {
 				currentTickLength = majorTickLengthInMm; // Use major tick length for 0.5
 			}
-			this.rulerSvg.appendChild(this.createLine(endX, startY + i, endX + this.toPixels(currentTickLength), startY + i, color, width));
+			this.rulerSvg.appendChild(
+				this.createLine(
+					endX,
+					startY + i,
+					endX + this.toPixels(currentTickLength),
+					startY + i,
+					color,
+					width
+				)
+			);
 		}
 
 		// Draw the ruler tick marks and labels on the bottom side
 		n = 0;
 		for (let i = 0; i <= cutoutWidth; i += tickLength) {
 			let currentTickLength = minorTickLengthInMm; // Default to minor tick length
-			const tickInInches = (n * tickSpacingInInches);
+			const tickInInches = n * tickSpacingInInches;
 			n++;
 			if (tickInInches % 1 === 0) {
 				continue; // Skip whole numbers
@@ -173,14 +216,23 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 			} else if (tickInInches % 1 === 0.5) {
 				currentTickLength = majorTickLengthInMm; // Use major tick length for 0.5
 			}
-			this.rulerSvg.appendChild(this.createLine(startX + i, endY, startX + i, endY + this.toPixels(currentTickLength), color, width));
+			this.rulerSvg.appendChild(
+				this.createLine(
+					startX + i,
+					endY,
+					startX + i,
+					endY + this.toPixels(currentTickLength),
+					color,
+					width
+				)
+			);
 		}
 
 		// Draw the ruler tick marks and labels on the left side
 		n = 0;
 		for (let i = 0; i <= cutoutHeight; i += tickLength) {
 			let currentTickLength = minorTickLengthInMm; // Default to minor tick length
-			const tickInInches = (n * tickSpacingInInches);
+			const tickInInches = n * tickSpacingInInches;
 			n++;
 			if (tickInInches % 1 === 0) {
 				continue; // Skip whole numbers
@@ -189,7 +241,16 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 			} else if (tickInInches % 1 === 0.5) {
 				currentTickLength = majorTickLengthInMm; // Use major tick length for 0.5
 			}
-			this.rulerSvg.appendChild(this.createLine(startX, startY + i, startX - this.toPixels(currentTickLength), startY + i, color, width));
+			this.rulerSvg.appendChild(
+				this.createLine(
+					startX,
+					startY + i,
+					startX - this.toPixels(currentTickLength),
+					startY + i,
+					color,
+					width
+				)
+			);
 		}
 	}
 
@@ -204,7 +265,7 @@ export default class PrintableAreaRuler extends PrintableAreaManager {
 		label.setAttribute('font-size', '8px');
 		label.setAttribute('font-family', 'Inter, Helvetica, Arial, sans-serif');
 		label.textContent = textContent;
-		
+
 		if (rotate !== undefined) {
 			label.setAttribute('transform', `rotate(${rotate} ${x} ${y})`);
 		}
