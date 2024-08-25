@@ -16,12 +16,12 @@ export default class MaplibreExportControl implements IControl {
     getDefaultPosition(): ControlPosition;
     getTranslation(): Translation;
     onAdd(map: MaplibreMap | MapboxMap): HTMLElement;
-    generateMap(map: MaplibreMap | MapboxMap, size: SizeType, dpi: DPIType, format: FormatType, unit: UnitType, filename?: string): void;
+    protected generateMap(map: MaplibreMap | MapboxMap, size: SizeType, dpi: DPIType, format: FormatType, unit: UnitType, filename?: string): void;
     private createSelection;
     onRemove(): void;
     private onDocumentClick;
-    toggleCrosshair(state: boolean): void;
-    togglePrintableArea(state: boolean): void;
-    private updatePrintableArea;
+    protected toggleCrosshair(state: boolean): void;
+    protected togglePrintableArea(state: boolean): void;
+    protected updatePrintableArea(): void;
 }
 //# sourceMappingURL=export-control.d.ts.map

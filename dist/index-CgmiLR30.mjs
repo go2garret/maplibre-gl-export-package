@@ -272,11 +272,11 @@ class Tl extends jc {
   }
   createLabel(n, r, s, o) {
     const c = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    return c.setAttribute("x", `${n}`), c.setAttribute("y", `${r}`), c.setAttribute("text-anchor", "middle"), c.setAttribute("alignment-baseline", "middle"), c.setAttribute("fill", this.exportLayoutOptions.rulerLabelColor ?? "#000000"), c.setAttribute("font-weight", "500"), c.setAttribute("font-size", this.exportLayoutOptions.rulerLabelSize ?? "11px"), c.setAttribute("font-family", "Inter, Helvetica, Arial, sans-serif"), c.textContent = s, o !== void 0 && c.setAttribute("transform", `rotate(${o} ${n} ${r})`), c;
+    return c.setAttribute("x", `${n}`), c.setAttribute("y", `${r}`), c.setAttribute("text-anchor", "middle"), c.setAttribute("alignment-baseline", "middle"), c.setAttribute("fill", this.exportLayoutOptions.rulerLabelColor ?? "#000000"), c.setAttribute("font-weight", "700"), c.setAttribute("font-size", this.exportLayoutOptions.rulerLabelSize ?? "11px"), c.setAttribute("font-family", "Inter, Helvetica, Arial, sans-serif"), c.textContent = s, o !== void 0 && c.setAttribute("transform", `rotate(${o} ${n} ${r})`), c;
   }
   createLine(n, r, s, o, c, h) {
     const f = document.createElementNS("http://www.w3.org/2000/svg", "line");
-    return f.setAttribute("x1", n.toString()), f.setAttribute("y1", r.toString()), f.setAttribute("x2", s.toString()), f.setAttribute("y2", o.toString()), f.setAttribute("stroke-dasharray", "5,5"), f.setAttribute("stroke", c), f.setAttribute("stroke-width", h.toString()), f;
+    return f.setAttribute("x1", n.toString()), f.setAttribute("y1", r.toString()), f.setAttribute("x2", s.toString()), f.setAttribute("y2", o.toString()), f.setAttribute("stroke-dasharray", "none"), f.setAttribute("stroke-linecap", "round"), f.setAttribute("stroke", c), f.setAttribute("stroke-width", h.toString()), f;
   }
 }
 const Ec = {
@@ -7745,7 +7745,7 @@ function(i) {
  */
 function(i) {
   function e() {
-    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-N7WS0YRi.mjs")).catch(function(n) {
+    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-BCcj3NrP.mjs")).catch(function(n) {
       return Promise.reject(new Error("Could not load canvg: " + n));
     }).then(function(n) {
       return n.default ? n.default : n;
@@ -8682,10 +8682,8 @@ class Xh {
    * @returns Icon width calculated
    */
   getIconWidth(e, n) {
-    const r = e.getContainer();
-    console.log("Get icon width", r, n);
-    const s = r.offsetWidth;
-    return console.log(" -> containerDiv.offsetWidth", s, "px"), parseInt(`${s * n}`);
+    const r = e.getContainer(), s = parseInt(r.style.width.replace("px", ""));
+    return parseInt(`${s * n}`);
   }
   /**
    * Get element position's pixel values based on selected position setting
@@ -8720,13 +8718,13 @@ class Xh {
    */
   addNorthIconImage(e) {
     const n = this.getIconWidth(e, this.northIconOptions.imageSizeFraction ?? 0.08);
-    return console.log("Add North Icon", n), new Promise((r) => {
+    return new Promise((r) => {
       const s = new Image(n, n);
       s.onload = () => {
-        this.northIconOptions.imageName && (console.log("renderMap.addImage", this.northIconOptions.imageName, s), e.addImage(this.northIconOptions.imageName, s)), r();
+        this.northIconOptions.imageName && e.addImage(this.northIconOptions.imageName, s), r();
       };
       function o(c) {
-        return console.log("svgStringToImageSrc", c), "data:image/svg+xml;charset=utf-8," + encodeURIComponent(c);
+        return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(c);
       }
       this.northIconOptions.image && (s.src = o(this.northIconOptions.image));
     });
@@ -8740,17 +8738,15 @@ class Xh {
     let n = this.northIconOptions.visibility ?? "visible";
     return e.getZoom() < 2 && this.width > this.height && (n = "none"), new Promise((r) => {
       this.addNorthIconImage(e).then(() => {
-        const s = this.getIconWidth(
+        const o = this.getIconWidth(
           e,
           this.northIconOptions.imageSizeFraction ?? 0.08
-        );
-        console.log("Created North Icon", s);
-        const o = s * 0.8, c = this.getElementPosition(
+        ) * 0.8, c = this.getElementPosition(
           e,
           this.northIconOptions.position ?? "top-right",
           o
         ), h = e.unproject(c), f = this.northIconOptions.imageName ?? "gl-export-north-icon";
-        console.log("Add North Icon Layer", f), e.addSource(f, {
+        e.addSource(f, {
           type: "geojson",
           data: {
             type: "Feature",
@@ -9160,4 +9156,4 @@ export {
   Xh as f,
   Ql as g
 };
-//# sourceMappingURL=index-CarrPpYJ.mjs.map
+//# sourceMappingURL=index-CgmiLR30.mjs.map
