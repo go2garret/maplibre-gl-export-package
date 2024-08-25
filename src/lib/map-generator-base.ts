@@ -313,7 +313,7 @@ export abstract class MapGeneratorBase {
 		console.log("Get icon width", containerDiv, fraction);
 		//const width = parseInt(containerDiv.style.width.replace('px', ''));
 		const width = containerDiv.offsetWidth;
-		console.log(" -> Icon width", width, containerDiv.style.width);
+		console.log(" -> containerDiv.offsetWidth", width, "px");
 		return parseInt(`${width * fraction}`);
 	}
 
