@@ -49,6 +49,7 @@ import {
 	Unit,
 	UnitType
 } from './interfaces';
+import { ExportLayoutOptions } from './interfaces/ExportLayoutOptions';
 
 export const defaultMarkerCirclePaint: CirclePaint = {
 	'circle-radius': 8,
@@ -77,6 +78,19 @@ export const defaultNorthIconOptions: NorthIconOptions = {
 	position: 'top-right'
 };
 
+export const defaultExportLayoutOptions: ExportLayoutOptions = {
+	"cutoutColor": "#888888",
+	"crosshairColor": "#FFFFFF",
+	"spinnerOverlayColor": "rgba(0, 0, 0, 0.5)",
+	"spinnerColor": "#FFFFFF",
+	"spinnerIcon": "circle",
+	"spinnerSize": "50px",
+	"showRuler": true,
+	"rulerTickmarkColor": "#000000",
+	"rulerLabelColor": "#000000",
+	"rulerLabelSize": '11px'	
+};
+
 export abstract class MapGeneratorBase {
 	protected map: MaplibreMap | MapboxMap;
 
@@ -102,6 +116,8 @@ export abstract class MapGeneratorBase {
 
 	protected northIconOptions: NorthIconOptions;
 
+	protected exportLayoutOptions: ExportLayoutOptions;
+
 	/**
 	 * Constructor
 	 * @param map MaplibreMap object
@@ -122,7 +138,8 @@ export abstract class MapGeneratorBase {
 		markerCirclePaint = defaultMarkerCirclePaint,
 		attributionClassName = 'maplibregl-ctrl-attrib-inner',
 		attributionOptions = defaultAttributionOptions,
-		northIconOptions = defaultNorthIconOptions
+		northIconOptions = defaultNorthIconOptions,
+		exportLayoutOptions = defaultExportLayoutOptions
 	) {
 		this.map = map;
 		this.width = size[0];
@@ -136,6 +153,7 @@ export abstract class MapGeneratorBase {
 		this.attributionClassName = attributionClassName;
 		this.attributionOptions = attributionOptions;
 		this.northIconOptions = northIconOptions;
+		this.exportLayoutOptions = exportLayoutOptions;
 	}
 
 	protected abstract getRenderedMap(

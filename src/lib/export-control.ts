@@ -22,7 +22,8 @@ import {
 import {
 	defaultAttributionOptions,
 	defaultMarkerCirclePaint,
-	defaultNorthIconOptions
+	defaultNorthIconOptions,
+	defaultExportLayoutOptions
 } from './map-generator-base';
 
 /**
@@ -67,6 +68,7 @@ export default class MaplibreExportControl implements IControl {
 		markerCirclePaint: defaultMarkerCirclePaint,
 		attributionOptions: defaultAttributionOptions,
 		northIconOptions: defaultNorthIconOptions,
+		exportLayoutOptions: defaultExportLayoutOptions,
 		autoClose: true
 	};
 
@@ -216,7 +218,8 @@ export default class MaplibreExportControl implements IControl {
 			filename,
 			this.options.markerCirclePaint,
 			this.options.attributionOptions,
-			this.options.northIconOptions
+			this.options.northIconOptions,
+			this.options.exportLayoutOptions
 		);
 		mapGenerator.generate();
 	}
