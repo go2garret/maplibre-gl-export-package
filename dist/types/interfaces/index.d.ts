@@ -7,4 +7,5 @@ export * from './PageOrientation';
 export * from './Size';
 export * from './Translation';
 export * from './Unit';
+export * from './ExportLayoutOptions';
 //# sourceMappingURL=index.d.ts.map

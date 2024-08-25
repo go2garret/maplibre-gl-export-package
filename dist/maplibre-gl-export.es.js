@@ -1,19 +1,20 @@
-import { A as e, C as r, D as t, F as n, L as i, e as o, M as l, a as g, P as p, S as u, U as M, b, d as P, c as d, g as f } from "./index-DWka7mDz.mjs";
+import { A as t, C as e, D as r, F as n, L as o, f as i, M as l, a as g, P as p, S as u, U as f, b as M, e as b, d, c as P, g as A } from "./index-I8PKHD-z.mjs";
 export {
-  e as AvailableLanguages,
-  r as CrosshairManager,
-  t as DPI,
+  t as AvailableLanguages,
+  e as CrosshairManager,
+  r as DPI,
   n as Format,
-  i as Languages,
-  o as MapGeneratorBase,
+  o as Languages,
+  i as MapGeneratorBase,
   l as MaplibreExportControl,
   g as PageOrientation,
   p as PrintableAreaManager,
   u as Size,
-  M as Unit,
-  b as defaultAttributionOptions,
-  P as defaultMarkerCirclePaint,
-  d as defaultNorthIconOptions,
-  f as getTranslation
+  f as Unit,
+  M as defaultAttributionOptions,
+  b as defaultExportLayoutOptions,
+  d as defaultMarkerCirclePaint,
+  P as defaultNorthIconOptions,
+  A as getTranslation
 };
 //# sourceMappingURL=maplibre-gl-export.es.js.map

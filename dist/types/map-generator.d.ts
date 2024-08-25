@@ -3,7 +3,7 @@ import 'js-loading-overlay';
 import { DPIType, FormatType, SizeType, UnitType } from './interfaces';
 import { MapGeneratorBase } from './map-generator-base';
 export default class MapGenerator extends MapGeneratorBase {
-    constructor(map: MaplibreMap, size?: SizeType, dpi?: DPIType, format?: FormatType, unit?: UnitType, fileName?: string, markerCirclePaint?: import("mapbox-gl").CirclePaint, attributionOptions?: import("./interfaces").AttributionOptions, northIconOptions?: import("./interfaces").NorthIconOptions);
+    constructor(map: MaplibreMap, size?: SizeType, dpi?: DPIType, format?: FormatType, unit?: UnitType, fileName?: string, markerCirclePaint?: import("mapbox-gl").CirclePaint, attributionOptions?: import("./interfaces").AttributionOptions, northIconOptions?: import("./interfaces").NorthIconOptions, exportLayoutOptions?: import("./interfaces").ExportLayoutOptions);
     protected getRenderedMap(container: HTMLElement, style: StyleSpecification): MaplibreMap;
     protected renderMapPost(renderMap: MaplibreMap): MaplibreMap;
 }

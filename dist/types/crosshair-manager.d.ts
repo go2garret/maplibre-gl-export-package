@@ -1,5 +1,6 @@
 import { type Map as MaplibreMap } from 'maplibre-gl';
 import { type Map as MapboxMap } from 'mapbox-gl';
+import { ExportLayoutOptions } from './interfaces';
 export default class CrosshairManager {
     private map;
     private width;
@@ -8,7 +9,8 @@ export default class CrosshairManager {
     private xLine;
     private yLine;
     private color;
-    constructor(map: MaplibreMap | MapboxMap | undefined);
+    protected exportLayoutOptions: ExportLayoutOptions;
+    constructor(map: MaplibreMap | MapboxMap | undefined, exportLayoutOptions: ExportLayoutOptions);
     create(): void;
     private updateValues;
     private mapResize;

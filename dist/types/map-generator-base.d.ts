@@ -2,9 +2,11 @@ import { Map as MaplibreMap, StyleSpecification } from 'maplibre-gl';
 import { CirclePaint, Map as MapboxMap } from 'mapbox-gl';
 import 'js-loading-overlay';
 import { AttributionOptions, DPIType, FormatType, NorthIconOptions, SizeType, UnitType } from './interfaces';
+import { ExportLayoutOptions } from './interfaces/ExportLayoutOptions';
 export declare const defaultMarkerCirclePaint: CirclePaint;
 export declare const defaultAttributionOptions: AttributionOptions;
 export declare const defaultNorthIconOptions: NorthIconOptions;
+export declare const defaultExportLayoutOptions: ExportLayoutOptions;
 export declare abstract class MapGeneratorBase {
     protected map: MaplibreMap | MapboxMap;
     protected width: number;
@@ -18,7 +20,8 @@ export declare abstract class MapGeneratorBase {
     protected attributionClassName: string;
     protected attributionOptions: AttributionOptions;
     protected northIconOptions: NorthIconOptions;
-    constructor(map: MaplibreMap | MapboxMap, size?: SizeType, dpi?: DPIType, format?: FormatType, unit?: UnitType, fileName?: string, markerClassName?: string, markerCirclePaint?: CirclePaint, attributionClassName?: string, attributionOptions?: AttributionOptions, northIconOptions?: NorthIconOptions);
+    protected exportLayoutOptions: ExportLayoutOptions;
+    constructor(map: MaplibreMap | MapboxMap, size?: SizeType, dpi?: DPIType, format?: FormatType, unit?: UnitType, fileName?: string, markerClassName?: string, markerCirclePaint?: CirclePaint, attributionClassName?: string, attributionOptions?: AttributionOptions, northIconOptions?: NorthIconOptions, exportLayoutOptions?: ExportLayoutOptions);
     protected abstract getRenderedMap(container: HTMLElement, style: StyleSpecification | mapboxgl.Style): MaplibreMap | MapboxMap;
     protected renderMapPost(renderMap: MaplibreMap | MapboxMap): MaplibreMap | MapboxMap;
     private getMarkers;
