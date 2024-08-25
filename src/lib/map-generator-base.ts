@@ -311,7 +311,8 @@ export abstract class MapGeneratorBase {
 	private getIconWidth(renderMap: MaplibreMap | MapboxMap, fraction: number) {
 		const containerDiv = renderMap.getContainer();
 		console.log("Get icon width", containerDiv, fraction);
-		const width = parseInt(containerDiv.style.width.replace('px', ''));
+		//const width = parseInt(containerDiv.style.width.replace('px', ''));
+		const width = containerDiv.offsetWidth;
 		console.log(" -> Icon width", width, containerDiv.style.width);
 		return parseInt(`${width * fraction}`);
 	}
