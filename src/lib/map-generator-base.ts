@@ -80,11 +80,11 @@ export const defaultNorthIconOptions: NorthIconOptions = {
 
 export const defaultExportLayoutOptions: ExportLayoutOptions = {
 	"cutoutColor": "#888888",
-	"crosshairColor": "#FFFFFF",
-	"spinnerOverlayColor": "rgba(0, 0, 0, 0.5)",
-	"spinnerColor": "#FFFFFF",
-	"spinnerIcon": "circle",
-	"spinnerSize": "50px",
+	"crosshairColor": "#535353",
+	"spinnerOverlayColor": "#5D5959",
+	"spinnerColor": "#2400FD",
+	"spinnerIcon": "ball-spin",
+	"spinnerSize": "2x",
 	"showRuler": true,
 	"rulerTickmarkColor": "#000000",
 	"rulerLabelColor": "#000000",
@@ -215,11 +215,11 @@ export abstract class MapGeneratorBase {
 		// eslint-disable-next-line
 		// @ts-ignore
 		JsLoadingOverlay.show({
-			overlayBackgroundColor: '#5D5959',
+			overlayBackgroundColor: this.exportLayoutOptions.spinnerOverlayColor,
 			overlayOpacity: '0.6',
-			spinnerIcon: 'ball-spin',
-			spinnerColor: '#2400FD',
-			spinnerSize: '2x',
+			spinnerIcon: this.exportLayoutOptions.spinnerIcon,
+			spinnerColor: this.exportLayoutOptions.spinnerColor,
+			spinnerSize: this.exportLayoutOptions.spinnerSize,
 			overlayIDName: 'overlay',
 			spinnerIDName: 'spinner',
 			offsetX: 0,
