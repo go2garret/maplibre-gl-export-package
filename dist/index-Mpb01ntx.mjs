@@ -7745,7 +7745,7 @@ function(i) {
  */
 function(i) {
   function e() {
-    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-D0hlI5Ew.mjs")).catch(function(n) {
+    return (Ht.canvg ? Promise.resolve(Ht.canvg) : import("./index.es-DdbipbSa.mjs")).catch(function(n) {
       return Promise.reject(new Error("Could not load canvg: " + n));
     }).then(function(n) {
       return n.default ? n.default : n;
@@ -8682,8 +8682,10 @@ class Xh {
    * @returns Icon width calculated
    */
   getIconWidth(e, n) {
-    const r = e.getContainer(), s = parseInt(r.style.width.replace("px", ""));
-    return parseInt(`${s * n}`);
+    const r = e.getContainer();
+    console.log("Get icon width", r, n);
+    const s = parseInt(r.style.width.replace("px", ""));
+    return console.log(" -> Icon width", s, r.style.width), parseInt(`${s * n}`);
   }
   /**
    * Get element position's pixel values based on selected position setting
@@ -9158,4 +9160,4 @@ export {
   Xh as f,
   Ql as g
 };
-//# sourceMappingURL=index-DTWp527w.mjs.map
+//# sourceMappingURL=index-Mpb01ntx.mjs.map
