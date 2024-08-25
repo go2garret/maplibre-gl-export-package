@@ -310,10 +310,7 @@ export abstract class MapGeneratorBase {
 	 */
 	private getIconWidth(renderMap: MaplibreMap | MapboxMap, fraction: number) {
 		const containerDiv = renderMap.getContainer();
-		console.log("Get icon width", containerDiv, fraction);
-		//const width = parseInt(containerDiv.style.width.replace('px', ''));
-		const width = containerDiv.offsetWidth;
-		console.log(" -> containerDiv.offsetWidth", width, "px");
+		const width = parseInt(containerDiv.style.width.replace('px', ''));
 		return parseInt(`${width * fraction}`);
 	}
 
@@ -365,18 +362,15 @@ export abstract class MapGeneratorBase {
 	 */
 	private addNorthIconImage(renderMap: MaplibreMap | MapboxMap) {
 		const iconSize = this.getIconWidth(renderMap, this.northIconOptions.imageSizeFraction ?? 0.08);
-		console.log("Add North Icon", iconSize);
 		return new Promise<void>((resolve) => {
 			const svgImage = new Image(iconSize, iconSize);
 			svgImage.onload = () => {
 				if (this.northIconOptions.imageName) {
-					console.log("renderMap.addImage", this.northIconOptions.imageName, svgImage);
 					renderMap.addImage(this.northIconOptions.imageName, svgImage);
 				}
 				resolve();
 			};
 			function svgStringToImageSrc(svgString: string) {
-				console.log("svgStringToImageSrc", svgString);
 				return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgString);
 			}
 			if (this.northIconOptions.image) {
@@ -402,7 +396,6 @@ export abstract class MapGeneratorBase {
 					renderMap,
 					this.northIconOptions.imageSizeFraction ?? 0.08
 				);
-				console.log("Created North Icon", iconSize);
 				const iconOffset = iconSize * 0.8;
 				const pixels = this.getElementPosition(
 					renderMap,
@@ -412,7 +405,6 @@ export abstract class MapGeneratorBase {
 				const lngLat = (renderMap as MaplibreMap).unproject(pixels);
 
 				const layerId = this.northIconOptions.imageName ?? 'gl-export-north-icon';
-				console.log("Add North Icon Layer", layerId);
 				renderMap.addSource(layerId, {
 					type: 'geojson',
 					data: {
