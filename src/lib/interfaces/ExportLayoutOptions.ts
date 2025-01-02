@@ -1,4 +1,5 @@
 export interface ExportLayoutOptions {
+	autoClose?: boolean;
 	cutoutColor?: string;
 	crosshairColor?: string;
 	spinnerOverlayColor?: string;

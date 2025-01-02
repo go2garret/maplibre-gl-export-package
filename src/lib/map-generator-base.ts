@@ -79,6 +79,7 @@ export const defaultNorthIconOptions: NorthIconOptions = {
 };
 
 export const defaultExportLayoutOptions: ExportLayoutOptions = {
+	"autoClose": true,
 	"cutoutColor": "#888888",
 	"crosshairColor": "#535353",
 	"spinnerOverlayColor": "#5D5959",

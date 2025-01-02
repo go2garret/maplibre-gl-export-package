@@ -69,8 +69,7 @@ export default class MaplibreExportControl implements IControl {
 		markerCirclePaint: defaultMarkerCirclePaint,
 		attributionOptions: defaultAttributionOptions,
 		northIconOptions: defaultNorthIconOptions,
-		exportLayoutOptions: defaultExportLayoutOptions,
-		autoClose: true
+		exportLayoutOptions: defaultExportLayoutOptions
 	};
 
 	protected MAPLIB_CSS_PREFIX: string = 'maplibregl';
@@ -292,7 +291,7 @@ export default class MaplibreExportControl implements IControl {
 	private onDocumentClick(event: MouseEvent): void {
 		if (
 			this.controlContainer &&
-			(this.options.autoClose && !this.controlContainer.contains(event.target as Element)) &&
+			((this.options.exportLayoutOptions?.autoClose ?? false) && !this.controlContainer.contains(event.target as Element)) &&
 			this.exportContainer &&
 			this.exportButton
 		) {
