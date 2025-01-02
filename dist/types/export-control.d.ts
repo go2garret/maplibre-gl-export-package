@@ -21,6 +21,14 @@ export default class MaplibreExportControl implements IControl {
     onRemove(): void;
     private onDocumentClick;
     protected toggleCrosshair(state: boolean): void;
+    protected getCutoutGeojson(): {
+        type: string;
+        geometry: {
+            type: string;
+            coordinates: number[][][];
+        };
+        properties: {};
+    } | undefined;
     protected togglePrintableArea(state: boolean): void;
     protected updatePrintableArea(): void;
 }

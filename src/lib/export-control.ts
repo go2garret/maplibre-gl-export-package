@@ -319,6 +319,10 @@ export default class MaplibreExportControl implements IControl {
 		}
 	}
 
+	protected getCutoutGeojson() {
+		return this.printableArea?.getCutoutGeojson();
+	}
+
 	protected togglePrintableArea(state: boolean) {
 		if (this.options.PrintableArea === true) {
 			if (state === false) {
@@ -333,7 +337,7 @@ export default class MaplibreExportControl implements IControl {
 					} else {
 						this.printableArea = new PrintableAreaManager(this.map, (this.options.exportLayoutOptions as ExportLayoutOptions));
 					}
-					
+
 					this.updatePrintableArea();
 				}
 			}
