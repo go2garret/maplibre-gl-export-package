@@ -74,6 +74,49 @@ export default class PrintableAreaManager {
 		);
 	}
 
+	public getCutoutGeojson() {
+		if (this.map === undefined) {
+			throw new Error('Map is undefined, cannot generate cutout GeoJSON.');
+		}
+
+		const clientWidth = this.map?.getCanvas().clientWidth;
+		const clientHeight = this.map?.getCanvas().clientHeight;
+		const width = this.toPixels(this.width);
+		const height = this.toPixels(this.height);
+
+		// Calculate the cutout coordinates in pixel space
+		const startX = clientWidth / 2 - width / 2;
+		const endX = startX + width;
+		const startY = clientHeight / 2 - height / 2;
+		const endY = startY + height;
+
+		// Convert pixel coordinates to geographic coordinates
+		const nw = this.map.unproject([startX, startY]).toArray(); // Top-left corner
+		const ne = this.map.unproject([endX, startY]).toArray(); // Top-right corner
+		const se = this.map.unproject([endX, endY]).toArray(); // Bottom-right corner
+		const sw = this.map.unproject([startX, endY]).toArray(); // Bottom-left corner
+
+		// Construct the GeoJSON polygon
+		const geojson = {
+			type: 'Feature',
+			geometry: {
+				type: 'Polygon',
+				coordinates: [
+					[
+						[nw[0], nw[1]], // Top-left
+						[ne[0], ne[1]], // Top-right
+						[se[0], se[1]], // Bottom-right
+						[sw[0], sw[1]], // Bottom-left
+						[nw[0], nw[1]], // Close the polygon
+					],
+				],
+			},
+			properties: {},
+		};
+
+		return geojson;
+	}
+
 	public destroy() {
 		if (this.svgCanvas !== undefined) {
 			this.svgCanvas.remove();
