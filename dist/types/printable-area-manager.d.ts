@@ -13,6 +13,14 @@ export default class PrintableAreaManager {
     private mapResize;
     updateArea(width: number, height: number): void;
     protected generateCutOut(): void;
+    getCutoutGeojson(): {
+        type: string;
+        geometry: {
+            type: string;
+            coordinates: number[][][];
+        };
+        properties: {};
+    };
     destroy(): void;
     protected toPixels(length: number, conversionFactor?: number): number;
 }
