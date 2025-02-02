@@ -17,6 +17,7 @@ export default class MaplibreExportControl implements IControl {
     getTranslation(): Translation;
     onAdd(map: MaplibreMap | MapboxMap): HTMLElement;
     protected generateMap(map: MaplibreMap | MapboxMap, size: SizeType, dpi: DPIType, format: FormatType, unit: UnitType, filename?: string): void;
+    getMapScreenshot(map: MaplibreMap | MapboxMap): Promise<string | null>;
     private createSelection;
     onRemove(): void;
     private onDocumentClick;

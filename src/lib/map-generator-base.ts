@@ -89,7 +89,7 @@ export const defaultExportLayoutOptions: ExportLayoutOptions = {
 	"showRuler": false,
 	"rulerTickmarkColor": "#000000",
 	"rulerLabelColor": "#000000",
-	"rulerLabelSize": '11px'	
+	"rulerLabelSize": '11px'
 };
 
 export abstract class MapGeneratorBase {
@@ -202,6 +202,73 @@ export abstract class MapGeneratorBase {
 			});
 		}
 		return renderMap;
+	}
+
+	public async getMapScreenshot(): Promise<string | null> {
+		// eslint-disable-next-line
+		const this_ = this;
+
+		this.format = Format.JPEG;
+		this.width = 50.8;
+		this.height = 50.8;
+		this.dpi = 96;
+		this.unit = Unit.mm;
+
+		// Calculate pixel ratio
+		const actualPixelRatio: number = window.devicePixelRatio;
+		Object.defineProperty(window, 'devicePixelRatio', {
+			get() {
+				return this_.dpi / 96;
+			}
+		});
+		// Create map container
+		const hidden = document.createElement('div');
+		hidden.className = 'hidden-map';
+		document.body.appendChild(hidden);
+		const container = document.createElement('div');
+		container.style.width = this.toPixels(this.width);
+		container.style.height = this.toPixels(this.height);
+		hidden.appendChild(container);
+
+		const style = this.map.getStyle();
+		if (style && style.sources) {
+			const sources = style.sources;
+			Object.keys(sources).forEach((name) => {
+				const src = sources[name];
+				Object.keys(src).forEach((key) => {
+					// delete properties if value is undefined.
+					// for instance, raster-dem might has undefined value in "url" and "bounds"
+					if (!src[key]) delete src[key];
+				});
+			});
+		}
+
+		// Render map
+		let renderMap = this.getRenderedMap(container, style);
+
+		return new Promise((resolve) => {
+			renderMap.on('load', () => {
+				renderMap.once('idle', () => {
+					renderMap = this.renderMapPost(renderMap);
+					const markers = this.getMarkers();
+
+					let screenshot: (string | null) = null;
+
+					if (markers.length === 0) {
+						screenshot = this.exportScreenshot(renderMap, hidden, actualPixelRatio);
+						resolve(screenshot); // Return screenshot immediately if no markers
+					} else {
+						renderMap = this.renderMarkers(renderMap);
+						renderMap.once('idle', () => {
+							screenshot = this.exportScreenshot(renderMap, hidden, actualPixelRatio);
+							resolve(screenshot); // Resolve when markers are rendered
+						});
+					}
+
+					return screenshot;
+				});
+			});
+		});
 	}
 
 	/**
@@ -533,6 +600,27 @@ export abstract class MapGeneratorBase {
 		return true;
 	}
 
+	private exportScreenshot(
+		renderMap: MaplibreMap | MapboxMap,
+		hiddenDiv: HTMLElement,
+		actualPixelRatio: number
+	) {
+		const canvas = renderMap.getCanvas();
+
+		const uri = canvas.toDataURL('image/jpeg', 0.85);
+
+		renderMap.remove();
+		hiddenDiv.parentNode?.removeChild(hiddenDiv);
+		Object.defineProperty(window, 'devicePixelRatio', {
+			get() {
+				return actualPixelRatio;
+			}
+		});
+		hiddenDiv.remove();
+
+		return uri;
+	}
+
 	private exportImage(
 		renderMap: MaplibreMap | MapboxMap,
 		hiddenDiv: HTMLElement,
@@ -648,14 +736,14 @@ export abstract class MapGeneratorBase {
 		const pxHeight = Number(this.toPixels(this.height, this.dpi).replace('px', ''));
 
 		const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" 
-      xmlns:xlink="http://www.w3.org/1999/xlink" 
-      version="1.1" 
-      width="${pxWidth}" 
-      height="${pxHeight}" 
-      viewBox="0 0 ${pxWidth} ${pxHeight}" 
+    <svg xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      version="1.1"
+      width="${pxWidth}"
+      height="${pxHeight}"
+      viewBox="0 0 ${pxWidth} ${pxHeight}"
       xml:space="preserve">
-        <image style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"  
+        <image style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
       xlink:href="${uri}" width="${pxWidth}" height="${pxHeight}"></image>
     </svg>`;
 

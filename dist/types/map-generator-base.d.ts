@@ -26,6 +26,7 @@ export declare abstract class MapGeneratorBase {
     protected renderMapPost(renderMap: MaplibreMap | MapboxMap): MaplibreMap | MapboxMap;
     private getMarkers;
     protected renderMarkers(renderMap: MaplibreMap | MapboxMap): MaplibreMap | MapboxMap;
+    getMapScreenshot(): Promise<string | null>;
     generate(): void;
     private stripHtml;
     private getIconWidth;
@@ -33,6 +34,7 @@ export declare abstract class MapGeneratorBase {
     private addNorthIconImage;
     private addNorthIconToMap;
     private addAttributions;
+    private exportScreenshot;
     private exportImage;
     private toPNG;
     private toJPEG;

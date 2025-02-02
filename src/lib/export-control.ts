@@ -225,6 +225,15 @@ export default class MaplibreExportControl implements IControl {
 		mapGenerator.generate();
 	}
 
+	public async getMapScreenshot(
+		map: MaplibreMap | MapboxMap
+	) {
+		const mapGenerator = new MapGenerator(
+			map as MaplibreMap
+		);
+		return await mapGenerator.getMapScreenshot();
+	}
+
 	private createSelection(
 		data: Record<string, unknown>,
 		title: string,
