@@ -209,9 +209,9 @@ export abstract class MapGeneratorBase {
 		const this_ = this;
 
 		this.format = Format.JPEG;
-		this.width = 50.8;
-		this.height = 50.8;
-		this.dpi = 96;
+		this.width = 206;
+		this.height = 206;
+		this.dpi = 48;
 		this.unit = Unit.mm;
 
 		// Calculate pixel ratio
