@@ -202,7 +202,7 @@ export default class MaplibreExportControl implements IControl {
 		return this.controlContainer;
 	}
 
-	protected generateMap(
+	protected async generateMap(
 		map: MaplibreMap | MapboxMap,
 		size: SizeType,
 		dpi: DPIType,
@@ -222,7 +222,7 @@ export default class MaplibreExportControl implements IControl {
 			this.options.northIconOptions,
 			this.options.exportLayoutOptions
 		);
-		mapGenerator.generate();
+		await mapGenerator.generate();
 	}
 
 	public async getMapScreenshot(

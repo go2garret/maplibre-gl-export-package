@@ -27,7 +27,7 @@ export declare abstract class MapGeneratorBase {
     private getMarkers;
     protected renderMarkers(renderMap: MaplibreMap | MapboxMap): MaplibreMap | MapboxMap;
     getMapScreenshot(): Promise<string | null>;
-    generate(): void;
+    generate(): Promise<void>;
     private stripHtml;
     private getIconWidth;
     private getElementPosition;
