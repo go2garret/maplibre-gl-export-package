@@ -77,7 +77,10 @@ export default class MapGenerator extends MapGeneratorBase {
 		const images = ((this.map as MaplibreMap).style.imageManager || {}).images || [];
 		Object.keys(images).forEach((key) => {
 			if (!images[key].data) return;
-			renderMap.addImage(key, images[key].data);
+			const addImageOptions = {
+				pixelRatio: 2
+			}
+			renderMap.addImage(key, images[key].data, addImageOptions);
 		});
 
 		return renderMap;
