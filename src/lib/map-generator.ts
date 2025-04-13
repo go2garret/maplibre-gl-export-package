@@ -8,6 +8,8 @@ import {
 	defaultMarkerCirclePaint,
 	defaultNorthIconOptions
 } from './map-generator-base';
+import * as fs from 'fs';
+import * as path from 'path';
 
 export default class MapGenerator extends MapGeneratorBase {
 	/**
@@ -80,10 +82,37 @@ export default class MapGenerator extends MapGeneratorBase {
 			const addImageOptions = {
 				pixelRatio: 2
 			}
+
+			this.log("Add Image 2x");
+
 			renderMap.addImage(key, images[key].data, addImageOptions);
 		});
 
 		return renderMap;
+	}
+
+
+	/**
+	 * Simple function to log a message to a text file
+	 * @param message - The message to log
+	 * @param filename - Name of the log file (default: 'log.txt')
+	 */
+	protected log(
+		message: string,
+		filename: string = 'log.txt'
+	): void {
+		try {
+		// Create log path in src directory
+		const logPath = path.join('src', filename);
+
+		// Add timestamp and newline
+		const entry = `[${new Date().toISOString()}] ${message}\n`;
+
+		// Append to file (creates file if it doesn't exist)
+		fs.appendFileSync(logPath, entry);
+		} catch (error) {
+		console.error('Failed to write to log file:', error);
+		}
 	}
 
 	protected renderMapPost(renderMap: MaplibreMap) {
